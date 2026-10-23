@@ -1,0 +1,6 @@
+/* One shared inset for the homepage and the three product heroes. */
+:root { --hero-content-inset: clamp(36px, 6vw, 112px); }
+:root body .hero .hero__in,
+:root body main.bca-page.bca-v2.photo-hero .bca-screen-opening .bca-hero-grid {
+  padding-inline: var(--hero-content-inset) !important;
+}

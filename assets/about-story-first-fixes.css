@@ -1,0 +1,28 @@
+/* Resolve old inner-page component styles in the selected About us layout. */
+.about-concept.about-four .phero h1{font-size:clamp(42px,4.5vw,66px);line-height:1.08}
+.about-concept.about-four .phero__ctas{align-items:center}
+.about-concept.about-four .founder-portrait{width:100%;min-width:0}
+.about-concept.about-four .story-editorial{min-width:0}
+.about-concept.about-four .values.values-wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 40px;align-items:start}
+.about-concept.about-four .values.values-wrap li{width:auto;max-width:none;min-width:0;margin:0;padding:20px 0 0;border:0;border-top:1px solid #81725c;outline:0;box-shadow:none;min-height:0;border-radius:0;background:transparent}
+.about-concept.about-four .values.values-wrap li b{font-size:21px;line-height:1.25;margin:0;color:#fffaf2}
+.about-concept.about-four .values.values-wrap li p{font-size:16px;line-height:1.6;margin:10px 0 0;color:#eadcc6}
+.about-concept.about-four .award{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:start;gap:20px}
+.about-concept.about-four .award .disc{width:48px;height:48px;padding:0;margin:0;flex:none;box-shadow:none;background:transparent}
+.about-concept.about-four .award .disc img{width:100%;height:100%}
+.about-concept.about-four .award small{font-size:13px;color:#a4311d}
+.about-concept.about-four .award b{display:block;margin:9px 0 13px;font-size:26px;line-height:1.2}
+.about-concept.about-four .fit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;border:0;margin-top:30px}
+.about-concept.about-four .fit__col{display:flex;flex-direction:column;gap:0;padding:24px 0 0;margin:0;min-width:0;border:0;border-top:1px solid #95846a;background:transparent;box-shadow:none;transform:none}
+.about-concept.about-four .fit__col:hover{background:transparent;transform:none}
+.about-concept.about-four .fit__q{font-size:15px;text-transform:none;line-height:1.45;letter-spacing:0;min-height:44px;margin:0 0 18px;padding:0;border:0;color:#f3e5cd}
+.about-concept.about-four .fit__a{display:flex;align-items:center;gap:14px;margin:0 0 18px;padding:0;border:0;min-height:91px}
+.about-concept.about-four .fit__a .disc{width:44px;height:44px;flex:none;margin:0;background:#fbf4e7;box-shadow:none}
+.about-concept.about-four .fit__a small{font-size:12px;color:#e3d0b2}
+.about-concept.about-four .fit__a b{font-size:26px;line-height:1.15;letter-spacing:-.02em;color:#fffaf2}
+.about-concept.about-four .fit__col>p:not(.fit__q){font-size:16px;line-height:1.65;color:#eadcc6;margin:0 0 22px;flex:1}
+.about-concept.about-four .fit__col>a{align-self:flex-start;margin-top:auto}
+.about-concept.about-four .fit__head .kicker{color:#ffb79d}
+.about-concept.about-four .contact__alt{overflow-wrap:anywhere}
+@media(max-width:900px){.about-concept.about-four .fit{grid-template-columns:1fr;gap:30px}.about-concept.about-four .fit__q{min-height:0}.about-concept.about-four .fit__a{min-height:0}.about-concept.about-four .values.values-wrap{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.about-concept.about-four .values.values-wrap{grid-template-columns:1fr;gap:24px}.about-concept.about-four .phero__ctas{justify-content:center;align-items:center;gap:18px}.about-concept.about-four .founder-portrait{width:100%}.about-concept.about-four .award b{font-size:23px}.about-concept.about-four .fit__a b{font-size:26px}.about-concept.about-four .phero h1{font-size:40px}}

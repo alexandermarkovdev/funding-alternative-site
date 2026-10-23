@@ -1,0 +1,340 @@
+{
+  "pages": [
+    {
+      "path": "index.html",
+      "title": "Homepage"
+    },
+    {
+      "path": "business-cash-advance.html",
+      "title": "Business Cash Advance"
+    },
+    {
+      "path": "merchant-cash-advance.html",
+      "title": "Merchant Cash Advance"
+    },
+    {
+      "path": "selective-invoice-financing.html",
+      "title": "Selective Invoice Financing"
+    },
+    {
+      "path": "about-us.html",
+      "title": "About us"
+    },
+    {
+      "path": "faq.html",
+      "title": "FAQs"
+    },
+    {
+      "path": "apply.html",
+      "title": "Application"
+    },
+    {
+      "path": "partner-with-us.html",
+      "title": "Partner with us"
+    },
+    {
+      "path": "blog.html",
+      "title": "Blog"
+    },
+    {
+      "path": "privacy-policy.html",
+      "title": "Privacy Policy"
+    },
+    {
+      "path": "terms-conditions.html",
+      "title": "Terms &amp; Conditions"
+    },
+    {
+      "path": "cookie-policy.html",
+      "title": "Cookie Policy"
+    },
+    {
+      "path": "introducer-portal-faq.html",
+      "title": "Introducer Portal FAQ"
+    },
+    {
+      "path": "open-banking-institutions.html",
+      "title": "Institutions we work with"
+    },
+    {
+      "path": "open-banking-transactions.html",
+      "title": "New Open Banking connection"
+    },
+    {
+      "path": "bca-landing-page-google-ads.html",
+      "title": "Business Cash Advance"
+    },
+    {
+      "path": "mca-landing-page-google-ads.html",
+      "title": "Merchant Cash Advance"
+    },
+    {
+      "path": "sif-landing-page-google-ads.html",
+      "title": "Selective Invoice Financing"
+    },
+    {
+      "path": "thank-you.html",
+      "title": "Thank you"
+    },
+    {
+      "path": "thank-you-bca-landing-page.html",
+      "title": "Thank you"
+    },
+    {
+      "path": "thank-you-mca-landing-page.html",
+      "title": "Thank you"
+    },
+    {
+      "path": "thank-you-sif-landing-page.html",
+      "title": "Thank you"
+    },
+    {
+      "path": "blog/7-practical-ways-to-encourage-customers-to-pay-their-invoices-faster.html",
+      "title": "7 Practical Ways To Encourage Customers to Pay Their Invoices Faster"
+    },
+    {
+      "path": "blog/alternative-finance-for-uk-smes.html",
+      "title": "Alternative Finance for UK SMEs"
+    },
+    {
+      "path": "blog/april-newsletter.html",
+      "title": "April Newsletter"
+    },
+    {
+      "path": "blog/business-cash-advance-vs-bank-loan-a-clear-complete-comparison.html",
+      "title": "Business Cash Advance vs Bank Loan: A Clear, Complete Comparison"
+    },
+    {
+      "path": "blog/december-2025-newsletter.html",
+      "title": "December 2025 Newsletter"
+    },
+    {
+      "path": "blog/february-newsletter.html",
+      "title": "February Newsletter"
+    },
+    {
+      "path": "blog/index.html",
+      "title": "Opening Funding Alternative"
+    },
+    {
+      "path": "blog/january-newsletter.html",
+      "title": "January Newsletter"
+    },
+    {
+      "path": "blog/march-newsletter.html",
+      "title": "March Newsletter"
+    },
+    {
+      "path": "blog/may-newsletter.html",
+      "title": "May Newsletter"
+    },
+    {
+      "path": "blog/meet-the-new-funding-alternative-introducer-portal.html",
+      "title": "Meet the New Funding Alternative Introducer Portal"
+    },
+    {
+      "path": "blog/solving-uk-smb-seasonal-cashflow-problems.html",
+      "title": "Solving UK SMB Seasonal Cashflow Problems"
+    },
+    {
+      "path": "blog/step-by-step-guide-to-a-fast-business-funding-application.html",
+      "title": "Step-by-Step Guide to a Fast Business Funding Application"
+    },
+    {
+      "path": "blog/the-best-alternatives-to-bank-loans-for-smes.html",
+      "title": "The Best Alternatives to Bank Loans for SMEs"
+    },
+    {
+      "path": "blog/the-different-forms-of-invoice-financing.html",
+      "title": "The Different Forms of Invoice Financing"
+    },
+    {
+      "path": "blog/turn-outstanding-invoices-into-growth-capital.html",
+      "title": "Turn Outstanding Invoices into Growth Capital"
+    }
+  ],
+  "features": [
+    {
+      "id": 1,
+      "title": "Application fields that stay clear",
+      "page": "apply.html",
+      "selector": ".ap__card",
+      "device": "desktop",
+      "priority": "High",
+      "before": "The fields currently use a thin underline and floating labels.",
+      "after": "Permanent labels above outlined inputs make the form easier to scan and revisit.",
+      "cls": "r-form"
+    },
+    {
+      "id": 2,
+      "title": "Mobile hero facts with room to breathe",
+      "page": "merchant-cash-advance.html",
+      "selector": ".hero-stats",
+      "device": "mobile",
+      "priority": "High",
+      "before": "Long values wrap into a narrow space beside the icons.",
+      "after": "Keep the icons; give each value the full width of its column. Applies to BCA, MCA, SIF and homepage facts.",
+      "cls": "r-facts"
+    },
+    {
+      "id": 3,
+      "title": "Remove the empty Cookie Policy sidebar",
+      "page": "cookie-policy.html",
+      "selector": ".resource-layout",
+      "device": "desktop",
+      "priority": "High",
+      "before": "The contents sidebar has no links, but still takes up a full column.",
+      "after": "A centred reading column, with no empty navigation.",
+      "cls": "r-cookie"
+    },
+    {
+      "id": 4,
+      "title": "Easier policy-page reading",
+      "page": "privacy-policy.html",
+      "selector": ".resource-layout",
+      "device": "desktop",
+      "priority": "High",
+      "before": "Long lines and heavy heading weights make dense policy text harder to scan.",
+      "after": "A narrower measure, calmer headings and more consistent paragraph spacing. Original policy words retained.",
+      "cls": "r-policy"
+    },
+    {
+      "id": 5,
+      "title": "A footer with clear groups",
+      "page": "index.html",
+      "selector": ".foot",
+      "device": "desktop",
+      "priority": "High",
+      "before": "Navigation, policies, social links and copyright share one busy row.",
+      "after": "Separate Explore, Policies and Services groups, plus a more readable disclosure. All existing links and disclosure words retained.",
+      "cls": "r-footer"
+    },
+    {
+      "id": 6,
+      "title": "Clearer calculator result hierarchy",
+      "page": "index.html",
+      "selector": ".calculator-section,.calc-section,.funding-calculator",
+      "device": "desktop",
+      "priority": "Medium",
+      "before": "Controls, result and small print are compressed into one beige panel.",
+      "after": "A white calculator surface, a distinct estimate area and larger tab targets. Calculations remain unchanged.",
+      "cls": "r-calculator"
+    },
+    {
+      "id": 7,
+      "title": "Contact fields with visible labels",
+      "page": "index.html",
+      "selector": "#contact",
+      "device": "desktop",
+      "priority": "High",
+      "before": "The contact form relies on placeholder text to identify its fields.",
+      "after": "Labels remain above each field after someone starts typing. Softer white inputs replace the grey blocks.",
+      "cls": "r-contact"
+    },
+    {
+      "id": 8,
+      "title": "A shorter mobile blog filter area",
+      "page": "blog.html",
+      "selector": ".blog-tools,.blog-search,.blog-filters",
+      "device": "mobile",
+      "priority": "Medium",
+      "before": "Eight wrapped topic buttons delay the first article on a small screen.",
+      "after": "A compact, labelled topic selector on mobile. Desktop filters and article content stay the same.",
+      "cls": "r-blog"
+    },
+    {
+      "id": 9,
+      "title": "A more comfortable article reading column",
+      "page": "blog/7-practical-ways-to-encourage-customers-to-pay-their-invoices-faster.html",
+      "selector": ".article-heading",
+      "device": "desktop",
+      "priority": "Medium",
+      "before": "Long article titles and body lines compete with the contents column.",
+      "after": "A more balanced title size, a 68-character reading measure and clearer subheading rhythm.",
+      "cls": "r-article"
+    },
+    {
+      "id": 10,
+      "title": "Mobile FAQ topics as a clear list",
+      "page": "faq.html",
+      "selector": ".faq-categories",
+      "device": "mobile",
+      "priority": "Medium",
+      "before": "Two columns of topic links have uneven line wraps and can be harder to tap.",
+      "after": "One clean list with generous tap areas and consistent separators.",
+      "cls": "r-faq"
+    },
+    {
+      "id": 11,
+      "title": "Introducer FAQs you can scan first",
+      "page": "introducer-portal-faq.html",
+      "selector": ".resource-content",
+      "device": "desktop",
+      "priority": "Medium",
+      "before": "The imported FAQ answers start expanded, creating a very long page.",
+      "after": "Start with the questions, add a question count and offer Expand all / Collapse all. All 14 answers stay available.",
+      "cls": "r-introducer"
+    },
+    {
+      "id": 12,
+      "title": "A bank directory that scans faster",
+      "page": "open-banking-institutions.html",
+      "selector": ".bank-container",
+      "device": "desktop",
+      "priority": "Medium",
+      "before": "Large centred logo cards use a lot of vertical space.",
+      "after": "Compact logo-and-name rows, a clearer search area and a quieter availability notice. Live connections remain unavailable.",
+      "cls": "r-banks"
+    },
+    {
+      "id": 13,
+      "title": "A cleaner bank connection form",
+      "page": "open-banking-transactions.html",
+      "selector": ".bank-container",
+      "device": "mobile",
+      "priority": "Medium",
+      "before": "The availability notice and bordered form create several nested boxes on mobile.",
+      "after": "A compact notice and a single aligned form column. The real connection button remains disabled.",
+      "cls": "r-bank-form"
+    },
+    {
+      "id": 14,
+      "title": "Thank-you pages with a clear next action",
+      "page": "thank-you.html",
+      "selector": ".thank-page",
+      "device": "desktop",
+      "priority": "Medium",
+      "before": "A large empty area and adjacent text links make the page feel unfinished.",
+      "after": "A compact confirmation layout with clearly separated next actions. These pages remain static templates.",
+      "cls": "r-thanks"
+    },
+    {
+      "id": 15,
+      "title": "Correct wayfinding on resource pages",
+      "page": "privacy-policy.html",
+      "selector": ".top",
+      "device": "desktop",
+      "priority": "High",
+      "before": "Policy and Open Banking pages currently highlight Blog as the active page.",
+      "after": "Remove the misleading Blog highlight and add a simple Home / current page breadcrumb.",
+      "cls": "r-wayfinding"
+    },
+    {
+      "id": 16,
+      "title": "Make the full partner FAQ easier to find",
+      "page": "partner-with-us.html",
+      "selector": ".review-partner-help,.faq",
+      "device": "desktop",
+      "priority": "Medium",
+      "before": "The separate introducer FAQ link sits away from the main partner questions.",
+      "after": "Put a clear link beside the partner FAQ section, where people are already looking for answers.",
+      "cls": "r-partner"
+    }
+  ],
+  "reviewedPages": 38,
+  "reviewedWidths": [
+    1440,
+    390
+  ],
+  "audit": "76 page-size checks; no document overflow, broken image references or page-script errors observed. Visual recommendations only; this is not a legal or compliance certification."
+}

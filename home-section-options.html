@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Funding steps and product section options | Funding Alternative</title><link rel="stylesheet" href="brand-assets/tokens.css">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7ead2;color:#404040;font:16px/1.4 var(--fa-font)}
+.controls{position:sticky;top:0;z-index:2;background:#f7ead2;padding:14px 24px;display:flex;gap:12px 26px;align-items:center;flex-wrap:wrap;border-bottom:1px solid #ccbea5}
+.controls strong{font-size:18px;font-weight:600}.choices{display:flex;gap:5px;flex-wrap:wrap}
+button,a{font:500 14px/1.2 var(--fa-font)}button{min-height:40px;padding:9px 13px;border:1px solid #b5a78e;border-radius:6px;background:transparent;color:#404040;cursor:pointer}
+button:hover{background:#e8d8bc}button[aria-pressed=true]{background:#404040;border-color:#404040;color:#fff}
+a{color:#404040;text-underline-offset:4px;margin-left:auto;white-space:nowrap}button:focus-visible,a:focus-visible{outline:3px solid #a4311d;outline-offset:3px}
+iframe{display:block;border:0;width:100%;height:calc(100svh - var(--controls-height,80px));background:#282624}
+.note{font-size:14px;margin:0;padding:12px 24px;background:#fffaf2}.note span{font-weight:600}
+::selection{background:#a4311d;color:white}
+@media(max-width:700px){.controls{padding:12px;gap:10px}.controls strong{width:100%}button{font-size:13px;padding:9px 10px}.choices{gap:4px}a{margin-left:0}.note{padding:12px}}
+</style></head><body>
+<header class="controls"><strong>Section options</strong>
+
+<div class="choices" role="group" aria-label="Section"><button data-section="flow" aria-pressed="true">Funding steps</button><button data-section="products" aria-pressed="false">Products</button></div><div class="choices" role="group" aria-label="Version"><button data-variant="current" aria-pressed="false">Current</button><button data-variant="1" aria-pressed="true">1</button><button data-variant="2" aria-pressed="false">2</button><button data-variant="3" aria-pressed="false">3</button><button data-variant="4" aria-pressed="false">4</button></div>
+<a id="standalone" target="_blank" rel="noopener" href="home-flow-option-1.html#how-it-works">Open full preview</a></header>
+<iframe title="Section options preview" aria-busy="true" style="visibility:hidden"></iframe>
+<p class="note"><span id="description">Section preview:</span> <span id="detail" style="font-weight:400">Compare the current design with four alternatives.</span> Bright brand colours, current copy and product photos retained. The live homepage is unchanged.</p>
+<script src="assets/home-section-comparison.js"></script></body></html>

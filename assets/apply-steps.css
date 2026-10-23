@@ -1,0 +1,97 @@
+/* Apply page: three-step application form (applicant → business → solution).
+   Fields follow the reference form; styling follows the approved site layout (brand palette, Barlow, 6px corners). */
+
+.ap--photo .ap__card { border-radius: 12px; padding: 28px 28px 24px; font-size: 1rem; }
+.ap__card h1 { margin: 0; }
+.ap__sub { margin: 6px 0 20px; font-size: 15px; }
+
+/* Progress: one segment per step */
+.steps-bar { list-style: none; margin: 0 0 24px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.steps-bar button { all: unset; box-sizing: border-box; display: block; width: 100%; cursor: default; padding-top: 10px; border-top: 4px solid var(--fa-grey-light);
+  font: 600 13px/1.3 var(--fa-font); color: var(--fa-logo-grey); }
+.steps-bar span { display: block; font-weight: 400; font-size: 12px; }
+.steps-bar [data-state="done"] button { border-top-color: var(--fa-charcoal); color: var(--fa-charcoal); cursor: pointer; }
+.steps-bar [data-state="done"] button:hover { color: var(--fa-red-deep); }
+.steps-bar [data-state="current"] button { border-top-color: var(--fa-red); color: var(--fa-charcoal); }
+.steps-bar button:focus-visible { outline: 3px solid var(--fa-red); outline-offset: 3px; }
+
+/* One step at a time */
+.step[hidden] { display: none; }
+.step h2 { font: 600 22px/1.2 var(--fa-font); letter-spacing: -.01em; text-transform: none; color: var(--fa-charcoal); margin: 0 0 18px; }
+.step h2:focus { outline: none; }
+
+.ap .ap__row { gap: 0 12px; }
+.ap .fld { gap: 6px; margin-bottom: 14px; }
+.ap .fld > label, .ap .fld > .fld__label { font-weight: 600; font-size: 14px; }
+.ap .ap__card input:not([type=radio]):not([type=checkbox]), .ap .ap__card select { min-height: 48px; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(64, 64, 64, .25);
+  background-color: var(--fa-white); font-size: 16px; }
+.ap .ap__card select { padding-right: 2.2rem; }
+.ap .ap__card select:invalid { color: var(--fa-logo-grey); }
+.ap .ap__card input:focus, .ap .ap__card select:focus { border-color: var(--fa-charcoal); box-shadow: 0 0 0 3px rgba(234, 70, 40, .25); }
+.ap .hint { font-size: 13px; line-height: 1.4; align-items: flex-start; }
+.ap .hint svg { margin-top: 2px; }
+.fld__err { margin: 0; color: var(--fa-red-deep); font-size: 13px; font-weight: 600; }
+.fld__err:empty { display: none; }
+
+/* Yes / No and product choices as large tappable options */
+.ap fieldset.fld { border: 0; padding: 0; min-width: 0; }
+.ap fieldset.fld legend { padding: 0; margin-bottom: 6px; font-weight: 600; font-size: 14px; }
+.choice { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.choice--stack { grid-template-columns: 1fr; }
+.choice label { position: relative; cursor: pointer; }
+.choice input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.choice label > span { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(64, 64, 64, .25);
+  font-weight: 600; font-size: 15px; line-height: 1.3; background: var(--fa-white); transition: border-color .15s, background-color .15s; }
+.choice label > span::before { content: ""; flex: none; width: 18px; height: 18px; border-radius: 50%; border: 2px solid rgba(64, 64, 64, .4); background: var(--fa-white); }
+.choice small { display: block; font-weight: 400; font-size: 13px; color: var(--fa-logo-grey); margin-top: 2px; }
+.choice label:hover > span { border-color: rgba(64, 64, 64, .5); }
+.choice input:checked + span { border-color: var(--fa-red-deep); background: var(--fa-beige); }
+.choice input:checked + span::before { border: 5px solid var(--fa-red-deep); }
+.choice input:focus-visible + span { outline: 3px solid var(--fa-red); outline-offset: 2px; }
+.choice[aria-invalid="true"] label > span { border-color: var(--fa-red-deep); }
+/* The site-wide error tint is for single inputs; on a group the red option borders and message are enough */
+.ap fieldset.fld[aria-invalid="true"], .ap .choice[aria-invalid="true"] { background-color: transparent !important; }
+
+.captcha { margin: 4px 0 14px; padding: 14px; border: 1px dashed rgba(64, 64, 64, .3); border-radius: 6px; font-size: 13px; line-height: 1.45; color: var(--fa-logo-grey); text-align: center; }
+.ap .ap__card .check { grid-template-columns: 18px 1fr; gap: 10px; font-size: 14px; line-height: 1.45; margin: 0 0 4px; color: var(--fa-logo-grey); }
+.ap .ap__card .check input { width: 18px; height: 18px; margin-top: 1px; accent-color: var(--fa-red-deep); }
+
+/* Back / Next */
+.step__nav { display: flex; gap: 10px; margin-top: 18px; }
+.ap .step__nav .btn { flex: 1; justify-content: center; min-height: 52px; padding: 0 22px !important; font: 600 17px/1 var(--fa-font); border: 0; cursor: pointer; border-radius: 6px !important; }
+.ap .step__nav .btn svg { width: 18px; height: 18px; }
+.ap .step__nav .btn--back { flex: none; background: transparent; color: var(--fa-charcoal); box-shadow: inset 0 0 0 1px rgba(64, 64, 64, .35) !important; }
+.ap .step__nav .btn--back:hover { background: var(--fa-grey-light); color: var(--fa-charcoal); }
+.ap .step__nav .btn--back svg { transform: rotate(180deg); }
+.ap__fine { font-size: 13px; line-height: 1.5; margin-top: 14px; }
+.ap__fine a { white-space: nowrap; }
+
+/* Sent */
+.step--done { text-align: left; }
+.step--done p { margin: 0 0 8px; color: var(--fa-logo-grey); }
+.step--done .tick { width: 44px; height: 44px; border-radius: 50%; background: var(--fa-beige); color: var(--fa-red-deep); display: grid; place-items: center; margin-bottom: 14px; }
+.step--done .tick svg { width: 22px; height: 22px; }
+
+@media (max-width: 480px) {
+  .ap--photo .ap__card { padding: 22px 18px 20px; }
+  .steps-bar span { display: none; }
+}
+
+/* ---------- Underlined fields (chosen from the form ideas, version 3): no boxes, labels float up as you type ---------- */
+  .ap__card .step h2 { padding-bottom: 8px; border-bottom: 2px solid var(--fa-charcoal); margin-bottom: 8px; }
+  .ap__card .ap__row { gap: 0 20px; }
+  .ap__card .fld:not(fieldset) { position: relative; gap: 0; margin-bottom: 8px; }
+  .ap__card .fld:not(fieldset) > label { position: absolute; left: 2px; top: 22px; margin: 0; font-weight: 400; font-size: 16px; color: var(--fa-logo-grey); pointer-events: none; transition: top .15s, font-size .15s; }
+  .ap__card .fld:has(input:focus, input:not(:placeholder-shown), input:disabled, select) > label { top: 4px; font-size: 12px; font-weight: 600; color: var(--fa-charcoal); }
+  .ap .ap__card input:not([type=radio]):not([type=checkbox]), .ap .ap__card select { min-height: 58px; padding: 24px 2px 8px; border: 0; border-bottom: 1.5px solid rgba(64,64,64,.35);
+    border-radius: 0; background-color: transparent; box-shadow: none; }
+  .ap .ap__card select { background-position: right 2px center; }
+  .ap .ap__card input:focus, .ap .ap__card select:focus { border-bottom-color: var(--fa-red-deep); box-shadow: 0 1.5px 0 var(--fa-red-deep); background-color: transparent; }
+  .ap .ap__card input:not([type=radio]):not([type=checkbox]):disabled { background: transparent; border-bottom-style: dashed; }
+  .ap .ap__card [aria-invalid=true]:not(fieldset):not(.choice) { background-color: transparent !important; }
+  .ap__card .fld__err { margin-top: 6px; }
+  .ap__card .hint { margin-top: 8px; }
+  .ap__card fieldset.fld { margin-top: 14px; }
+  .ap__card .choice label > span { border: 0; border-bottom: 1.5px solid rgba(64,64,64,.35); border-radius: 0; padding-inline: 2px; }
+  .ap__card .choice input:checked + span { background: transparent; border-bottom-color: var(--fa-red-deep); box-shadow: 0 1.5px 0 var(--fa-red-deep); }
+  @media (prefers-reduced-motion: reduce) { .ap__card .fld:not(fieldset) > label { transition: none; } }

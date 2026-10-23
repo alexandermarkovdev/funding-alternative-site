@@ -1,0 +1,21 @@
+/* Selected portal icon grid and centred FAQs. */
+.partner-page.partner-one .portal-benefit-grid{background:#fff;color:#404040;padding:48px 0}
+.partner-page .portal-benefit-grid .block__head{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:start;margin-bottom:30px}
+.partner-page .portal-benefit-grid h2{font-size:36px;line-height:1.15;color:#404040}
+.partner-page .portal-benefit-grid .kicker{color:#a4311d}
+.partner-page .portal-benefit-grid .block__head>p{font-size:16px;line-height:1.6;color:#62594c}
+.partner-page.partner-one .portal-benefit-grid .benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 40px}
+.partner-page .portal-benefit-grid .benefit{padding:20px 0;border-top:1px solid #d1c0a2;min-width:0;color:#62594c;font-size:16px;line-height:1.55}
+.partner-page .portal-benefit-grid .benefit>svg{width:28px;height:28px;margin-bottom:12px;fill:none;stroke:#bf351d;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.partner-page .portal-benefit-grid .benefit b{display:block;font-size:18px;line-height:1.3;color:#404040;margin-bottom:7px;font-weight:600}
+.partner-page .portal-benefit-grid .benefits-cta{margin-top:28px!important}
+.partner-page.partner-one .partner-faq-centred{background:#fbf4e7;padding:48px 0}
+.partner-page.partner-one .partner-faq-centred>.wrap.split{display:block;max-width:900px}
+.partner-page .partner-faq-centred .prose{text-align:center;margin-bottom:25px}
+.partner-page .partner-faq-centred h2{font-size:38px;line-height:1.15}
+.partner-page .partner-faq-centred .prose>p:last-child{margin:14px 0 0;font-size:15px}
+.partner-page.partner-one .partner-faq-centred .faq{display:grid;grid-template-columns:1fr;gap:10px}
+.partner-page .partner-faq-centred .faq details{background:#fff;border:0;border-radius:8px;margin:0;box-shadow:none}
+.partner-page .partner-faq-centred .faq summary{padding:20px 24px;font-size:18px;font-weight:600;line-height:1.4}
+.partner-page .partner-faq-centred .faq__body{padding:0 24px 23px;font-size:16px;line-height:1.7;color:#62594c;max-width:72ch}
+@media(max-width:760px){.partner-page .portal-benefit-grid .block__head{grid-template-columns:1fr;gap:18px}.partner-page.partner-one .portal-benefit-grid .benefits{grid-template-columns:1fr;gap:0}.partner-page .portal-benefit-grid .benefit{display:grid;grid-template-columns:28px 1fr;gap:15px}.partner-page .portal-benefit-grid .benefit>svg{margin:0}.partner-page .portal-benefit-grid h2{font-size:28px}.partner-page .partner-faq-centred h2{font-size:30px}.partner-page .partner-faq-centred .faq summary{font-size:16px}.partner-page.partner-one .portal-benefit-grid,.partner-page.partner-one .partner-faq-centred{padding:30px 0}}

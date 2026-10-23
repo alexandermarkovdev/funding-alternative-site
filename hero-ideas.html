@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homepage Hero Ideas</title>
+<link rel="stylesheet" href="brand-assets/tokens.css">
+<link rel="icon" href="brand-assets/logo/favicon/fa-favicon-33.svg">
+<style>
+  :root { --hair: rgba(64, 64, 64, .16); }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; display: flex; flex-direction: column; background: var(--fa-grey-light); color: var(--fa-charcoal); font: 400 15px/1.45 var(--fa-font); overflow: hidden; }
+  button { font: inherit; color: inherit; cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--fa-red); outline-offset: 2px; }
+
+  .bar { background: var(--fa-charcoal); color: var(--fa-beige); display: flex; align-items: center; gap: 20px; padding: 12px 20px; flex-wrap: wrap; }
+  .bar__logo { height: 26px; display: block; }
+  .bar__title { font-weight: 600; font-size: 17px; white-space: nowrap; }
+  .seg { display: flex; background: rgba(247, 234, 210, .12); border-radius: 6px; padding: 3px; }
+  .seg button { border: 0; background: transparent; color: var(--fa-beige); padding: 8px 14px; border-radius: 4px; font-weight: 600; white-space: nowrap; }
+  .seg button:hover { background: rgba(247, 234, 210, .12); }
+  .seg button[aria-pressed="true"] { background: var(--fa-beige); color: var(--fa-charcoal); }
+  .seg--ideas button[aria-pressed="true"]:not([data-idea="0"]) { background: var(--fa-red-deep); color: var(--fa-white); }
+  .bar__right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
+  .bar a { color: var(--fa-beige); font-weight: 600; text-underline-offset: 4px; white-space: nowrap; }
+
+  .note { display: flex; align-items: baseline; gap: 12px; padding: 14px 24px; }
+  .note b { font-size: 17px; white-space: nowrap; }
+  .note span { color: var(--fa-logo-grey); }
+  .hint { margin-left: auto; font-size: 13px; color: var(--fa-logo-grey); white-space: nowrap; }
+  kbd { font: 600 12px/1 var(--fa-font); border: 1px solid rgba(64, 64, 64, .3); border-radius: 4px; padding: 2px 6px; background: var(--fa-white); }
+
+  .viewport { flex: 1; min-height: 0; display: flex; justify-content: center; padding: 0 24px 24px; }
+  .frame { position: relative; overflow: hidden; background: var(--fa-white); box-shadow: 0 0 0 1px var(--hair), 0 18px 40px rgba(64, 64, 64, .14); }
+  .frame iframe { position: absolute; top: 0; left: 0; border: 0; transform-origin: 0 0; background: var(--fa-white); }
+
+  @media (max-width: 900px) { .hint, .bar__title { display: none; } .note { flex-wrap: wrap; } }
+</style>
+</head>
+<body>
+<header class="bar">
+  <img class="bar__logo" src="brand-assets/logo/fa-logo-horizontal-on-dark.svg" alt="Funding Alternative">
+  <span class="bar__title">Homepage hero ideas</span>
+  <div class="seg seg--ideas" role="group" aria-label="Idea" id="ideas"></div>
+  <div class="bar__right">
+    <div class="seg" role="group" aria-label="Screen size">
+      <button type="button" data-device="desktop" aria-pressed="true">Desktop</button>
+      <button type="button" data-device="mobile" aria-pressed="false">Mobile</button>
+    </div>
+    <a id="open" href="apply.html" target="_blank" rel="noopener">Open full page</a>
+  </div>
+</header>
+<p class="note"><b id="name"></b><span id="desc"></span><span class="hint"><kbd>←</kbd> <kbd>→</kbd> switch ideas</span></p>
+<div class="viewport" id="viewport"><div class="frame" id="frame"><iframe id="site" title="Homepage preview"></iframe></div></div>
+
+<script>
+  const IDEAS = [
+    ['Current', 'The homepage hero as it is now.', 'index.html'],
+    ['1 · Bigger headline', 'The headline grows to fill the panel and the intro text widens, in a hero about 15% shorter.', 'index-hero-1.html'],
+    ['2 · Bigger photo', 'The beige panel shrinks to fit the text and the photo takes most of the width; the hero is shorter too.', 'index-hero-2.html'],
+    ['3 · Text on the photo', 'A charcoal panel replaces the beige, and the photo fades into it from the right, so the text and photo read as one dark scene.', 'index-hero-3.html'],
+    ['4 · Facts in the panel', 'The four key facts move up into the beige panel as a 2 × 2 grid under the buttons, so the panel is full and the whole hero fits one screen.', 'index-hero-4.html'],
+  ];
+  const DEVICES = { desktop: 1440, mobile: 390 };
+  const $ = s => document.querySelector(s);
+  const iframe = $('#site'), frame = $('#frame'), viewport = $('#viewport');
+  const state = { idea: 1, device: 'desktop' };
+
+  $('#ideas').innerHTML = IDEAS.map(([n], i) => `<button type="button" data-idea="${i}">${n}</button>`).join('');
+
+  function fit() {
+    const w = DEVICES[state.device], availW = viewport.clientWidth - 48, availH = viewport.clientHeight - 24, scale = Math.min(1, availW / w);
+    Object.assign(iframe.style, { width: w + 'px', height: availH / scale + 'px', transform: `scale(${scale})` });
+    Object.assign(frame.style, { width: w * scale + 'px', height: availH + 'px' });
+  }
+  function render(load) {
+    const [name, desc, src] = IDEAS[state.idea];
+    document.querySelectorAll('[data-idea]').forEach(b => b.setAttribute('aria-pressed', +b.dataset.idea === state.idea));
+    document.querySelectorAll('[data-device]').forEach(b => b.setAttribute('aria-pressed', b.dataset.device === state.device));
+    $('#name').textContent = name; $('#desc').textContent = desc; $('#open').href = src;
+    if (load) iframe.src = src;
+    fit();
+  }
+  $('#ideas').addEventListener('click', e => { const b = e.target.closest('[data-idea]'); if (b) { state.idea = +b.dataset.idea; render(true); } });
+  document.querySelectorAll('[data-device]').forEach(b => b.addEventListener('click', () => { state.device = b.dataset.device; render(false); }));
+  addEventListener('keydown', e => {
+    if (e.target.closest('input, textarea, select')) return;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      state.idea = (state.idea + (e.key === 'ArrowRight' ? 1 : IDEAS.length - 1)) % IDEAS.length; render(true);
+    }
+  });
+  addEventListener('resize', fit);
+  render(true);
+</script>
+</body>
+</html>

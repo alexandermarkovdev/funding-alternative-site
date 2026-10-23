@@ -1,0 +1,116 @@
+/* Alternatives for the funding journey and product sections. */
+:root body .flow-concept { --step-accent:#ea4628; --step-surface:#fff; background:#fff; scroll-margin-top:80px; }
+:root body .flow-concept .funding-stage { border:0; padding:0; }
+:root body .flow-concept .funding-stage::before { display:none; }
+:root body .flow-concept .funding-stages { gap:32px; }
+:root body .flow-concept .stage-number { letter-spacing:-.035em; }
+:root body .flow-concept .stage-icon { background:none; }
+:root body .flow-concept .funding-header { max-width:none; }
+:root body .flow-concept .stage-copy { max-width:34ch; }
+/* 1: red numbered roundels on a connected route. */
+:root body .flow-concept-1 .funding-stages { gap:36px; }
+:root body .flow-concept-1 .phase-art { height:76px; margin-bottom:24px; gap:20px; }
+:root body .flow-concept-1 .stage-number { display:grid; place-items:center; border-radius:50%; width:68px; height:68px; flex:none; font-size:27px; background:#ea4628; color:#fff; letter-spacing:-.02em; }
+:root body .flow-concept-1 .stage-icon { width:44px; height:44px; }
+:root body .flow-concept-1 .funding-stage:not(:last-child)::after { content:""; position:absolute; height:2px; background:#edc3ad; left:130px; right:-20px; top:37px; }
+/* 2: an upward, optimistic route, with larger line icons. */
+:root body .flow-concept-2 .phase-art { height:100px; padding-top:14px; gap:14px; align-items:center; }
+:root body .flow-concept-2 .stage-number { font-size:58px; }
+:root body .flow-concept-2 .stage-icon { width:58px; height:58px; }
+:root body .flow-concept-2 .funding-stages { gap:32px; align-items:start; }
+:root body .flow-concept-2 .journey-line { display:block; top:18px; height:74px; color:#ea4628; opacity:.65; }
+:root body .flow-concept-2 .funding-stage:nth-child(2) { margin-top:32px; }
+:root body .flow-concept-2 .funding-stage:nth-child(3) { margin-top:64px; }
+:root body .flow-concept-2 .funding-stage:nth-child(4) { margin-top:96px; }
+/* 3: two-by-two steps with requirements alongside. */
+:root body .flow-concept-3 .funding-inner { display:grid; grid-template-columns:minmax(0,1fr) 310px; gap:32px 50px; }
+:root body .flow-concept-3 .funding-header { grid-column:1/-1; margin-bottom:0; }
+:root body .flow-concept-3 .funding-stages { grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px 38px; }
+:root body .flow-concept-3 .funding-stage { display:grid; grid-template-columns:65px minmax(0,1fr); column-gap:20px; padding-top:20px; border-top:1px solid #d9cdb7; }
+:root body .flow-concept-3 .phase-art { grid-column:1; grid-row:1/4; display:flex; flex-direction:column; gap:15px; align-items:flex-start; margin:0; }
+:root body .flow-concept-3 .stage-number { font-size:45px; }
+:root body .flow-concept-3 .stage-icon { width:40px; height:40px; }
+:root body .flow-concept-3 .funding-stage :is(h3,.stage-time,.stage-copy) { grid-column:2; }
+:root body .flow-concept-3 .funding-criteria { display:flex; flex-direction:column; align-items:flex-start; gap:24px; margin:0; padding:28px; }
+:root body .flow-concept-3 .criteria-copy ul { display:grid; gap:15px; margin-top:22px; }
+:root body .flow-concept-3 .funding-button { width:100%; }
+/* 4: heading and requirements left; a readable vertical timeline right. */
+:root body .flow-concept-4 .funding-inner { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.2fr); gap:32px 100px; align-items:start; }
+:root body .flow-concept-4 .funding-header { grid-column:1; margin:0; }
+:root body .flow-concept-4 .funding-header h2 { max-width:17ch; }
+:root body .flow-concept-4 .journey-wrap { grid-column:2; grid-row:1/span 2; }
+:root body .flow-concept-4 .funding-stages { grid-template-columns:1fr; gap:0; }
+:root body .flow-concept-4 .funding-stage { display:grid; grid-template-columns:112px minmax(0,1fr); column-gap:28px; padding:0 0 32px; }
+:root body .flow-concept-4 .funding-stage:last-child { padding-bottom:0; }
+:root body .flow-concept-4 .phase-art { grid-column:1; grid-row:1/4; gap:12px; margin:0; align-items:flex-start; }
+:root body .flow-concept-4 .stage-number { font-size:40px; line-height:1.1; }
+:root body .flow-concept-4 .stage-icon { width:40px; height:40px; }
+:root body .flow-concept-4 .funding-stage :is(h3,.stage-time,.stage-copy) { grid-column:2; }
+:root body .flow-concept-4 .funding-stage:not(:last-child)::after { content:""; position:absolute; left:20px; top:58px; bottom:14px; width:1px; background:#edb29b; }
+:root body .flow-concept-4 .funding-criteria { grid-column:1; margin:0; display:flex; flex-direction:column; gap:22px; align-items:flex-start; }
+:root body .flow-concept-4 .criteria-copy ul { display:grid; gap:13px; }
+/* Product directions preserve all supplied images and copy. */
+:root body .products-concept { scroll-margin-top:80px; }
+:root body .products-concept .prod-item { min-width:0; }
+:root body .products-concept .prod-image { clip-path:none!important; }
+:root body .products-concept .prod-image img { width:100%; height:100%; object-fit:cover; }
+/* 1: straight image edges, precise columns and a clear arrow action. */
+:root body .products-concept-1 .prod-image { aspect-ratio:4/3; }
+:root body .products-concept-1 .prod-item { display:flex; flex-direction:column; grid-row:auto; }
+:root body .products-concept-1 .prod-image { order:0; flex-shrink:0; }
+:root body .products-concept-1 .chapter-copy { order:1; display:flex; flex-direction:column; justify-content:flex-start; padding:26px 28px 30px; flex:1 0 auto; }
+:root body .products-concept-1 .prod-question { min-height:2.6em; }
+:root body .products-concept-1 .prod-identity { min-height:68px; }
+:root body .products-concept-1 .prod-description { margin-bottom:24px; }
+:root body .products-concept-1 .prod-link { border-top:1px solid #d9cdb7; padding-top:20px; justify-content:space-between; }
+:root body .products-concept-1 .prod-link svg { width:34px; height:34px; padding:7px; border-radius:50%; background:#f7ead2; }
+/* 2: three photographic rows, with more room for the product descriptions. */
+:root body .products-concept-2 .product-chapters { display:grid; grid-template-columns:1fr; gap:28px; }
+:root body .products-concept-2 .prod-item { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); grid-template-rows:auto; grid-row:auto; background:#fff; }
+:root body .products-concept-2 .prod-image,:root body .products-concept-2 .prod-item:nth-child(even) .prod-image { grid-column:1; grid-row:1; aspect-ratio:auto; min-height:300px; }
+:root body .products-concept-2 .chapter-copy { grid-column:2; grid-row:1; display:flex; flex-direction:column; padding:32px 42px; justify-content:center; }
+:root body .products-concept-2 .prod-name { font-size:30px; }
+:root body .products-concept-2 .prod-link { margin-top:24px; }
+/* 3: bright photographs, with inset white reading panels. */
+:root body .products-concept-3 .prod-item { display:flex; flex-direction:column; grid-row:auto; background:none; }
+:root body .products-concept-3 .prod-image,:root body .products-concept-3 .prod-item:nth-child(even) .prod-image { order:0; aspect-ratio:1.1; margin:0; }
+:root body .products-concept-3 .chapter-copy { order:1; position:relative; width:calc(100% - 28px); margin:-44px auto 0; padding:26px 24px; display:flex; flex-direction:column; background:#fff; flex:1 0 auto; }
+:root body .products-concept-3 .prod-link { margin-top:auto; padding-top:25px; }
+/* 4: the business question leads; photography comes after the explanation. */
+:root body .products-concept-4 { background:#fff; }
+:root body .products-concept-4 .prod-item { display:flex; flex-direction:column; grid-row:auto; background:#f7ead2; padding:28px; }
+:root body .products-concept-4 .chapter-copy { display:contents; }
+:root body .products-concept-4 .prod-question { order:0; font-size:21px; line-height:1.3; min-height:2.6em; }
+:root body .products-concept-4 .prod-identity { order:1; margin-top:16px; }
+:root body .products-concept-4 .prod-description { order:2; margin:18px 0 24px; min-height:5em; }
+:root body .products-concept-4 .prod-image,:root body .products-concept-4 .prod-item:nth-child(even) .prod-image { order:3; aspect-ratio:16/10; margin:0; }
+:root body .products-concept-4 .prod-link { order:4; margin-top:24px; }
+@media(max-width:1000px) {
+  :root body .flow-concept-3 .funding-inner { grid-template-columns:1fr; }
+  :root body .flow-concept-3 .funding-criteria { display:grid; grid-template-columns:1fr auto; }
+  :root body .flow-concept-4 .funding-inner { gap:30px 44px; }
+  :root body .products-concept-2 .chapter-copy { padding:26px; }
+}
+@media(max-width:800px) {
+  :root body .flow-concept .journey-line { display:none; }
+  :root body .flow-concept-1 .funding-stage::after { display:none; }
+  :root body .flow-concept-2 .funding-stage { margin-top:0!important; }
+  :root body .flow-concept-4 .funding-inner { grid-template-columns:1fr; }
+  :root body .flow-concept-4 .funding-header,:root body .flow-concept-4 .journey-wrap,:root body .flow-concept-4 .funding-criteria { grid-column:1; grid-row:auto; }
+  :root body .flow-concept-4 .funding-criteria { order:3; }
+  :root body .products-concept-2 .prod-item { grid-template-columns:1fr; }
+  :root body .products-concept-2 .prod-image,:root body .products-concept-2 .prod-item:nth-child(even) .prod-image { grid-column:1; grid-row:1; aspect-ratio:16/10; min-height:0; }
+  :root body .products-concept-2 .chapter-copy { grid-column:1; grid-row:2; }
+}
+@media(max-width:520px) {
+  :root body .flow-concept .funding-stages { grid-template-columns:1fr; }
+  :root body .flow-concept-1 .funding-stage,:root body .flow-concept-2 .funding-stage { display:block; }
+  :root body .flow-concept-1 .phase-art,:root body .flow-concept-2 .phase-art { flex-direction:row; align-items:center; margin-bottom:18px; }
+  :root body .flow-concept-3 .funding-criteria { display:flex; }
+  :root body .flow-concept-4 .funding-stage { grid-template-columns:76px minmax(0,1fr); gap:18px; }
+  :root body .flow-concept-4 .phase-art { flex-direction:column; }
+  :root body .flow-concept-4 .stage-icon { width:32px; height:32px; }
+  :root body .flow-concept-4 .funding-stage::after { display:none; }
+  :root body .products-concept-4 .prod-question,:root body .products-concept-4 .prod-description { min-height:0; }
+  :root body .products-concept-1 .prod-question,:root body .products-concept-1 .prod-identity { min-height:0; }
+}

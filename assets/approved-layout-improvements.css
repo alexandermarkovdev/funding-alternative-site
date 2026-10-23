@@ -1,0 +1,253 @@
+/* Approved homepage layout changes: 01, 02, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 16, 17, 18, 19, 25, 27, 28, 29.
+   Baked from the reviewed preview (layout-compare.html). Brand palette only; no copy or images changed. */
+
+:root {
+  --fx-container: min(1320px, 100% - 2 * var(--gutter));
+  --fx-edge: max(var(--gutter), (100vw - 1320px) / 2);
+  --fx-space: clamp(3.5rem, 7vw, 6rem);
+  --fx-hair: rgba(64, 64, 64, .16);
+}
+.hero { --hero-edge: var(--gutter); }
+
+/* ---------- 01 · One shared grid ---------- */
+.top__in { width: var(--fx-container); margin-inline: auto; padding-inline: 0; }
+.funding-how .funding-inner,
+.product-showcase .products-inner,
+.funding-difference .difference-inner,
+.wrap,
+.foot .foot__open-banking { width: var(--fx-container); }
+.calc-slot.inline .calc-wrap { width: min(780px, 100% - 2 * var(--gutter)); }
+@media (min-width: 1180px) {
+  .hero { --hero-edge: var(--fx-edge); --split: calc(var(--fx-edge) + 480px); }
+  .hero__in { padding-inline: var(--fx-edge); }
+  .hero__copy { max-width: min(600px, calc(var(--split) - var(--fx-edge) + 4%)); }
+}
+
+/* ---------- 02 · One vertical rhythm ---------- */
+.funding-how,
+.product-showcase,
+.funding-difference.difference-section,
+.home-faq,
+.contact,
+.calc-slot { padding-block: var(--fx-space); }
+.funding-how .funding-header,
+.product-showcase.chapters .products-heading,
+.funding-difference.clear .difference-heading,
+.home-faq-heading { margin-bottom: 48px; }
+@media (max-width: 620px) {
+  .funding-how .funding-header,
+  .product-showcase.chapters .products-heading,
+  .funding-difference.clear .difference-heading,
+  .home-faq-heading { margin-bottom: 32px; }
+}
+
+/* ---------- 04 · Palette backgrounds that alternate ---------- */
+.funding-how { --step-surface: var(--fa-white); background: var(--fa-white); }
+.product-showcase.chapters { background: var(--fa-beige); }
+.product-showcase.chapters .prod-item { background: var(--fa-white); }
+.calc-slot,
+.calc-slot.inline { background: var(--fa-charcoal); }
+.calc-slot.inline .funding-calculator { background: var(--fa-beige); --art-paper: var(--fa-beige); border-color: transparent; }
+.funding-difference.clear .data-table tbody .ours { background: var(--fa-beige); }
+.home-faq { background: var(--fa-beige); }
+.contact { background: var(--fa-white); border-top: 0; }
+.cform input,
+.cform textarea { background: var(--fa-grey-light); }
+
+/* ---------- 05 · One heading style ---------- */
+.funding-how h2,
+.product-showcase h2,
+.funding-difference .difference-heading h2,
+.home-faq-heading h2,
+.contact h2 { font: 600 clamp(2rem, 3.4vw, 3rem)/1.08 var(--fa-font) !important; letter-spacing: -.025em !important; text-transform: none; margin: 0; }
+.funding-how .funding-subtitle,
+.product-showcase .products-intro,
+.funding-difference .difference-heading .intro,
+.home-faq-heading p,
+.contact__card > p:not(.contact__alt) { font-size: 19px; font-weight: 400; line-height: 1.55; margin-top: 16px; }
+.funding-difference.clear .difference-heading { row-gap: 16px; }
+.funding-difference .difference-heading .intro { margin-top: 0; }
+@media (max-width: 620px) {
+  .funding-how .funding-subtitle,
+  .product-showcase .products-intro,
+  .funding-difference .difference-heading .intro,
+  .home-faq-heading p,
+  .contact__card > p:not(.contact__alt) { font-size: 17px; }
+}
+
+/* ---------- 06 · Left-aligned section headers ---------- */
+.funding-how .funding-header { text-align: left; margin-left: 0; }
+.funding-how.flowing .funding-subtitle:before { display: none; }
+.home-faq-heading { text-align: left; }
+.home-faq-heading h2 { margin-left: 0; }
+.home-faq-all { margin-left: 0; }
+.contact__card { text-align: left; margin-inline: 0; }
+.cform .btn { justify-self: start; }
+.cform__small { text-align: left; }
+
+/* ---------- 07 · Section labels above their headings ---------- */
+.product-showcase.chapters .products-heading { display: flex; flex-direction: column; }
+.product-showcase .products-category,
+.funding-difference .difference-heading .category { order: -1; margin: 0 0 14px; display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--fa-red-deep); }
+.funding-difference .difference-heading .category { margin-bottom: -2px; }
+.product-showcase .products-category::before,
+.funding-difference .difference-heading .category::before { content: ""; width: 10px; height: 10px; flex: none; background: var(--fa-red);
+  clip-path: polygon(35% 0, 65% 0, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%, 0 35%, 35% 35%); }
+
+/* ---------- 08 · One button ---------- */
+.hero__ctas .btn,
+.funding-how .funding-button,
+.funding-difference .apply-button,
+.cform .btn,
+.calc-slot .funding-calculator .calculator-footer .apply { font: 600 17px/1 var(--fa-font) !important; min-height: 54px; padding: 0 26px !important; gap: 14px !important; border-radius: 6px !important; }
+.hero__ctas .btn svg,
+.funding-how .funding-button svg,
+.funding-difference .apply-button svg,
+.cform .btn svg,
+.calc-slot .funding-calculator .calculator-footer .apply svg { width: 18px; height: 18px; }
+.top .btn { border-radius: 6px !important; }
+
+/* ---------- 09 · Readable small print ---------- */
+.calc-slot .calculator-footer p { font-size: 13px !important; max-width: 46ch !important; }
+.calc-slot .estimate-label,
+.calc-slot .secondary-result,
+.calc-slot .field-top,
+.calc-slot .result-hint { font-size: 14px !important; }
+.calc-slot .secondary-result strong { font-size: 19px !important; }
+.funding-how .funding-criteria small,
+.cform__small { font-size: 14px; }
+.product-showcase .prod-label { font-size: 15px; }
+
+/* ---------- 10 · Navigation beside the logo ---------- */
+@media (min-width: 1361px) {
+  .nav { margin-inline: 3rem auto; gap: 2rem; }
+}
+
+/* ---------- 11 · Mobile header: equal-size actions ---------- */
+@media (max-width: 600px) {
+  .top__actions { gap: 8px; }
+  .top__phone { width: 40px; height: 40px; }
+  .top__actions .btn--sm,
+  .top.is-scrolled .top__actions .btn--sm { height: 40px; padding: 0 14px !important; font-size: 14px; }
+  .mnav summary { width: 40px; height: 40px; border-radius: 50%; background: var(--fa-beige); }
+}
+@media (max-width: 420px) {
+  .top__phone,
+  .mnav summary { width: 38px; height: 38px; }
+  .top__actions .btn--sm,
+  .top.is-scrolled .top__actions .btn--sm { height: 38px; padding: 0 12px !important; }
+}
+
+/* ---------- 12 · Flat beige hero panel ---------- */
+.hero { background: var(--fa-beige); }
+.hero__brand-plus { display: none; }
+
+/* ---------- 13 · Hero facts as a full-width strip ---------- */
+@media (min-width: 861px) {
+  .hero { --strip: 108px; }
+  .hero__in { position: static; padding-bottom: calc(var(--strip) + 3rem); }
+  .hero__copy { position: static; }
+  .hero__brand-plus { display: none; }
+  .hero__photo,
+  .hero__edge { bottom: var(--strip); }
+  .proof { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; height: var(--strip); max-width: none; margin: 0;
+    padding: 0 var(--hero-edge); grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; align-content: center;
+    background: var(--fa-beige); border-top: 1px solid var(--fx-hair); }
+  .proof > div { padding-inline: 28px; border-left: 1px solid var(--fx-hair); }
+  .proof > div:first-child { padding-left: 0; border-left: 0; }
+  .hero__tagline { margin-top: 28px; }
+}
+
+/* ---------- 16 · Step numbers scaled to the content ---------- */
+.funding-how .phase-art { height: auto; display: flex; align-items: center; gap: 18px; margin-bottom: 20px; }
+.funding-how .stage-number { font-size: 64px; letter-spacing: -.04em; }
+.funding-how .stage-icon { position: static; width: 48px; height: 48px; background: none; }
+@media (max-width: 520px) {
+  .funding-how .phase-art { height: auto; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .funding-how .stage-number { font-size: 46px; }
+  .funding-how .stage-icon { width: 38px; height: 38px; }
+}
+
+/* ---------- 17 · Straight timeline between steps ---------- */
+.funding-how .journey-line { display: none; }
+.funding-how .funding-stage { padding-top: 30px; border-top: 2px solid var(--fx-hair); }
+.funding-how .funding-stage::before { content: ""; position: absolute; top: -8px; left: 0; width: 14px; height: 14px; background: var(--fa-red);
+  clip-path: polygon(35% 0, 65% 0, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%, 0 35%, 35% 35%); }
+@media (min-width: 801px) {
+  .funding-how .funding-stages { column-gap: 0; }
+  .funding-how .funding-stage { padding-right: 32px; }
+}
+
+/* ---------- 18 · Requirements in their own panel ---------- */
+.funding-how .funding-criteria,
+.funding-how.flowing .funding-criteria { margin-top: 56px; padding: 28px 32px; border: 0; background: var(--fa-beige); }
+.funding-how .funding-criteria { background: var(--fa-beige); }
+.funding-how .criteria-copy li { font-weight: 600; }
+@media (max-width: 520px) { .funding-how .funding-criteria { padding: 24px 20px; } }
+
+/* ---------- 19 · Products side by side ---------- */
+@media (min-width: 1000px) {
+  .product-showcase.chapters .product-chapters { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px; row-gap: 0; }
+  .product-showcase.chapters .prod-item { display: grid; grid-template-rows: subgrid; grid-row: span 5; grid-template-columns: none; min-height: 0; }
+  .product-showcase.chapters .prod-image,
+  .product-showcase.chapters .prod-item:nth-child(even) .prod-image { grid-row: 1; order: 0; min-height: 0; aspect-ratio: 4 / 3;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+  .product-showcase.chapters .chapter-copy { display: grid; grid-template-rows: subgrid; grid-row: 2 / span 4; padding: 20px 32px 32px; }
+  .product-showcase.chapters .prod-question { font-size: 19px; margin: 0 0 18px; }
+  .product-showcase.chapters .prod-name { font-size: clamp(24px, 2vw, 28px); }
+  .product-showcase.chapters .prod-description { font-size: 17px; margin-top: 14px; }
+  .product-showcase.chapters .prod-link { align-self: end; margin-top: 24px; }
+}
+
+/* ---------- 25 · Apply button under our column ---------- */
+@media (min-width: 621px) {
+  .funding-difference .section-end,
+  .funding-difference.clear .section-end { padding-left: 18%; margin-top: 24px; justify-content: flex-start; }
+  .funding-difference .apply-button { width: 33.333%; }
+}
+
+/* ---------- 27 · FAQs in two columns ---------- */
+@media (min-width: 900px) {
+  .home-faq-inner { width: var(--fx-container); display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto 1fr; column-gap: clamp(40px, 6vw, 96px); align-items: start; }
+  .home-faq-heading { grid-column: 1; grid-row: 1; text-align: left; margin: 0; }
+  .home-faq-heading h2 { margin-left: 0; }
+  .home-faq-list { grid-column: 2; grid-row: 1 / span 2; border-top: 1px solid rgba(64, 64, 64, .22); }
+  .home-faq-all { grid-column: 1; grid-row: 2; align-self: start; margin: 28px 0 0; }
+}
+
+/* ---------- 28 · Contact in two columns ---------- */
+@media (min-width: 900px) {
+  .contact__card { max-width: none; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto auto 1fr;
+    column-gap: clamp(40px, 6vw, 96px); text-align: left; align-items: start; }
+  .contact__card > h2 { grid-column: 1; grid-row: 1; }
+  .contact__card > p:not(.contact__alt) { grid-column: 1; grid-row: 2; margin-bottom: 0; }
+  .contact__card > .contact__alt { grid-column: 1; grid-row: 3; margin-top: 20px; }
+  .cform { grid-column: 2; grid-row: 1 / span 3; }
+  .cform .btn { justify-self: start; }
+  .cform__small { text-align: left; }
+}
+
+/* ---------- 29 · Tidier form fields ---------- */
+.cform { gap: 12px; }
+.cform input,
+.cform textarea { min-height: 54px; padding: 15px 16px; border-radius: 6px; border: 1px solid rgba(64, 64, 64, .22); }
+.cform textarea { min-height: 150px; }
+.cform input:focus,
+.cform textarea:focus { border-color: var(--fa-charcoal); box-shadow: 0 0 0 3px rgba(234, 70, 40, .25); }
+
+/* ---------- Hero: bigger photo (chosen from the hero ideas, version 2), tightened after review ----------
+   The hero text and the header logo start at the page margin rather than the centred 1320px grid, so wide screens
+   don't open a gap on the left; the panel is just wide enough for the text, and the hero fills the first screen. */
+body .top__in { width: auto; margin-inline: 0; padding-inline: var(--gutter); }
+@media (min-width: 861px) {
+  body .hero { --hero-edge: var(--gutter); --split: 46%; }
+  /* The hero (with its facts strip) always fills the first screen; the text sits centred in the beige panel */
+  body .hero__in { min-height: calc(100svh - 62px); padding-inline: var(--gutter); padding-block: 64px calc(var(--strip) + 64px); }
+  body .hero__copy { max-width: calc(var(--split) - var(--gutter) - 40px); }
+  body .hero__copy h1 { font-size: clamp(40px, 3.6vw, 56px); }
+  body .hero__photo img { object-position: 40% 30%; }
+}
+@media (min-width: 1180px) {
+  body .hero { --split: calc(var(--gutter) + 480px); }
+  body .hero__copy { max-width: 500px; }
+}

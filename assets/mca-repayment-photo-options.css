@@ -1,0 +1,19 @@
+/* Four preview layouts scoped to the existing repayment section. */
+.repayment-photo-banner { aspect-ratio:3.4/1; margin-bottom:32px; }
+.repayment-photo-banner img { object-position:50% 48%; }
+:root body .bca-page .mca-photo-in-card .terminal-photo { grid-column:1/-1; aspect-ratio:16/9; margin:24px 0 26px; width:100%; min-width:0; max-width:none; }
+:root body .bca-page .mca-photo-in-card .mca-sale-heading { justify-content:flex-end; }
+:root body .bca-page.bca-v2 .mca-photo-centre .options { grid-template-columns:minmax(0,1fr) minmax(0,.78fr) minmax(0,1fr); }
+.mca-photo-centre .options > .terminal-photo { min-height:420px; height:100%; }
+.mca-photo-centre .options > .terminal-photo img { object-position:42% center; }
+:root body .bca-page.bca-v2 .mca-photo-centre .options .card { padding:26px; }
+@media(min-width:761px) and (max-width:1100px) {
+  :root body .bca-page.bca-v2 .mca-photo-centre .options { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .mca-photo-centre .options > .terminal-photo { grid-column:1/-1; grid-row:1; min-height:0; aspect-ratio:3/1; }
+}
+@media(max-width:760px) {
+  .repayment-photo-banner { aspect-ratio:16/10; margin-bottom:26px; }
+  :root body .bca-page.bca-v2 .mca-photo-centre .options { grid-template-columns:1fr; }
+  .mca-photo-centre .options > .terminal-photo { height:auto; min-height:0; aspect-ratio:16/10; }
+  .mca-photo-centre .options > .terminal-photo img { object-position:center; }
+}

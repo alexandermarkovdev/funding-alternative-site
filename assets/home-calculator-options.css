@@ -1,0 +1,24 @@
+.home-calc-option { background:#404040; padding:clamp(52px,7vw,96px) 0; scroll-margin-top:80px; }
+.home-calc-layout { width:min(1320px,calc(100% - 2 * var(--gutter))); margin:auto; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr); gap:clamp(36px,6vw,90px); align-items:center; }
+:root body .home-calc-option .calc-slot.inline { padding:0; background:none; margin:0; min-width:0; }
+:root body .home-calc-option .calc-slot.inline .calc-wrap { width:100%; margin:0; }
+:root body .home-calc-option .calculator-intro h2 { color:#f7ead2; font:600 clamp(32px,3.3vw,48px)/1.07 var(--fa-font); letter-spacing:-.025em; text-transform:none; margin:0 0 23px; max-width:19ch; }
+.home-funding-types { display:grid; gap:0; margin-top:28px; }
+.home-funding-type { padding:17px 0; border-top:1px solid #f7ead240; display:grid; grid-template-columns:34px 1fr; gap:15px; align-items:start; }
+.home-funding-type svg { width:28px; height:28px; color:#ffad94; }
+.home-funding-type strong { display:block; font-size:18px; font-weight:600; margin-bottom:5px; }
+.home-funding-type span { display:block; font-size:16px; line-height:1.45; }
+:root body .home-calc-option-3 .calc-slot.inline .funding-calculator { border-radius:12px; }
+:root body .home-calc-option-3 .calc-slot .estimate { background:#404040; color:#fff; border-radius:6px; }
+:root body .home-calc-option-3 .calc-slot :is(.estimate-label,.secondary-result span,.result-hint) { color:#f7ead2; }
+:root body .home-calc-option-3 .calc-slot .estimate-value { color:#ffad94; }
+:root body .home-calc-option-3 .calc-slot .secondary-result strong { color:#fff; }
+:root body .home-calc-option-3 .calc-slot .secondary-result { border-color:#f7ead240; }
+.home-calc-option-4 { background:#f7ead2; }
+:root body .home-calc-option-4 .calculator-intro,:root body .home-calc-option-4 .calculator-intro h2 { color:#404040; }
+:root body .home-calc-option-4 .calc-slot.inline .funding-calculator { background:#fff!important; border-radius:12px; }
+:root body .home-calc-option-4 .calc-slot .estimate { background:#f7ead2; border-radius:6px; }
+@media(max-width:900px) {
+  .home-calc-layout { grid-template-columns:1fr; gap:32px; }
+  :root body .home-calc-option .calculator-intro h2 { font-size:34px; }
+}

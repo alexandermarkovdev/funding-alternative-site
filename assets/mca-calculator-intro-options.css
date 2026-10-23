@@ -1,0 +1,49 @@
+.calc-concept { scroll-margin-top:80px; }
+:root body .bca-page .calc-concept .bca-cost-grid { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr); gap:clamp(36px,6vw,90px); align-items:center; }
+.calculator-intro { color:#f7ead2; min-width:0; }
+:root body .bca-page .calculator-intro h2 { color:#f7ead2; font:600 clamp(32px,3.3vw,48px)/1.07 var(--fa-font); letter-spacing:-.025em; text-transform:none; margin:0 0 23px; max-width:18ch; }
+.calculator-intro > p { font-size:19px; line-height:1.6; margin:0; max-width:45ch; }
+.calc-intro-benefits { list-style:none; padding:0; margin:28px 0 0; display:grid; gap:16px; }
+.calc-intro-benefits li { display:flex; gap:12px; align-items:flex-start; font-size:17px; line-height:1.45; }
+.calc-intro-benefits svg { width:18px; height:18px; flex:none; color:#ffad94; margin-top:4px; }
+.calc-intro-steps { list-style:none; padding:0; margin:30px 0 0; counter-reset:calc-step; }
+.calc-intro-steps li { display:grid; grid-template-columns:36px 1fr; gap:15px; padding:18px 0; border-top:1px solid #f7ead240; counter-increment:calc-step; }
+.calc-intro-steps li::before { content:counter(calc-step); display:grid; place-items:center; width:32px; height:32px; border:1px solid #ffad9480; border-radius:50%; color:#ffad94; font-size:15px; }
+.calc-intro-steps strong { display:block; font-weight:600; font-size:18px; margin-bottom:5px; }
+.calc-intro-steps p { font-size:16px; line-height:1.45; margin:0; color:#f7ead2; }
+.calc-live-split { margin-top:30px; padding-top:24px; border-top:1px solid #f7ead240; }
+.calc-live-split > p { font-size:16px; margin:0 0 16px; }
+.calc-split-bar { display:flex; gap:4px; height:48px; }
+.calc-split-bar .keep { width:var(--keep,85%); background:#f7ead2; }
+.calc-split-bar .repay { flex:1; background:#ffad94; }
+.calc-split-labels { display:flex; justify-content:space-between; gap:20px; margin-top:15px; }
+.calc-split-labels strong { display:block; font-size:26px; font-weight:600; margin-bottom:5px; }
+.calc-split-labels span { display:block; font-size:14px; line-height:1.4; max-width:18ch; }
+.calc-split-labels > div:last-child { text-align:right; color:#ffad94; }
+.calc-live-split small { display:block; margin-top:18px; font-size:13px; line-height:1.45; color:#f7ead2; }
+/* 3: refine only the calculator's presentation; original controls and maths stay in place. */
+:root body .bca-page .calc-concept-3 .funding-calculator { border-radius:12px; }
+:root body .bca-page .calc-concept-3 .calc-slot .estimate { background:#404040; color:#fff; border-radius:6px; }
+:root body .bca-page .calc-concept-3 .calc-slot .estimate-label,
+:root body .bca-page .calc-concept-3 .calc-slot .secondary-result span,
+:root body .bca-page .calc-concept-3 .calc-slot .result-hint { color:#f7ead2; }
+:root body .bca-page .calc-concept-3 .calc-slot .estimate-value { color:#ffad94; }
+:root body .bca-page .calc-concept-3 .calc-slot .secondary-result strong { color:#fff; }
+:root body .bca-page .calc-concept-3 .calc-slot .secondary-result { border-color:#f7ead240; }
+/* 4: a light section, a white calculator, and helpful expandable notes. */
+:root body .bca-page .calc-concept-4.bca-cost { background:#f7ead2; }
+:root body .bca-page .calc-concept-4 .calculator-intro,
+:root body .bca-page .calc-concept-4 .calculator-intro h2 { color:#404040; }
+:root body main.bca-page.bca-v2 .calc-concept-4 .calc-slot .funding-calculator { background:#fff!important; border-radius:12px; }
+:root body .bca-page .calc-concept-4 .calc-slot .estimate { background:#f7ead2; border-radius:6px; }
+.calc-intro-notes { margin-top:28px; }
+.calc-intro-notes details { border-top:1px solid #40404040; padding:16px 0; }
+.calc-intro-notes summary { font-weight:600; font-size:17px; cursor:pointer; line-height:1.4; }
+.calc-intro-notes details p { font-size:16px; line-height:1.5; margin:12px 0 0; }
+.calc-intro-notes summary:focus-visible { outline:3px solid #a4311d; outline-offset:5px; }
+@media(max-width:900px) {
+  :root body .bca-page .calc-concept .bca-cost-grid { grid-template-columns:1fr; gap:32px; }
+  .calculator-intro > p { font-size:17px; }
+  :root body .bca-page .calculator-intro h2 { font-size:34px; }
+  .calc-live-split { max-width:480px; }
+}

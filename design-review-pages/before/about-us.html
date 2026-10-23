@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en-GB"><head><base href="/"><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About us | Funding Alternative</title>
+<meta name="description" content="We help British business owners to thrive, not just survive. Learn about Funding Alternative.">
+<link rel="stylesheet" href="brand-assets/tokens.css">
+<link rel="stylesheet" href="assets/pages.css">
+<link rel="icon" href="brand-assets/logo/favicon/fa-favicon-33.svg">
+<style>
+  :root {
+    --paper: #fbf4e7;          /* lifted beige for panels */
+    --line: rgba(64, 64, 64, .12);
+    --muted: #5e5a54;
+    --gutter: clamp(1.5rem, 4vw, 5rem); /* edge spacing for header + hero */
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 70px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; background: var(--fa-beige); color: var(--fa-charcoal); font: 400 1.0625rem/1.6 var(--fa-font); }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--fa-red); outline-offset: 3px; border-radius: 2px; }
+  .wrap { width: min(1760px, 100% - 2 * var(--gutter)); margin-inline: auto; }
+
+  h1, h2 { font-weight: 900; text-transform: uppercase; line-height: .95; letter-spacing: -.01em; margin: 0; color: var(--fa-charcoal); }
+  h1 { font-size: clamp(2.5rem, 3.5vw, 3.7rem); }
+  h2 { font-size: clamp(2rem, 3.6vw, 3rem); }
+  h3 { font-weight: 700; font-size: 1.3rem; line-height: 1.2; margin: 0; }
+  p { margin: 0; }
+  .kicker { font-weight: 500; text-transform: uppercase; color: var(--fa-red); letter-spacing: .06em; font-size: .95rem; margin-bottom: .9rem; }
+
+  /* Buttons — brand guide p.12, adapted: red fill on beige so the CTA stays visible */
+  .btn { display: inline-flex; align-items: center; gap: .6em; font: 600 1.05rem/1 var(--fa-font); letter-spacing: 0;
+         padding: 1.05em 1.75em; border-radius: 999px; text-decoration: none; border: 0; cursor: pointer;
+         background: var(--fa-red); color: var(--fa-beige); transition: background-color .15s, color .15s; }
+  .btn:hover { background: var(--fa-charcoal); color: var(--fa-beige); }
+  .btn:active { background: var(--fa-charcoal); }
+  .btn--ghost { background: transparent; color: var(--fa-charcoal); box-shadow: inset 0 0 0 2px var(--fa-charcoal); }
+  .btn--ghost:hover { background: var(--fa-charcoal); color: var(--fa-beige); }
+  .btn--sm { padding: .68em 1.2em; font-size: .92rem; }
+
+  /* ---------- Header ---------- */
+  .top { background: var(--fa-white); box-shadow: 0 1px 0 var(--line); position: sticky; top: 0; z-index: 50; transition: box-shadow .2s; }
+  .top.is-scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 24px rgba(48,46,43,.08); }
+  /* Shrink on scroll */
+  .top__in, .top__logo img, .nav > a, .nav__drop > button, .nav__ink, .top .btn--sm { transition: min-height .25s ease, height .25s ease, padding .25s ease, bottom .25s ease, font-size .25s ease; }
+  .top.is-scrolled .top__in { min-height: 46px; }
+  .top.is-scrolled .top__logo img { height: 28px; }
+  .top.is-scrolled .nav > a, .top.is-scrolled .nav__drop > button { padding-block: .8rem; }
+  .top.is-scrolled .nav__ink { bottom: .45rem; }
+  .top.is-scrolled .btn--sm { padding: .55em 1.05em; font-size: .86rem; }
+  @media (prefers-reduced-motion: reduce) { .top__in, .top__logo img, .nav > a, .nav__drop > button, .top .btn--sm { transition: none; } }
+  .top__in { display: flex; align-items: center; gap: 2rem; min-height: 60px; padding-inline: var(--gutter); }
+  .top__logo { flex: none; }
+  .top__logo img { height: 38px; width: auto; }
+  .nav { position: relative; display: flex; gap: 2.2rem; margin-inline: auto; font-weight: 500; font-size: .98rem; align-items: center; }
+  .nav a { text-decoration: none; }
+  .nav a:hover { color: var(--fa-red); }
+  .nav > a, .nav__drop > button { padding-block: 1.15rem; }
+  .nav__ink { position: absolute; bottom: .7rem; left: 0; height: 3px; width: 0; border-radius: 3px; background: var(--fa-red); opacity: 0; pointer-events: none;
+              transition: transform .3s cubic-bezier(.3,.7,.2,1), width .3s cubic-bezier(.3,.7,.2,1), opacity .2s; }
+  @media (prefers-reduced-motion: reduce) { .nav__ink { transition: opacity .2s; } }
+  .nav__drop { position: relative; }
+  .nav__drop > button { font: inherit; background: none; border: 0; padding: 0; cursor: pointer; color: inherit; display: inline-flex; align-items: center; gap: .35em; }
+  .nav__drop > button::after { content: ""; border: 4.5px solid transparent; border-top-color: currentColor; margin-top: 5px; }
+  .nav__menu { position: absolute; z-index: 30; top: calc(100% - .4rem); left: -1.2rem; width: 360px; background: var(--fa-white); border-radius: 12px; padding: .6rem;
+               box-shadow: 0 18px 50px rgba(48,46,43,.22); display: none; }
+  .nav__drop:hover .nav__menu, .nav__drop:focus-within .nav__menu { display: block; }
+  .nav__drop > button::after { transition: transform .15s; }
+  .nav__drop:hover > button::after, .nav__drop:focus-within > button::after { transform: rotate(180deg) translateY(4px); }
+  .nav__drop::before { content: ""; position: absolute; inset: 100% -1rem auto; height: 1.6rem; }
+  .nav__menu a { display: grid; grid-template-columns: 40px 1fr; gap: .2rem .8rem; padding: .7rem; border-radius: 8px; line-height: 1.3; }
+  .nav__menu a:hover { background: var(--fa-beige); color: var(--fa-charcoal); }
+  .nav__menu i { grid-row: span 2; width: 40px; height: 40px; border-radius: 50%; background: var(--fa-beige); color: var(--fa-red); display: grid; place-items: center; }
+  .nav__menu a:hover i { background: var(--fa-white); }
+  .nav__menu i svg { width: 20px; height: 20px; }
+  .nav__menu b { font-weight: 700; }
+  .nav__menu small { color: var(--muted); font-size: .85rem; }
+  .nav__menu .nav__all { display: block; text-align: center; font-weight: 600; color: var(--fa-red); border-top: 1px solid var(--line); border-radius: 0 0 8px 8px; margin-top: .3rem; }
+  .top__actions { display: flex; align-items: center; gap: 1.1rem; }
+  .top__login { display: flex; flex-direction: column; padding-left: 1.1rem; border-left: 1px solid var(--line); line-height: 1.15; text-decoration: none; }
+  .top__login b { font-weight: 700; font-size: .95rem; transition: color .15s; }
+  .top__login small { font-size: .78rem; color: var(--muted); }
+  .top__login:hover b { color: var(--fa-red); }
+  .nav, .btn { white-space: nowrap; }
+  .top__phone { display: inline-flex; align-items: center; gap: .5rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+  .top__phone svg { width: 18px; height: 18px; color: var(--fa-red); flex: none; }
+  .top__phone:hover { color: var(--fa-red); }
+
+  /* ---------- Hero ---------- */
+  .hero { --split: 46%; position: relative; background: linear-gradient(90deg, var(--paper) 0%, var(--fa-beige) 55%); overflow: hidden; }
+  .hero__photo { position: absolute; inset: 0 0 0 var(--split); }
+  .hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 30%; }
+  .hero__photo { clip-path: polygon(8% 0, 100% 0, 100% 100%, 18% 100%); }
+  .hero__edge { position: absolute; inset: 0 0 0 var(--split); pointer-events: none; }
+  .hero__edge svg { width: 100%; height: 100%; }
+  .hero__in { position: relative; min-height: 620px; display: flex; align-items: center; padding-block: 4.5rem; padding-inline: var(--gutter); }
+  .hero__copy { max-width: min(640px, calc(var(--split) + 5% - var(--gutter))); }
+  @media (min-width: 1180px) { .hero { --split: 36%; } }
+  @media (min-width: 1600px) { .hero { --split: 28%; } }
+  .hero__copy h1 { margin-bottom: 1.4rem; }
+  .hero__lede { font-size: 1.2rem; line-height: 1.55; max-width: 48ch; margin-bottom: 2rem; }
+  .hero__ctas { display: flex; align-items: center; gap: 1.6rem; flex-wrap: wrap; margin-bottom: 2.6rem; }
+  .hero__call { font-weight: 600; font-size: 1.05rem; text-underline-offset: 5px; text-decoration-thickness: 1.5px; }
+  .hero__call:hover { color: var(--fa-red); }
+  /* Key facts: the brand "+" marks each one (no tick lists) */
+  .proof { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem 2rem; margin: 0; padding: 1.6rem 0 0; border-top: 1px solid var(--line); max-width: 560px; }
+  .proof > div { display: grid; grid-template-columns: 22px 1fr; column-gap: .75rem; }
+  .proof > div::before { content: ""; grid-row: span 2; width: 22px; height: 22px; align-self: end; margin-bottom: .2rem; background: var(--fa-red);
+                         clip-path: polygon(35% 0, 65% 0, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%, 0 35%, 35% 35%); }
+  .proof dd { margin: 0; font-weight: 900; text-transform: uppercase; font-size: 1.6rem; line-height: 1.05; white-space: nowrap; }
+  .proof dt { color: var(--muted); font-size: .9rem; margin-bottom: .15rem; }
+
+  /* ---------- Sections ---------- */
+  .sec { padding-block: 5.5rem; }
+  .sec--paper { background: var(--paper); }
+  .sec__head { display: grid; grid-template-columns: 1.15fr 1fr; gap: 3rem; align-items: end; margin-bottom: 3rem; }
+  .sec__head > p { color: var(--muted); max-width: 52ch; }
+
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  /* Products — "Which one fits your business?" */
+  .fit__head { text-align: center; margin-bottom: 3.5rem; }
+  .fit__head p:not(.kicker) { color: var(--muted); max-width: 52ch; margin: 1rem auto 0; }
+  .fit { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--fa-charcoal); }
+  .fit__col { padding: 2.2rem 2rem 2.4rem; display: flex; flex-direction: column; transition: background-color .25s; }
+  .fit__col + .fit__col { border-left: 1px solid var(--line); }
+  .fit__col:hover { background: var(--fa-white); }
+  .fit__q { font-weight: 900; text-transform: uppercase; font-size: clamp(1.5rem, 2.2vw, 2rem); line-height: 1; margin: 0 0 1.6rem; min-height: 3em; }
+  .fit__a { display: flex; align-items: center; gap: .9rem; padding: 1rem 0; border-block: 1px dashed var(--line); margin-bottom: 1.2rem; }
+  .fit__a .disc { width: 48px; height: 48px; background: var(--fa-beige); box-shadow: none; }
+  .fit__a small { display: block; color: var(--muted); font-size: .82rem; }
+  .fit__a b { font-weight: 700; font-size: 1.15rem; }
+  .fit__col > p:not(.fit__q) { color: var(--muted); margin-bottom: 1.8rem; }
+  .fit__col .btn { margin-top: auto; align-self: flex-start; }
+
+
+
+  /* Contact us — small centred card */
+  .contact { background: var(--paper); padding-block: 4.5rem; border-top: 1px solid var(--line); }
+  .contact__card { max-width: 640px; margin-inline: auto; text-align: center; }
+  .contact h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+  .contact__card > p { color: var(--muted); margin: .6rem 0 1.6rem; }
+  .cform { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; text-align: left; }
+  .cform .field { display: grid; gap: .3rem; }
+  .cform .field--wide { grid-column: 1 / -1; }
+  .cform input, .cform textarea { font: inherit; color: inherit; width: 100%; padding: .85rem 1rem; border-radius: 12px; border: 1.5px solid var(--line); background: var(--fa-white);
+                                  transition: border-color .15s; }
+  .cform textarea { min-height: 96px; resize: vertical; }
+  .cform input:focus, .cform textarea:focus { outline: none; border-color: var(--fa-charcoal); }
+  .cform [aria-invalid="true"] { border-color: var(--fa-red-deep); background: #fff6f3; }
+  .cform__err { color: var(--fa-red-deep); font-size: .85rem; font-weight: 600; }
+  .cform__err:empty { display: none; }
+  .cform .btn { grid-column: 1 / -1; justify-self: center; margin-top: .4rem; border: 0; cursor: pointer; font-family: inherit; }
+  .cform__small { grid-column: 1 / -1; text-align: center; font-size: .82rem; color: var(--muted); }
+  .cform__small a { color: var(--fa-charcoal); }
+  .contact__alt { margin-top: 1.2rem; font-size: .95rem; color: var(--muted); }
+  .contact__alt a { color: var(--fa-charcoal); font-weight: 700; white-space: nowrap; }
+
+  /* Footer — one line */
+  .foot { background: var(--fa-white); padding-block: 1.4rem; font-size: .9rem; }
+  .foot__row { display: flex; align-items: center; gap: 1rem 2rem; flex-wrap: wrap; }
+  .foot__logo img { height: 30px; width: auto; }
+  .foot__links { list-style: none; margin: 0 auto; padding: 0; display: flex; flex-wrap: wrap; gap: .3rem 1.4rem; }
+  .foot__links a { text-decoration: none; }
+  .foot__links a:hover { color: var(--fa-red); }
+  .social { display: flex; gap: .45rem; }
+  .social a { width: 34px; height: 34px; border-radius: 50%; background: var(--fa-beige); display: grid; place-items: center; transition: background-color .15s, color .15s; }
+  .social a:hover { background: var(--fa-red); color: var(--fa-beige); }
+  .social svg { width: 16px; height: 16px; }
+  .foot__copy { color: var(--muted); font-size: .85rem; white-space: nowrap; }
+
+  .mnav { display: none; position: relative; }
+  .mnav summary { list-style: none; cursor: pointer; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 6px; }
+  .mnav summary::-webkit-details-marker { display: none; }
+  .mnav summary svg { width: 26px; height: 26px; }
+  .mnav[open] summary { background: var(--fa-beige); }
+  .mnav__panel { position: absolute; right: 0; top: calc(100% + .6rem); background: var(--fa-white); border-radius: 8px; padding: .5rem; min-width: 260px;
+                 box-shadow: 0 14px 40px rgba(64,64,64,.18); display: grid; }
+  .mnav__panel a { padding: .7rem .8rem; border-radius: 5px; text-decoration: none; font-weight: 500; }
+  .mnav__panel a:hover { background: var(--fa-beige); }
+  .mnav__panel .sub { padding-left: 1.6rem; font-weight: 400; }
+
+  /* ---------- Load moment: hero copy rises, photo edge sweeps in ---------- */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero__copy > * { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+    .hero__copy > *:nth-child(2) { animation-delay: .06s; }
+    .hero__copy > *:nth-child(3) { animation-delay: .12s; }
+    .hero__copy > *:nth-child(4) { animation-delay: .18s; }
+    .hero__copy > *:nth-child(5) { animation-delay: .24s; }
+    .hero__photo { animation: wipe .9s cubic-bezier(.6,0,.2,1) both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+    @keyframes wipe { from { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); } }
+  }
+
+  /* What happens when you apply — split layout, beige */
+  .plus { display: inline-block; width: 16px; height: 16px; background: var(--fa-red); flex: none;
+          clip-path: polygon(35% 0, 65% 0, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%, 0 35%, 35% 35%); }
+  .apply { position: relative; isolation: isolate; overflow: hidden; background: linear-gradient(90deg, var(--paper) 0%, var(--fa-beige) 55%); padding-block: 4.5rem; }
+  .apply::after { content: ""; position: absolute; z-index: -1; right: -70px; top: -70px; width: 460px; aspect-ratio: 1; opacity: .9; pointer-events: none;
+                  background: url("brand-assets/patterns/tinted/plus-pattern-25-white.svg") center / contain no-repeat; }
+  .apply__grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+  .apply__intro { position: static; }
+  .apply__bar { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .apply__bar h3 { margin: 0; font-size: .95rem; font-weight: 600; color: var(--fa-charcoal); }
+  .apply__bar .needs { display: flex; flex-wrap: wrap; gap: .6rem 1.6rem; }
+  .apply__bar .btn { margin-left: auto; }
+  .apply__bar small { flex-basis: 100%; color: var(--muted); font-size: .85rem; text-align: right; }
+  .apply__intro > p:not(.kicker) { color: var(--muted); max-width: 40ch; margin: 1.1rem 0 2rem; }
+  .apply__text { display: grid; gap: .8rem; color: var(--muted); max-width: 52ch; margin: 1.2rem 0 0; }
+  .apply__text strong, .apply__lead { color: var(--fa-charcoal); }
+  .apply__lead { font-weight: 700; font-size: 1.1rem; }
+  .apply__intro h3 { margin: 0 0 .9rem; font-size: .95rem; font-weight: 500; color: var(--muted); }
+  .apply__intro .btn { margin-top: 2.2rem; }
+  .apply__intro small { display: block; margin-top: 1rem; color: var(--muted); font-size: .85rem; }
+  .needs { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
+  .needs li { display: flex; align-items: center; gap: .8rem; font-weight: 600; }
+  .disc { position: relative; flex: none; width: 88px; height: 88px; border-radius: 50%; background: var(--fa-white); display: grid; place-items: center;
+          box-shadow: 0 0 0 1px rgba(64,64,64,.06), 0 8px 22px rgba(0,0,0,.08); }
+  .disc img { width: 54%; height: 54%; }
+  .disc--sm { width: 46px; height: 46px; box-shadow: 0 0 0 1px rgba(64,64,64,.08); }
+  .disc__num { position: absolute; left: -6px; top: -6px; width: 32px; height: 32px; border-radius: 50%; background: var(--fa-red); color: var(--fa-beige);
+               display: grid; place-items: center; font-weight: 900; font-size: 1rem; box-shadow: 0 0 0 4px var(--fa-beige); }
+  .steps { list-style: none; margin: 0; padding: 0; }
+  .steps li { position: relative; display: grid; grid-template-columns: 88px 1fr; gap: 1.6rem; padding-bottom: 2.6rem; }
+  .steps li:last-child { padding-bottom: 0; }
+  .steps li:not(:last-child)::before { content: ""; position: absolute; left: 43px; top: 96px; bottom: 8px; width: 2px;
+                                       background: repeating-linear-gradient(180deg, rgba(64,64,64,.25) 0 10px, transparent 10px 18px); }
+  .steps__why { color: var(--fa-red); font-weight: 700; margin: .5rem 0 .35rem; }
+  .steps h3 { margin: 0; font-weight: 900; text-transform: uppercase; line-height: 1; font-size: 1.5rem; }
+  .steps__time { display: inline-block; margin: .6rem 0 .8rem; font-weight: 700; font-size: .82rem; color: var(--fa-beige); background: var(--fa-charcoal); padding: .28rem .8rem; border-radius: 999px; }
+  .steps li p:last-child { color: var(--muted); max-width: 44ch; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1360px) {
+    .nav { display: none; }
+    .top__actions { margin-left: auto; }
+    .mnav { display: block; }
+  }
+  @media (max-width: 1080px) {
+    .nav { display: none; }
+    .top__actions { margin-left: auto; }
+    .mnav { display: block; }
+    .fit { grid-template-columns: 1fr; }
+    .fit__col + .fit__col { border-left: 0; border-top: 1px solid var(--line); }
+    .fit__q { min-height: 0; }
+  }
+  @media (max-width: 860px) {
+    .hero__photo, .hero__edge { position: relative; inset: auto; height: 380px; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%); }
+    .hero__edge { display: none; }
+    .hero__in { min-height: 0; padding-block: 2.6rem 3.5rem; }
+    .hero__copy { max-width: 640px; }
+    .sec__head { grid-template-columns: 1fr; gap: 1.5rem; }
+    .foot__links { margin-inline: 0; }
+      .apply { padding-block: 4rem; }
+    .apply__grid { grid-template-columns: 1fr; gap: 3rem; }
+    .apply__bar .btn { margin-left: 0; } .apply__bar small { text-align: left; }
+    .sec { padding-block: 4rem; }
+  }
+  @media (max-width: 600px) {
+    .cform { grid-template-columns: 1fr; }
+    .steps li { grid-template-columns: 64px 1fr; gap: 1rem; }
+    .steps .disc { width: 64px; height: 64px; }
+    .steps li:not(:last-child)::before { left: 31px; top: 72px; }
+    .top__login { display: none; }
+    .top__phone span { display: none; }
+    .top__phone { width: 40px; height: 40px; justify-content: center; border-radius: 50%; background: var(--fa-beige); }
+    .top__logo img { height: 32px; }
+    .top__in { gap: .8rem; }
+    .top__actions { gap: .6rem; }
+    .proof { gap: 1.2rem 1.2rem; }
+    .proof dd { font-size: 1.35rem; }
+    .wrap { width: calc(100% - 2rem); }
+  }
+
+  /* Products on charcoal (colour idea 3) */
+  .sec--paper { background: var(--fa-charcoal); color: var(--fa-beige); }
+  .sec--paper h2 { color: var(--fa-beige); }
+  .sec--paper .kicker { color: #ff8a70; }
+  .fit__head p:not(.kicker), .fit__col > p:not(.fit__q), .fit__a small { color: rgba(247,234,210,.75); }
+  .fit { border-top-color: var(--fa-beige); }
+  .fit__col + .fit__col { border-color: rgba(247,234,210,.16); }
+  .fit__a { border-color: rgba(247,234,210,.22); }
+  .fit__a .disc { background: var(--fa-white); }
+  .fit__col:hover { background: rgba(247,234,210,.06); }
+  .contact { border-top: 0; }
+
+  /* What makes us different */
+  .diff { background: var(--fa-white); padding-block: 5.5rem; }
+  .diff__head { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.5rem 3rem; align-items: end; margin-bottom: 2.6rem; }
+  .diff__head > p { color: var(--muted); max-width: 52ch; }
+  .diff__scroll { overflow-x: auto; }
+  .diff__table { width: 100%; min-width: 720px; border-collapse: separate; border-spacing: 0; table-layout: fixed; }
+  .diff__table th, .diff__table td { padding: 1rem 1.3rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+  .diff__table thead th { font-weight: 900; text-transform: uppercase; font-size: 1.05rem; border-bottom: 2px solid var(--fa-charcoal); }
+  .diff__table tbody th { font-weight: 500; color: var(--muted); width: 11rem; }
+  .diff__table td { font-weight: 500; }
+  .diff__table .is-us { background: var(--paper); font-weight: 700; }
+  .diff__table thead .is-us { color: var(--fa-red); border-radius: 16px 16px 0 0; border-bottom-color: var(--fa-red); }
+  .diff__table tbody tr:last-child .is-us { border-radius: 0 0 16px 16px; }
+  @media (max-width: 860px) { .diff { padding-block: 4rem; } .diff__head { grid-template-columns: 1fr; } }
+</style>
+<link rel="stylesheet" href="assets/site-navigation.css?v=dropdown-wrap-2">
+<link rel="stylesheet" href="assets/about-founder.css"><link rel="stylesheet" href="assets/about-layout.css"><link rel="stylesheet" href="assets/about-story-first-fixes.css"><link rel="stylesheet" href="assets/about-awards.css"><link rel="stylesheet" href="assets/selected-visual-improvements.css">
+<link rel="stylesheet" href="assets/site-completion.css"><script src="assets/site-consent.js" defer></script><link rel="canonical" href="https://fundingalternative.co.uk/about-us.html"><link rel="stylesheet" href="assets/site-interactions.css?v=approved1"><style data-review-only>/* Keep the comparison unobscured; no consent choice is recorded. */.consent-banner{display:none!important}</style></head>
+<body>
+
+<header class="top">
+  <div class="top__in">
+    <a class="top__logo" href="index.html" aria-label="Funding Alternative home">
+      <img src="brand-assets/logo/fa-logo-horizontal-on-light.svg" alt="Funding Alternative">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <div class="nav__drop">
+        <button type="button" aria-haspopup="true">Our products</button>
+        <div class="nav__menu">
+          <a href="business-cash-advance.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"></path></svg></i><b>Business Cash Advance</b><small>Flexible or weekly repayments, typically 3–9 months</small></a>
+          <a href="merchant-cash-advance.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18M7 15h3"></path></svg></i><b>Merchant Cash Advance</b><small>Repaid through your daily card sales</small></a>
+          <a href="selective-invoice-financing.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"></path><path d="M14 3v5h5M9 13h6M9 17h4"></path></svg></i><b>Selective Invoice Financing</b><small>Get most of an invoice's value upfront</small></a>
+          <a class="nav__all" href="index.html#products">See all business funding</a>
+        </div>
+      </div>
+      <a href="about-us.html" aria-current="page">About us</a>
+      <a href="faq.html">FAQs</a><a href="blog.html">Blog</a>
+      <a href="partner-with-us.html">Partner with us</a>
+      <a href="index.html#contact">Contact us</a>
+      <span class="nav__ink" aria-hidden="true"></span>
+    </nav>
+    <div class="top__actions">
+      <a class="top__login" href="https://portal.fundingalternative.co.uk/"><b>Portal</b><small>Clients &amp; introducers</small></a>
+      <a class="top__phone" href="tel:08001026000" aria-label="Call us free on 0800 1026000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"></path></svg><span>0800 1026000</span></a>
+      <a class="btn btn--sm" href="apply.html">Apply now
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </a>
+      <details class="mnav">
+        <summary aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></summary>
+        <nav class="mnav__panel" aria-label="Mobile">
+          <a href="index.html#products">Our products</a>
+          <a class="sub" href="business-cash-advance.html">Business Cash Advance</a>
+          <a class="sub" href="merchant-cash-advance.html">Merchant Cash Advance</a>
+          <a class="sub" href="selective-invoice-financing.html">Selective Invoice Financing</a>
+          <a href="about-us.html" aria-current="page">About us</a>
+          <a href="faq.html">FAQs</a><a href="blog.html">Blog</a>
+              <a href="partner-with-us.html">Partner with us</a>
+          <a href="index.html#contact">Contact us</a>
+          <a href="https://portal.fundingalternative.co.uk/">Portal login</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main class="about-concept about-four">
+  <section class="phero" aria-labelledby="p-h">
+    <div class="wrap phero__grid">
+      <div class="about-hero-copy">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">About us</span></nav>
+        <p class="kicker">About us</p>
+        <h1 id="p-h">We help British business owners to thrive, not just survive</h1>
+        <p class="phero__lede">We know the challenges entrepreneurs face because we're entrepreneurs too. We're more than a source of funding; we're a partner who understands your vision and supports your ambition.</p>
+        <div class="phero__ctas">
+        <a class="btn" href="apply.html">Apply now
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+          <a class="hero__call" href="index.html#contact">Speak to a funding specialist</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="block block--white" aria-labelledby="story-h">
+    <div class="wrap split">
+      
+      
+    <figure class="founder-portrait"><img src="assets/about/serge-santos.webp" width="800" height="450" alt="Serge Santos, founder and CEO of Funding Alternative Group" fetchpriority="high"><figcaption><strong>Serge Santos</strong><span>Founder and CEO of Funding Alternative Group</span></figcaption></figure><div class="story-editorial"><div class="prose">
+        <p class="kicker">Our story</p>
+        <h2 id="story-h">We've been through what you're going through</h2>
+      </div><div class="prose">
+        <p>Traditional loans don't work for business owners, they work for banks. Banks can't and won't help small businesses with small business problems: stalled cash flow, supplier invoices piling up, payroll problems, or needing cash to buy the stock to make the cash.</p>
+        <p>We've faced all of that ourselves, and we came out the other side because cash flow is solvable. Our approach combines financial flexibility with genuine understanding and a human touch. It's about more than just money; it's about moving forward together.</p>
+        <p><strong>Cash flow is solvable. You don't have to do it all alone.</strong></p>
+      </div></div></div>
+  </section>
+
+  <section class="block block--dark" aria-labelledby="values-h">
+    <div class="wrap">
+      <div class="block__head"><div><p class="kicker">We're more than money</p><h2 id="values-h">How we work</h2></div>
+        <p>Our mission is simple: give British businesses what they need to survive and thrive.</p></div>
+      <ul class="values values-wrap"><li><b>Solution-focused</b><p>We look for a way forward, and take your story into account, not just the numbers.</p></li><li><b>Meticulous</b><p>Our analysts review your cash flow properly, so your offer is clear and right.</p></li><li><b>Straight-talking</b><p>One fixed fee, no APR and no hidden costs. You know exactly what you'll pay.</p></li><li><b>Flexible</b><p>Pay back in proportion to your revenue, or with fixed repayments.</p></li><li><b>Supportive</b><p>A dedicated relationship manager, and a real person on the phone.</p></li><li><b>Entrepreneur-led</b><p>We know the challenges entrepreneurs face because we’re entrepreneurs too.</p></li></ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="awards-h" class="company-awards"><div class="wrap"><header class="heading"><h2 id="awards-h">Recognised for supporting<br>British businesses</h2><div class="brand"><svg viewBox="0 0 300 90" role="img" aria-label="SME News Finance Awards"><text x="0" y="54" fill="currentColor" font-family="Barlow,Arial,sans-serif" font-size="52" font-weight="600">SME</text><text x="32" y="77" fill="currentColor" font-family="Georgia,serif" font-style="italic" letter-spacing="5" font-size="18">news</text><path d="M119 8v73" stroke="currentColor" stroke-width="1"></path><text x="133" y="41" fill="currentColor" font-family="Barlow,Arial,sans-serif" font-size="29" font-weight="600">FINANCE</text><text x="133" y="72" fill="currentColor" font-family="Barlow,Arial,sans-serif" font-size="29" font-weight="600">AWARDS</text></svg></div></header><div class="awards"><article class="award"><svg class="medal" viewBox="0 0 48 56" aria-hidden="true"><circle cx="24" cy="19" r="15"></circle><circle cx="24" cy="19" r="11"></circle><path d="m24 11 2.5 5 5.5.8-4 4 1 5.5-5-2.6-5 2.6 1-5.5-4-4 5.5-.8zM15 32l-3 19 12-7 12 7-3-19"></path></svg><time datetime="2025">2025</time><h3>Best SME Funding Solution – London</h3><small>SME Finance Awards</small></article><article class="award"><svg class="medal" viewBox="0 0 48 56" aria-hidden="true"><circle cx="24" cy="19" r="15"></circle><circle cx="24" cy="19" r="11"></circle><path d="m24 11 2.5 5 5.5.8-4 4 1 5.5-5-2.6-5 2.6 1-5.5-4-4 5.5-.8zM15 32l-3 19 12-7 12 7-3-19"></path></svg><time datetime="2024">2024</time><h3>SME Funding Enterprise of the Year</h3><small>SME Finance Awards</small></article><article class="award"><svg class="medal" viewBox="0 0 48 56" aria-hidden="true"><circle cx="24" cy="19" r="15"></circle><circle cx="24" cy="19" r="11"></circle><path d="m24 11 2.5 5 5.5.8-4 4 1 5.5-5-2.6-5 2.6 1-5.5-4-4 5.5-.8zM15 32l-3 19 12-7 12 7-3-19"></path></svg><time datetime="2023">2023</time><h3>Best SME Funding Solutions Firm – UK</h3><small>SME Finance Awards</small></article><article class="award"><svg class="medal" viewBox="0 0 48 56" aria-hidden="true"><circle cx="24" cy="19" r="15"></circle><circle cx="24" cy="19" r="11"></circle><path d="m24 11 2.5 5 5.5.8-4 4 1 5.5-5-2.6-5 2.6 1-5.5-4-4 5.5-.8zM15 32l-3 19 12-7 12 7-3-19"></path></svg><time datetime="2022">2022</time><h3>Best SME Business Cash Advance Solutions Provider</h3><small>SME Finance Awards</small></article></div></div></section><section class="block company-partners" aria-labelledby="company-partners-h"><div class="wrap"><div class="prose">
+        <p class="kicker">Trusted partners</p>
+        <h2 id="company-partners-h">Who we work with</h2>
+        <p>We're a <strong>WorldPay</strong> partner, a <strong>Yapily</strong> partner for secure Open Banking, and <strong>rated on Trustpilot</strong> by the businesses and brokers we work with.</p>
+        <p class="company">Funding Alternative Group Limited, registered number 11501528.<br>104 Roebuck Road, Chessington, Surrey, KT9 1EU.</p>
+      </div></div></section>
+
+  <!-- Products -->
+  <section class="sec sec--paper" aria-labelledby="products-h">
+    <div class="wrap">
+      <div class="fit__head">
+        <p class="kicker">Our products</p>
+        <h2 id="products-h">Which one fits your business?</h2>
+        <p>Start with what's going on in your business. We'll point you to the right funding.</p>
+      </div>
+      <div class="fit">
+        <div class="fit__col">
+          <p class="fit__q">Need a lump sum for stock or growth?</p>
+          <div class="fit__a"><span class="disc"><img src="brand-assets/icons/on-light/icon-62.svg" alt=""></span><span><small>You want a</small><b>Business Cash Advance</b></span></div>
+          <p>£15k to £250k, repaid over 3 to 9 months with fixed weekly payments or a share of your sales.</p>
+          <a class="btn" href="business-cash-advance.html">Learn more <span class="sr-only">about Business Cash Advance</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </a>
+        </div>
+        <div class="fit__col">
+          <p class="fit__q">Take most of your payments by card?</p>
+          <div class="fit__a"><span class="disc"><img src="brand-assets/icons/on-light/icon-43.svg" alt=""></span><span><small>You want a</small><b>Merchant Cash Advance</b></span></div>
+          <p>Repaid automatically from your card takings, so busy days pay more and quiet days pay less.</p>
+          <a class="btn" href="merchant-cash-advance.html">Learn more <span class="sr-only">about Merchant Cash Advance</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </a>
+        </div>
+        <div class="fit__col">
+          <p class="fit__q">Waiting weeks for customers to pay?</p>
+          <div class="fit__a"><span class="disc"><img src="brand-assets/icons/on-light/icon-60.svg" alt=""></span><span><small>You want</small><b>Selective Invoice Financing</b></span></div>
+          <p>Get around 80% of an invoice now. The rest arrives when your customer pays.</p>
+          <a class="btn" href="selective-invoice-financing.html">Learn more <span class="sr-only">about Selective Invoice Financing</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact us -->
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap"><div class="contact__card">
+      <h2 id="contact-h">Get in touch</h2>
+      <p>Tell us what you need and we'll get back to you.</p>
+      <!-- Needs wiring to the site's form handler (and reCAPTCHA) before going live -->
+      <form class="cform" action="/contact-us/" method="post" novalidate="">
+        <div class="field"><label class="sr-only" for="f-name">Your name</label><input id="f-name" name="name" placeholder="Your name" autocomplete="name" required="" aria-describedby="e-name"><span class="cform__err" id="e-name"></span></div>
+        <div class="field"><label class="sr-only" for="f-email">Email address</label><input id="f-email" name="email" type="email" placeholder="Email address" autocomplete="email" required="" aria-describedby="e-email"><span class="cform__err" id="e-email"></span></div>
+        <div class="field field--wide"><label class="sr-only" for="f-msg">How can we help?</label><textarea id="f-msg" name="message" placeholder="How can we help?" required="" aria-describedby="e-msg"></textarea><span class="cform__err" id="e-msg"></span></div>
+        <button class="btn" type="submit">Send message
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </button>
+        <p class="cform__small">By sending, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+      </form>
+      <p class="contact__alt">Prefer to talk? <a href="tel:08001026000">0800 1026000</a> or <a href="mailto:applications@fundingalternative.co.uk">applications@fundingalternative.co.uk</a></p>
+    </div></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__row">
+    <a class="foot__logo" href="index.html"><img src="brand-assets/logo/fa-logo-horizontal-on-light.svg" alt="Funding Alternative"></a>
+    <ul class="foot__links">
+      <li><a href="index.html#contact">Contact Us</a></li>
+      <li><a href="blog.html">Our Blog</a></li>
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+      <li><a href="cookie-policy.html">Cookie Policy</a></li>
+    <li><a href="open-banking-institutions.html">Open Banking</a></li><li><button type="button" data-consent-settings>Cookie settings</button></li></ul>
+    <div class="social">
+      <a href="https://www.linkedin.com/company/fundingalt" aria-label="Funding Alternative on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4V9.5Z"></path></svg></a>
+      <a href="mailto:applications@fundingalternative.co.uk" aria-label="Email Funding Alternative"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></a>
+      <a href="https://www.facebook.com/fundingalt" aria-label="Funding Alternative on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8Z"></path></svg></a>
+    </div>
+    <small class="foot__copy">2026 © Funding Alternative</small>
+  </div>
+<div class="foot__open-banking"><p>Funding Alternative uses Open Banking services provided by Yapily Connect Ltd, which is authorised by the Financial Conduct Authority (FCA FRN: 827001) under the Payment Services Regulations 2017 (SI 2017/752) for the provision of account information and payment initiation services in the United Kingdom. With your consent, Yapily Connect securely accesses your bank account information on a read-only basis to support your funding application.</p></div>
+</footer>
+
+<script>
+  // Red underline glides to whichever menu link is hovered or focused
+  const nav = document.querySelector('.nav'), ink = nav.querySelector('.nav__ink');
+  const moveTo = el => { const n = nav.getBoundingClientRect(), r = el.getBoundingClientRect();
+    ink.style.width = r.width + 'px'; ink.style.transform = `translateX(${r.left - n.left}px)`; ink.style.opacity = 1; };
+  nav.querySelectorAll(':scope > a, .nav__drop > button').forEach(el => {
+    el.addEventListener('mouseenter', () => moveTo(el));
+    el.addEventListener('focus', () => moveTo(el));
+  });
+  nav.addEventListener('mouseleave', () => { if (!nav.contains(document.activeElement)) ink.style.opacity = 0; });
+  nav.addEventListener('focusout', e => { if (!nav.contains(e.relatedTarget)) ink.style.opacity = 0; });
+</script>
+<script>
+  // Contact form: plain-language errors under each field, checked on submit
+  (() => {
+    const form = document.querySelector('.cform'); if (!form) return;
+    const rules = {
+      'f-name': v => v.trim() ? '' : 'Enter your name',
+      'f-email': v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Enter an email address, like name@business.co.uk',
+      'f-msg': v => v.trim() ? '' : 'Tell us briefly what you need',
+      'f-firm': v => v.trim() ? '' : 'Enter your brokerage or firm name',
+      'f-phone': v => v.replace(/\D/g, '').length >= 10 ? '' : 'Enter a phone number, like 07700 900123',
+    };
+    Object.keys(rules).forEach(id => { if (!document.getElementById(id)) delete rules[id]; });
+    const check = id => {
+      const el = document.getElementById(id), msg = rules[id](el.value);
+      el.setAttribute('aria-invalid', !!msg); document.getElementById('e-' + id.slice(2)).textContent = msg; return !msg;
+    };
+    Object.keys(rules).forEach(id => document.getElementById(id).addEventListener('blur', e => { if (e.target.value) check(id); }));
+    form.addEventListener('submit', e => {
+      const bad = Object.keys(rules).filter(id => !check(id));
+      if (bad.length) { e.preventDefault(); document.getElementById(bad[0]).focus(); }
+    });
+  })();
+
+  // Header stays pinned; add a soft shadow once the page has scrolled
+  (() => {
+    const top = document.querySelector('.top');
+    const onScroll = () => { const on = top.classList.contains('is-scrolled'); top.classList.toggle('is-scrolled', on ? scrollY > 20 : scrollY > 80); };
+    addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  })();
+</script>
+
+
+<script src="assets/site-interactions.js?v=approved1" defer></script></body></html>

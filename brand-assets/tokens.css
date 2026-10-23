@@ -1,0 +1,48 @@
+/* Funding Alternative (FAUK) brand tokens — from FAUK BRAND GUIDE 2025 */
+
+@font-face { font-family: "Barlow"; src: url("fonts/barlow/Barlow-Light.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("fonts/barlow/Barlow-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("fonts/barlow/Barlow-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("fonts/barlow/Barlow-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("fonts/barlow/Barlow-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("fonts/barlow/Barlow-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("fonts/barlow/Barlow-ExtraBold.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("fonts/barlow/Barlow-Black.woff2") format("woff2"); font-weight: 900; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("fonts/barlow/Barlow-BlackItalic.woff2") format("woff2"); font-weight: 900; font-style: italic; font-display: swap; }
+
+:root {
+  /* Primary */
+  --fa-red:       #ea4628; /* brand red — CTAs, "FUNDING" wordmark, plus marks */
+  --fa-beige:     #f7ead2; /* tan — main light background, photo overlay tint */
+  --fa-charcoal:  #404040; /* dark sections, body text on light */
+  --fa-grey-light: #efeff0; /* neutral panels */
+
+  /* Secondary */
+  --fa-red-deep:   #d2232a; /* hover/pressed red (guide lists RGB 210/35/42) */
+  --fa-black:      #030303;
+  --fa-sky:        #9adbf5; /* secondary CTA / accent */
+  --fa-teal:       #70a0b4; /* secondary CTA hover / accent */
+
+  /* Seen in logo & icon artwork */
+  --fa-logo-grey:  #4d4d4d; /* plus-pattern grey in logo + icons */
+  --fa-white:      #ffffff;
+
+  /* Type */
+  --fa-font: "Barlow", system-ui, sans-serif;
+  --fa-weight-headline: 900;   /* Barlow Black, UPPERCASE, tight — attention headlines */
+  --fa-weight-subhead: 500;    /* Barlow Medium, UPPERCASE, red — sub-headlines */
+  --fa-weight-body: 400;
+  --fa-radius-btn: 6px;
+}
+
+/* Buttons per guide p.12 */
+.fa-btn { font: 700 1rem/1 var(--fa-font); text-transform: uppercase; letter-spacing: .02em;
+  padding: .9em 1.6em; border: 0; border-radius: var(--fa-radius-btn); cursor: pointer;
+  transition: background-color .15s, color .15s; }
+.fa-btn--primary { background: var(--fa-beige); color: var(--fa-red); }
+.fa-btn--primary:hover { background: var(--fa-red); color: var(--fa-beige); }
+.fa-btn--primary:active { background: var(--fa-red-deep); color: var(--fa-beige); }
+.fa-btn--secondary { background: var(--fa-sky); color: var(--fa-charcoal); }
+.fa-btn--secondary:hover { background: var(--fa-charcoal); color: var(--fa-sky); }
+.fa-btn--secondary:active { background: var(--fa-teal); color: var(--fa-charcoal); }
+.fa-btn:disabled { opacity: .4; pointer-events: none; }

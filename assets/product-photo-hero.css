@@ -1,0 +1,68 @@
+/* Full-screen photo top section for product pages whose <main> carries "photo-hero" (BCA and MCA).
+   Chosen from the MCA photo test: the photo covers the whole first screen behind the text and facts strip,
+   with the same dark tint as the Apply page, darkest on the left where the text sits. */
+
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening { position: relative; isolation: isolate; background: #282624 no-repeat var(--hero-pos, 72% 30%) / cover !important;
+  min-height: calc(100svh - var(--bca-header-height, 62px)) !important; }
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(90deg, rgba(40,38,36,.95) 0%, rgba(40,38,36,.86) 30%, rgba(40,38,36,.45) 52%, rgba(40,38,36,.25) 100%); }
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .bca-hero,
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .bca-facts-band { background: transparent !important; }
+:root body .bca-page.photo-hero .bca-screen-opening .bca-hero-photo { display: none; }
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .bca-hero-copy { padding-top: 80px !important; padding-bottom: 80px !important; }
+
+/* Light text on the tinted photo */
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening h1 { color: var(--fa-white) !important; }
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .kicker,
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .phero__lede,
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .phero__lede + .phero__lede { color: var(--fa-beige) !important; }
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .crumbs,
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .crumbs a,
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .crumbs span { color: rgba(247,234,210,.8) !important; }
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .hero__call { color: var(--fa-white) !important; }
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .bca-facts-band { border-top: 1px solid rgba(247,234,210,.2) !important; }
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .bca-facts .proof dd,
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .bca-facts .factcard__head b { color: var(--fa-white) !important; }
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .bca-facts .proof dt,
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .bca-facts small { color: rgba(247,234,210,.8) !important; }
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening .bca-facts .proof > div { border-color: rgba(247,234,210,.25) !important; }
+
+/* Each page's photo and where it is anchored */
+:root body .bca-page.bca-v2.product-mca.photo-hero .bca-screen-opening { background-image: url("products/stock/mca-hero-istock-hd.webp") !important; --hero-pos: 85% 15%; }
+/* MCA: she already stands right of centre, so the tint just fades out sooner to keep her bright */
+:root body .bca-page.bca-v2.product-mca.photo-hero .bca-screen-opening::before {
+  background: linear-gradient(90deg, rgba(40,38,36,.95) 0%, rgba(40,38,36,.86) 30%, rgba(40,38,36,.25) 47%, rgba(40,38,36,.05) 100%); }
+:root body .bca-page.bca-v2.product-bca.photo-hero .bca-screen-opening { background-image: url("products/stock/bca-hero-istock-flip.webp") !important; --hero-pos: 50% 8%; }
+/* BCA: the photo is mirrored so the two men stand in the clear right half; the tint fades out sooner so they stay bright */
+:root body .bca-page.bca-v2.product-bca.photo-hero .bca-screen-opening::before {
+  background: linear-gradient(90deg, rgba(40,38,36,.95) 0%, rgba(40,38,36,.86) 30%, rgba(40,38,36,.25) 47%, rgba(40,38,36,.05) 100%); }
+
+@media (max-width: 900px) {
+  :root body .bca-page.bca-v2.photo-hero .bca-screen-opening::before { background: rgba(40,38,36,.82); }
+  :root body .bca-page.bca-v2.photo-hero .bca-screen-opening .bca-hero-copy { padding-top: 40px !important; padding-bottom: 48px !important; }
+  :root body .bca-page.bca-v2.product-mca.photo-hero .bca-screen-opening { background-image: url("products/stock/mca-hero-istock-hd-sm.webp") !important; --hero-pos: 55% center; }
+  :root body .bca-page.bca-v2.product-mca.photo-hero .bca-screen-opening::before { background: rgba(40,38,36,.8); }
+  :root body .bca-page.bca-v2.product-bca.photo-hero .bca-screen-opening { background-image: url("products/stock/bca-hero-istock-flip-sm.webp") !important; --hero-pos: 62% center; }
+  :root body .bca-page.bca-v2.product-bca.photo-hero .bca-screen-opening::before { background: rgba(40,38,36,.8); }
+}
+
+/* Support photos: keep the faces in the short eligibility panel */
+.product-bca .bca-inline-photo img { object-position: center 18%; }
+.product-mca .bca-inline-photo img { object-position: center 25%; }
+
+/* Facts strip keeps a dark band so it stays readable wherever the photo is bright */
+:root body .bca-page.bca-v2.photo-hero .bca-screen-opening > .bca-facts-band { background: rgba(40,38,36,.8) !important; }
+
+/* The title always takes two lines ("Merchant / Cash Advance") so it never reaches the person in the photo */
+@media (min-width: 901px) { :root body .bca-page.bca-v2.photo-hero .bca-screen-opening h1 { max-width: 12ch !important; } }
+
+/* SIF: the invoice photo, anchored on the clip, pen and hand. Not mirrored (the invoice has writing on it).
+   The tint stays strong over the bright paper behind the text. */
+:root body .bca-page.bca-v2.product-sif.photo-hero .bca-screen-opening { background-image: url("products/stock/sif-hero-photo.webp") !important; --hero-pos: 60% 38%; }
+:root body .bca-page.bca-v2.product-sif.photo-hero .bca-screen-opening::before {
+  background: linear-gradient(90deg, rgba(40,38,36,.95) 0%, rgba(40,38,36,.9) 40%, rgba(40,38,36,.35) 57%, rgba(40,38,36,.12) 100%); }
+@media (min-width: 901px) { :root body .bca-page.bca-v2.product-sif.photo-hero .bca-screen-opening h1 { max-width: 18ch !important; } }
+@media (max-width: 900px) {
+  :root body .bca-page.bca-v2.product-sif.photo-hero .bca-screen-opening { background-image: url("products/stock/sif-hero-photo-sm.webp") !important; --hero-pos: 60% center; }
+  :root body .bca-page.bca-v2.product-sif.photo-hero .bca-screen-opening::before { background: rgba(40,38,36,.82); }
+}

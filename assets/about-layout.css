@@ -1,0 +1,107 @@
+.about-concept{--ink:#404040;--paper:#fbf4e7;background:#fff;color:#404040}
+.about-concept .wrap{width:min(1280px,calc(100% - 64px))}
+.about-concept h1,.about-concept h2,.about-concept h3{font-weight:600;text-transform:none;letter-spacing:-.025em;line-height:1.1;text-wrap:balance}
+.about-concept h1{font-size:clamp(44px,4.3vw,64px);max-width:800px}
+.about-concept h2{font-size:clamp(28px,3vw,40px)}
+.about-concept .kicker{font-size:12px;letter-spacing:.06em;color:#a4311d}
+.about-concept .phero{background:#fbf4e7;padding:40px 0 46px}
+.about-concept .phero:after{display:none}
+.about-concept .phero__lede{font-size:18px;line-height:1.65;max-width:57ch}
+.about-concept .phero__grid{gap:60px;grid-template-columns:1.05fr 1fr}
+.about-concept .btn{background:#bf351d;color:#fffaf2;border-radius:999px;font-size:15px;padding:14px 22px;font-weight:600;gap:14px}
+.about-concept .btn:hover{background:#404040;color:#fffaf2}
+.about-concept .hero__call{font-size:15px;text-underline-offset:5px}
+.about-concept .phero__ctas{gap:20px}
+.about-concept .block,.about-concept .sec{padding:54px 0}
+.about-concept .prose p:not(.kicker){font-size:17px;line-height:1.7;color:#62594c}
+.about-concept .block__head{gap:55px;margin-bottom:28px}
+.about-concept .block--dark{background:#404040;color:#fffaf2}
+.about-concept .block--dark .block__head>p{color:#eadcc6}
+.about-concept .block--dark .kicker{color:#ffb79d}
+.about-concept .values{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 38px}
+.about-concept .values li{padding:18px 0 0;border-top:1px solid #81725c;background:transparent;border-radius:0}
+.about-concept .values b{font-size:21px;font-weight:600;line-height:1.2;display:block;text-transform:none;color:#fffaf2}
+.about-concept .values p{font-size:16px;line-height:1.6;margin:12px 0 0;color:#eadcc6}
+.about-concept .award{background:transparent;padding:0;border:0;box-shadow:none;border-radius:0;gap:22px}
+.about-concept .award b{font-size:26px;line-height:1.2;text-transform:none;font-weight:600}
+.about-concept .award p{font-size:16px;line-height:1.6;color:#62594c}
+.about-concept .award .disc{background:transparent;box-shadow:none;width:48px;height:48px;flex:none}
+.about-concept .fit{gap:35px}
+.about-concept .fit__col{background:transparent;border-radius:0;box-shadow:none;padding:22px 0 0;border-top:1px solid #ccba9b}
+.about-concept .fit__a b{font-size:27px;font-weight:600;text-transform:none;line-height:1.15}
+.about-concept .fit__col>p{font-size:16px;line-height:1.6}
+.about-concept .fit__head{margin-bottom:28px}
+.about-concept .contact{padding:46px 0}
+.about-concept .founder-portrait img{border-radius:0}
+.about-concept ::selection{background:#f2c5ae;color:#404040}
+/* 1: familiar angled image and an open editorial story. */
+.about-one .phero{padding:0}
+.about-one .phero__grid{width:100%;max-width:none;gap:0;grid-template-columns:1fr 1fr;align-items:stretch}
+.about-one .phero__grid>div:first-child{padding:36px clamp(32px,5vw,80px) 46px}
+.about-one .founder-portrait{align-self:stretch;position:relative;display:flex;flex-direction:column;justify-content:center;background:#f7ead2;margin-left:-3%;padding-left:8%;clip-path:polygon(8% 0,100% 0,100% 100%,0 100%)}
+.about-one .founder-portrait>img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:60% center}
+.about-one .founder-portrait figcaption{padding:18px 25px 22px;background:#f7ead2}
+.about-one [aria-labelledby=story-h] .split{grid-template-columns:.8fr 1.2fr;gap:100px}
+.about-one .values{grid-template-columns:repeat(3,1fr)}
+.about-one [aria-labelledby=award-h]{background:#fbf4e7}
+/* 2: broad editorial typography, portrait kept in its full natural frame. */
+.about-two .phero{background:#fffaf2;padding-bottom:0}
+.about-two .phero__grid{display:block}
+.about-two .about-hero-copy{display:grid;grid-template-columns:1fr 1fr;column-gap:75px;padding-bottom:34px}
+.about-two .crumbs{grid-column:1/-1;margin-bottom:25px}
+.about-two .about-hero-copy>.kicker{grid-column:1;grid-row:2;margin-bottom:16px}
+.about-two .phero h1{grid-column:1;grid-row:3/5;font-size:clamp(46px,4.8vw,69px);margin-bottom:0}
+.about-two .phero__lede{grid-column:2;grid-row:3;margin:0}
+.about-two .phero__ctas{grid-column:2;grid-row:4;margin-top:25px}
+.about-two .founder-portrait{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 250px;align-items:end;gap:26px}
+.about-two .founder-portrait img{aspect-ratio:16/9;height:auto}
+.about-two .founder-portrait figcaption{padding:0 0 24px}
+.about-two [aria-labelledby=story-h] .split{grid-template-columns:.85fr 1.15fr;gap:70px}
+.about-two .block--dark{background:#f7ead2;color:#404040}
+.about-two .block--dark h2,.about-two .values b{color:#404040}
+.about-two .block--dark .kicker{color:#a4311d}
+.about-two .block--dark .block__head>p,.about-two .values p{color:#62594c}
+.about-two .values li{border-color:#cbb99b}
+.about-two .values{grid-template-columns:repeat(5,1fr);gap:22px}
+.about-two .values b{font-size:19px}
+.about-two [aria-labelledby=award-h]{background:#fff}
+/* 3: charcoal founder feature with cream story and five precise value rows. */
+.about-three .phero{background:#404040;color:#fffaf2}
+.about-three .phero__grid{grid-template-columns:1fr 1.05fr;gap:65px}
+.about-three .about-hero-copy{order:2}
+.about-three .founder-portrait{order:1}
+.about-three .phero h1,.about-three .phero__lede,.about-three .hero__call,.about-three .founder-portrait figcaption strong{color:#fffaf2}
+.about-three .crumbs,.about-three .crumbs a,.about-three .founder-portrait figcaption span{color:#eadcc6}
+.about-three .phero .kicker{color:#ffb79d}
+.about-three .founder-portrait img{aspect-ratio:4/3;object-fit:cover;object-position:60% center;border-radius:10px}
+.about-three [aria-labelledby=story-h]{background:#fbf4e7}
+.about-three [aria-labelledby=values-h]{background:#fff;color:#404040}
+.about-three [aria-labelledby=values-h]>.wrap{display:grid;grid-template-columns:.8fr 1.3fr;gap:75px}
+.about-three [aria-labelledby=values-h] .block__head{display:block}
+.about-three [aria-labelledby=values-h] h2,.about-three .values b{color:#404040}
+.about-three [aria-labelledby=values-h] .kicker{color:#a4311d}
+.about-three [aria-labelledby=values-h] .block__head>p,.about-three .values p{color:#62594c}
+.about-three .values{grid-template-columns:1fr;gap:0}
+.about-three .values li{display:grid;grid-template-columns:175px 1fr;gap:20px;padding:20px 0;border-color:#d1c0a2}
+.about-three .values p{margin:0}
+/* 4: a compact centred opening; Serge introduces the story immediately below. */
+.about-four .phero{padding:35px 0 40px}
+.about-four .phero__grid{display:block;max-width:1000px;text-align:center}
+.about-four .crumbs{justify-content:center}
+.about-four .phero h1{margin:0 auto 22px;max-width:980px;font-size:clamp(44px,4.7vw,68px)}
+.about-four .phero__lede{margin:0 auto 25px;max-width:75ch}
+.about-four .phero__ctas{justify-content:center}
+.about-four [aria-labelledby=story-h]>.wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:65px;align-items:center}
+.about-four .founder-portrait img{border-radius:10px}
+.about-four .story-editorial .prose:first-child{margin-bottom:24px}
+.about-four .story-editorial .kicker{margin-top:0}
+.about-four .values{grid-template-columns:repeat(3,1fr)}
+.about-four [aria-labelledby=award-h] .split{grid-template-columns:1fr 1fr;gap:80px}
+@media(max-width:1050px){.about-two .values{grid-template-columns:repeat(3,1fr)}.about-three .values li{grid-template-columns:1fr;gap:8px}}
+@media(max-width:760px){
+.about-concept .wrap{width:calc(100% - 40px)}.about-concept h1{font-size:42px!important}.about-concept h2{font-size:29px}.about-concept .phero{padding:28px 0 32px}.about-concept .phero__grid,.about-concept .split,.about-concept .block__head{grid-template-columns:1fr!important;gap:26px!important}.about-concept .block,.about-concept .sec{padding:34px 0}.about-concept .phero__lede{font-size:17px}.about-concept .prose p:not(.kicker){font-size:16px}.about-concept .values{grid-template-columns:1fr!important;gap:22px}.about-concept .fit{grid-template-columns:1fr}.about-concept .founder-portrait img{aspect-ratio:16/9!important}.about-concept .phero__ctas{align-items:flex-start}
+.about-one .phero{padding:0}.about-one .phero__grid{width:100%}.about-one .phero__grid>div:first-child{padding:28px 22px 32px}.about-one .founder-portrait{margin:0;clip-path:none;padding:0}.about-one .founder-portrait figcaption{padding:16px 22px}
+.about-two .about-hero-copy{display:block;padding-bottom:28px}.about-two .phero h1{margin-bottom:22px}.about-two .founder-portrait{display:block}.about-two .founder-portrait figcaption{padding:15px 0 24px}
+.about-three .about-hero-copy{order:0}.about-three .founder-portrait{order:1}.about-three [aria-labelledby=values-h]>.wrap{display:block}.about-three .values li{grid-template-columns:1fr;padding:18px 0}
+.about-four [aria-labelledby=story-h]>.wrap{display:flex;flex-direction:column;gap:28px}.about-four .phero__ctas{align-items:center}.about-four .story-editorial .prose:first-child{margin-bottom:20px}
+}

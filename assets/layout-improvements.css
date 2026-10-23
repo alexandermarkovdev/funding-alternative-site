@@ -1,0 +1,389 @@
+/* Homepage layout improvements, 01–30.
+   Each change is scoped to a class on <html> (fx-01 … fx-30) so it can be switched on or off
+   individually from layout-compare.html. Colours are brand palette only (brand-assets/colours.json);
+   translucent charcoal is used for hairlines. No copy or images are changed. */
+
+:root {
+  --fx-container: min(1320px, 100% - 2 * var(--gutter));
+  --fx-edge: max(var(--gutter), (100vw - 1320px) / 2);
+  --fx-space: clamp(3.5rem, 7vw, 6rem);
+  --fx-hair: rgba(64, 64, 64, .16);
+}
+.hero { --hero-edge: var(--gutter); }
+.fx-flash { outline: 3px dashed var(--fa-red) !important; outline-offset: 6px; transition: outline-color .3s; }
+
+/* ---------- 01 · One shared grid ---------- */
+.fx-01 .top__in { width: var(--fx-container); margin-inline: auto; padding-inline: 0; }
+.fx-01 .funding-how .funding-inner,
+.fx-01 .product-showcase .products-inner,
+.fx-01 .funding-difference .difference-inner,
+.fx-01 .wrap,
+.fx-01 .foot .foot__open-banking { width: var(--fx-container); }
+.fx-01 .calc-slot.inline .calc-wrap { width: min(780px, 100% - 2 * var(--gutter)); }
+@media (min-width: 1180px) {
+  .fx-01 .hero { --hero-edge: var(--fx-edge); --split: calc(var(--fx-edge) + 480px); }
+  .fx-01 .hero__in { padding-inline: var(--fx-edge); }
+  .fx-01 .hero__copy { max-width: min(600px, calc(var(--split) - var(--fx-edge) + 4%)); }
+}
+
+/* ---------- 02 · One vertical rhythm ---------- */
+.fx-02 .funding-how,
+.fx-02 .product-showcase,
+.fx-02 .funding-difference.difference-section,
+.fx-02 .home-faq,
+.fx-02 .contact,
+.fx-02 .calc-slot { padding-block: var(--fx-space); }
+.fx-02 .funding-how .funding-header,
+.fx-02 .product-showcase.chapters .products-heading,
+.fx-02 .funding-difference.clear .difference-heading,
+.fx-02 .home-faq-heading { margin-bottom: 48px; }
+@media (max-width: 620px) {
+  .fx-02 .funding-how .funding-header,
+  .fx-02 .product-showcase.chapters .products-heading,
+  .fx-02 .funding-difference.clear .difference-heading,
+  .fx-02 .home-faq-heading { margin-bottom: 32px; }
+}
+
+/* ---------- 03 · Brand palette for text, accents and lines ---------- */
+.fx-03 { --muted: var(--fa-logo-grey); --line: var(--fx-hair); }
+.fx-03 .hero__copy h1 span { color: var(--fa-red); }
+.fx-03 .hero__tagline svg,
+.fx-03 .funding-how .criteria-copy svg { color: var(--fa-red); }
+.fx-03 .hero__ctas .btn,
+.fx-03 .top .btn,
+.fx-03 .cform .btn,
+.fx-03 .funding-how .funding-button,
+.fx-03 .funding-difference .apply-button,
+.fx-03 .calc-slot .funding-calculator .calculator-footer .apply { background: var(--fa-red-deep); color: var(--fa-white); }
+.fx-03 .hero__ctas .btn:hover,
+.fx-03 .top .btn:hover,
+.fx-03 .cform .btn:hover,
+.fx-03 .funding-how .funding-button:hover,
+.fx-03 .funding-difference .apply-button:hover,
+.fx-03 .calc-slot .funding-calculator .calculator-footer .apply:hover { background: var(--fa-charcoal); color: var(--fa-white); }
+.fx-03 .funding-how .funding-subtitle,
+.fx-03 .funding-how .stage-time,
+.fx-03 .product-showcase .prod-question,
+.fx-03 .product-showcase .prod-link,
+.fx-03 .home-faq-item summary svg,
+.fx-03 .home-faq-item[open] summary,
+.fx-03 .home-faq-all { color: var(--fa-red-deep); }
+.fx-03 .funding-how.flowing .funding-subtitle:before { background: var(--fa-red); }
+.fx-03 .funding-how .stage-copy,
+.fx-03 .funding-how .funding-criteria small,
+.fx-03 .product-showcase .products-intro,
+.fx-03 .product-showcase .products-category,
+.fx-03 .product-showcase .prod-description,
+.fx-03 .product-showcase .prod-label,
+.fx-03 .funding-difference .difference-heading .intro,
+.fx-03 .funding-difference .category,
+.fx-03 .home-faq-heading p,
+.fx-03 .home-faq-answer { color: var(--fa-logo-grey); }
+.fx-03 .funding-how .journey-line { color: rgba(64, 64, 64, .3); }
+.fx-03 .funding-how .funding-criteria { border-top-color: var(--fx-hair); }
+.fx-03 .funding-difference .data-table th,
+.fx-03 .funding-difference .data-table td,
+.fx-03 .funding-difference.clear .data-table th,
+.fx-03 .funding-difference.clear .data-table td { border-bottom-color: var(--fx-hair); }
+.fx-03 .funding-difference.clear .data-table thead .ours { background: var(--fa-red-deep); border-color: var(--fa-red-deep); }
+.fx-03 .calc-slot .funding-calculator { --accent: var(--fa-red-deep); --muted: var(--fa-logo-grey); --track: rgba(64, 64, 64, .2); --line: var(--fx-hair); --art-accent: var(--fa-red); }
+.fx-03 .calc-slot.inline .funding-calculator,
+.fx-03 .calc-slot .product-tabs { border-color: rgba(64, 64, 64, .2); }
+.fx-03 .calc-slot.inline .estimate { border-left-color: rgba(64, 64, 64, .2); }
+.fx-03 .calc-slot.inline .estimate-value { color: var(--fa-red-deep); }
+.fx-03 .calc-slot .product-tabs button,
+.fx-03 .calc-slot .panel-heading h2,
+.fx-03 .calc-slot.inline .result-hint { color: var(--fa-logo-grey); }
+.fx-03 .calc-slot .product-tabs button:hover { background: var(--fa-beige); color: var(--fa-charcoal); }
+.fx-03 .calc-slot .product-tabs button[aria-selected="true"],
+.fx-03 .calc-slot .product-tabs button[aria-selected="true"]:hover { background: var(--fa-charcoal); color: var(--fa-beige); }
+.fx-03 .calc-slot input[type=range] { accent-color: var(--fa-red-deep) !important; }
+.fx-03 .home-faq-item { border-bottom-color: rgba(64, 64, 64, .22) !important; }
+.fx-03 .foot,
+.fx-03 .foot a,
+.fx-03 .foot__copy,
+.fx-03 .foot .foot__open-banking { color: var(--fa-beige) !important; }
+.fx-03 .foot .foot__open-banking { border-top-color: rgba(247, 234, 210, .2); }
+.fx-03 .foot .social a { background: var(--fa-beige) !important; color: var(--fa-charcoal) !important; }
+
+/* ---------- 04 · Palette backgrounds that alternate ---------- */
+.fx-04 .funding-how { --step-surface: var(--fa-white); background: var(--fa-white); }
+.fx-04 .product-showcase.chapters { background: var(--fa-beige); }
+.fx-04 .product-showcase.chapters .prod-item { background: var(--fa-white); }
+.fx-04 .calc-slot,
+.fx-04 .calc-slot.inline { background: var(--fa-charcoal); }
+.fx-04 .calc-slot.inline .funding-calculator { background: var(--fa-beige); --art-paper: var(--fa-beige); border-color: transparent; }
+.fx-04 .funding-difference.clear .data-table tbody .ours { background: var(--fa-beige); }
+.fx-04 .home-faq { background: var(--fa-beige); }
+.fx-04 .contact { background: var(--fa-white); border-top: 0; }
+.fx-04 .cform input,
+.fx-04 .cform textarea { background: var(--fa-grey-light); }
+
+/* ---------- 05 · One heading style ---------- */
+.fx-05 .funding-how h2,
+.fx-05 .product-showcase h2,
+.fx-05 .funding-difference .difference-heading h2,
+.fx-05 .home-faq-heading h2,
+.fx-05 .contact h2 { font: 600 clamp(2rem, 3.4vw, 3rem)/1.08 var(--fa-font) !important; letter-spacing: -.025em !important; text-transform: none; margin: 0; }
+.fx-05 .funding-how .funding-subtitle,
+.fx-05 .product-showcase .products-intro,
+.fx-05 .funding-difference .difference-heading .intro,
+.fx-05 .home-faq-heading p,
+.fx-05 .contact__card > p:not(.contact__alt) { font-size: 19px; font-weight: 400; line-height: 1.55; margin-top: 16px; }
+.fx-05 .funding-difference.clear .difference-heading { row-gap: 16px; }
+.fx-05 .funding-difference .difference-heading .intro { margin-top: 0; }
+@media (max-width: 620px) {
+  .fx-05 .funding-how .funding-subtitle,
+  .fx-05 .product-showcase .products-intro,
+  .fx-05 .funding-difference .difference-heading .intro,
+  .fx-05 .home-faq-heading p,
+  .fx-05 .contact__card > p:not(.contact__alt) { font-size: 17px; }
+}
+
+/* ---------- 06 · Left-aligned section headers ---------- */
+.fx-06 .funding-how .funding-header { text-align: left; margin-left: 0; }
+.fx-06 .funding-how.flowing .funding-subtitle:before { display: none; }
+.fx-06 .home-faq-heading { text-align: left; }
+.fx-06 .home-faq-heading h2 { margin-left: 0; }
+.fx-06 .home-faq-all { margin-left: 0; }
+.fx-06 .contact__card { text-align: left; margin-inline: 0; }
+.fx-06 .cform .btn { justify-self: start; }
+.fx-06 .cform__small { text-align: left; }
+
+/* ---------- 07 · Section labels above their headings ---------- */
+.fx-07 .product-showcase.chapters .products-heading { display: flex; flex-direction: column; }
+.fx-07 .product-showcase .products-category,
+.fx-07 .funding-difference .difference-heading .category { order: -1; margin: 0 0 14px; display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--fa-red-deep); }
+.fx-07 .funding-difference .difference-heading .category { margin-bottom: -2px; }
+.fx-07 .product-showcase .products-category::before,
+.fx-07 .funding-difference .difference-heading .category::before { content: ""; width: 10px; height: 10px; flex: none; background: var(--fa-red);
+  clip-path: polygon(35% 0, 65% 0, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%, 0 35%, 35% 35%); }
+
+/* ---------- 08 · One button ---------- */
+.fx-08 .hero__ctas .btn,
+.fx-08 .funding-how .funding-button,
+.fx-08 .funding-difference .apply-button,
+.fx-08 .cform .btn,
+.fx-08 .calc-slot .funding-calculator .calculator-footer .apply { font: 600 17px/1 var(--fa-font) !important; min-height: 54px; padding: 0 26px !important; gap: 14px !important; border-radius: 6px !important; }
+.fx-08 .hero__ctas .btn svg,
+.fx-08 .funding-how .funding-button svg,
+.fx-08 .funding-difference .apply-button svg,
+.fx-08 .cform .btn svg,
+.fx-08 .calc-slot .funding-calculator .calculator-footer .apply svg { width: 18px; height: 18px; }
+.fx-08 .top .btn { border-radius: 6px !important; }
+
+/* ---------- 09 · Readable small print ---------- */
+.fx-09 .calc-slot .calculator-footer p { font-size: 13px !important; max-width: 46ch !important; }
+.fx-09 .calc-slot .estimate-label,
+.fx-09 .calc-slot .secondary-result,
+.fx-09 .calc-slot .field-top,
+.fx-09 .calc-slot .result-hint { font-size: 14px !important; }
+.fx-09 .calc-slot .secondary-result strong { font-size: 19px !important; }
+.fx-09 .funding-how .funding-criteria small,
+.fx-09 .cform__small { font-size: 14px; }
+.fx-09 .product-showcase .prod-label { font-size: 15px; }
+
+/* ---------- 10 · Navigation beside the logo ---------- */
+@media (min-width: 1361px) {
+  .fx-10 .nav { margin-inline: 3rem auto; gap: 2rem; }
+}
+
+/* ---------- 11 · Mobile header: equal-size actions ---------- */
+@media (max-width: 600px) {
+  .fx-11 .top__actions { gap: 8px; }
+  .fx-11 .top__phone { width: 40px; height: 40px; }
+  .fx-11 .top__actions .btn--sm,
+  .fx-11 .top.is-scrolled .top__actions .btn--sm { height: 40px; padding: 0 14px !important; font-size: 14px; }
+  .fx-11 .mnav summary { width: 40px; height: 40px; border-radius: 50%; background: var(--fa-beige); }
+}
+@media (max-width: 420px) {
+  .fx-11 .top__phone,
+  .fx-11 .mnav summary { width: 38px; height: 38px; }
+  .fx-11 .top__actions .btn--sm,
+  .fx-11 .top.is-scrolled .top__actions .btn--sm { height: 38px; padding: 0 12px !important; }
+}
+
+/* ---------- 12 · Flat beige hero panel ---------- */
+.fx-12 .hero { background: var(--fa-beige); }
+.fx-12 .hero__brand-plus { display: none; }
+
+/* ---------- 13 · Hero facts as a full-width strip ---------- */
+@media (min-width: 861px) {
+  .fx-13 .hero { --strip: 108px; }
+  .fx-13 .hero__in { position: static; padding-bottom: calc(var(--strip) + 3rem); }
+  .fx-13 .hero__copy { position: static; }
+  .fx-13 .hero__brand-plus { display: none; }
+  .fx-13 .hero__photo,
+  .fx-13 .hero__edge { bottom: var(--strip); }
+  .fx-13 .proof { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; height: var(--strip); max-width: none; margin: 0;
+    padding: 0 var(--hero-edge); grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; align-content: center;
+    background: var(--fa-beige); border-top: 1px solid var(--fx-hair); }
+  .fx-13 .proof > div { padding-inline: 28px; border-left: 1px solid var(--fx-hair); }
+  .fx-13 .proof > div:first-child { padding-left: 0; border-left: 0; }
+  .fx-13 .hero__tagline { margin-top: 28px; }
+}
+
+/* ---------- 14 · Hero height capped ---------- */
+@media (min-width: 861px) {
+  .fx-14 .hero__in { min-height: clamp(560px, calc(100svh - 62px), 720px); }
+  .fx-13.fx-14 .hero__in { min-height: clamp(640px, calc(100svh - 62px), 800px); }
+}
+
+/* ---------- 15 · Hero buttons as a matched pair ---------- */
+.fx-15 .hero__ctas { gap: 12px; }
+.fx-15 .hero__call { display: inline-flex; align-items: center; min-height: 54px; padding: 0 24px; border: 2px solid var(--fa-charcoal); border-radius: 6px;
+  text-decoration: none; font-size: 17px; font-weight: 600; transition: background-color .15s, color .15s; }
+.fx-15 .hero__call:hover { background: var(--fa-charcoal); color: var(--fa-beige); }
+@media (max-width: 520px) { .fx-15 .hero__ctas > * { flex: 1 1 100%; justify-content: center; } }
+
+/* ---------- 16 · Step numbers scaled to the content ---------- */
+.fx-16 .funding-how .phase-art { height: auto; display: flex; align-items: center; gap: 18px; margin-bottom: 20px; }
+.fx-16 .funding-how .stage-number { font-size: 64px; letter-spacing: -.04em; }
+.fx-16 .funding-how .stage-icon { position: static; width: 48px; height: 48px; background: none; }
+@media (max-width: 520px) {
+  .fx-16 .funding-how .phase-art { height: auto; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .fx-16 .funding-how .stage-number { font-size: 46px; }
+  .fx-16 .funding-how .stage-icon { width: 38px; height: 38px; }
+}
+
+/* ---------- 17 · Straight timeline between steps ---------- */
+.fx-17 .funding-how .journey-line { display: none; }
+.fx-17 .funding-how .funding-stage { padding-top: 30px; border-top: 2px solid var(--fx-hair); }
+.fx-17 .funding-how .funding-stage::before { content: ""; position: absolute; top: -8px; left: 0; width: 14px; height: 14px; background: var(--fa-red);
+  clip-path: polygon(35% 0, 65% 0, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%, 0 35%, 35% 35%); }
+@media (min-width: 801px) {
+  .fx-17 .funding-how .funding-stages { column-gap: 0; }
+  .fx-17 .funding-how .funding-stage { padding-right: 32px; }
+}
+
+/* ---------- 18 · Requirements in their own panel ---------- */
+.fx-18 .funding-how .funding-criteria,
+.fx-18 .funding-how.flowing .funding-criteria { margin-top: 56px; padding: 28px 32px; border: 0; background: var(--fa-beige); }
+.fx-04.fx-18 .funding-how .funding-criteria { background: var(--fa-beige); }
+.fx-18 .funding-how .criteria-copy li { font-weight: 600; }
+@media (max-width: 520px) { .fx-18 .funding-how .funding-criteria { padding: 24px 20px; } }
+
+/* ---------- 19 · Products side by side ---------- */
+@media (min-width: 1000px) {
+  .fx-19 .product-showcase.chapters .product-chapters { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px; row-gap: 0; }
+  .fx-19 .product-showcase.chapters .prod-item { display: grid; grid-template-rows: subgrid; grid-row: span 5; grid-template-columns: none; min-height: 0; }
+  .fx-19 .product-showcase.chapters .prod-image,
+  .fx-19 .product-showcase.chapters .prod-item:nth-child(even) .prod-image { grid-row: 1; order: 0; min-height: 0; aspect-ratio: 4 / 3;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+  .fx-19 .product-showcase.chapters .chapter-copy { display: grid; grid-template-rows: subgrid; grid-row: 2 / span 4; padding: 20px 32px 32px; }
+  .fx-19 .product-showcase.chapters .prod-question { font-size: 19px; margin: 0 0 18px; }
+  .fx-19 .product-showcase.chapters .prod-name { font-size: clamp(24px, 2vw, 28px); }
+  .fx-19 .product-showcase.chapters .prod-description { font-size: 17px; margin-top: 14px; }
+  .fx-19 .product-showcase.chapters .prod-link { align-self: end; margin-top: 24px; }
+}
+
+/* ---------- 20 · Whole product card is clickable ---------- */
+.fx-20 .product-showcase .prod-item { position: relative; }
+.fx-20 .product-showcase .prod-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.fx-20 .product-showcase .prod-name { transition: color .15s; }
+.fx-20 .product-showcase .prod-item:hover .prod-name { color: var(--fa-red-deep); }
+.fx-20 .product-showcase .prod-item:hover .prod-link svg { transform: translateX(4px); }
+.fx-20 .product-showcase .prod-link:focus-visible { outline: 0; }
+.fx-20 .product-showcase .prod-item:has(.prod-link:focus-visible) { outline: 3px solid var(--fa-red-deep); outline-offset: 4px; }
+
+/* ---------- 21 · Calculator at full width ---------- */
+@media (min-width: 621px) {
+  .fx-21 .calc-slot.inline .calc-wrap { width: var(--fx-container); }
+  .fx-21 .calc-slot.inline .funding-calculator { padding: 32px 40px 28px; }
+  .fx-21 .calc-slot .calculator-header { margin-bottom: 20px; }
+  .fx-21 .calc-slot .calculator-header h2 { font-size: 28px; }
+  .fx-21 .calc-slot.inline .calculation { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+  .fx-21 .calc-slot.inline .controls { gap: 40px; }
+  .fx-21 .calc-slot.inline .field-top output { font-size: 30px !important; }
+  .fx-21 .calc-slot.inline .calculator-footer { margin-top: 24px; padding-top: 18px; }
+}
+
+/* ---------- 22 · Result in a charcoal panel ---------- */
+.fx-22 .calc-slot.inline .estimate { background: var(--fa-charcoal); color: var(--fa-beige); padding: 22px 26px; border: 0; border-radius: 6px; }
+.fx-22 .calc-slot.inline .estimate-value { color: var(--fa-beige); font-size: 44px; }
+.fx-22 .calc-slot.inline .secondary-result strong { color: var(--fa-white); }
+.fx-22 .calc-slot.inline .result-hint { color: var(--fa-beige); }
+@media (max-width: 620px) {
+  .fx-22 .calc-slot.inline .estimate { padding: 16px 18px; }
+  .fx-22 .calc-slot.inline .estimate-value { font-size: 32px; }
+  .fx-22 .calc-slot.inline .secondary-result { border-left-color: rgba(247, 234, 210, .3); }
+}
+
+/* ---------- 23 · Bigger calculator controls ---------- */
+.fx-23 .calc-slot .product-tabs button { min-height: 44px; padding: 8px 16px; font-size: 14px; }
+.fx-23 .calc-slot input[type=range] { height: 36px !important; }
+.fx-23 .calc-slot input[type=range]::-webkit-slider-runnable-track { height: 6px; }
+.fx-23 .calc-slot input[type=range]::-webkit-slider-thumb { width: 24px; height: 24px; margin-top: -9px; }
+.fx-23 .calc-slot input[type=range]::-moz-range-thumb { width: 18px; height: 18px; }
+@media (max-width: 620px) {
+  .fx-23 .calc-slot .product-tabs { width: 100%; margin-left: 0; }
+  .fx-23 .calc-slot .product-tabs button { flex: 1; }
+}
+
+/* ---------- 24 · One continuous highlighted column ---------- */
+.fx-24 .funding-difference.clear .data-table .ours { background: var(--fa-beige); }
+.fx-24 .funding-difference.clear .data-table thead .ours { background: var(--fa-red-deep); color: var(--fa-white); border-radius: 6px 6px 0 0; }
+.fx-24 .funding-difference.clear .data-table tbody tr:last-child .ours { border-radius: 0 0 6px 6px; border-bottom-color: transparent; }
+.fx-24 .funding-difference.clear .data-table tbody td.ours { border-bottom-color: rgba(64, 64, 64, .1); }
+.fx-24 .funding-difference.clear .data-table tbody td:not(.ours) { color: var(--fa-logo-grey); }
+.fx-24 .funding-difference.clear .data-table tbody th { font-weight: 600; }
+.fx-24 .funding-difference .table-brand .brand-favicon { background: var(--fa-white); border-radius: 50%; }
+
+/* ---------- 25 · Apply button under our column ---------- */
+@media (min-width: 621px) {
+  .fx-25 .funding-difference .section-end,
+  .fx-25 .funding-difference.clear .section-end { padding-left: 18%; margin-top: 24px; justify-content: flex-start; }
+  .fx-25 .funding-difference .apply-button { width: 33.333%; }
+}
+
+/* ---------- 26 · Compact comparison on phones ---------- */
+@media (max-width: 620px) {
+  .fx-26 .funding-difference .stacked-table tbody tr { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; padding: 20px 0; }
+  .fx-26 .funding-difference .stacked-table tbody th { grid-column: 1 / -1; padding: 0 !important; font-size: 18px; }
+  .fx-26 .funding-difference .stacked-table td { display: flex; flex-direction: column; gap: 2px; padding: 0 !important; font-size: 15px; }
+  .fx-26 .funding-difference .stacked-table td.ours { grid-column: 1 / -1; padding: 12px 14px !important; font-size: 17px; background: var(--fa-beige); }
+  .fx-26 .funding-difference .stacked-table td:before { font-size: 13px; }
+}
+
+/* ---------- 27 · FAQs in two columns ---------- */
+@media (min-width: 900px) {
+  .fx-27 .home-faq-inner { width: var(--fx-container); display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto 1fr; column-gap: clamp(40px, 6vw, 96px); align-items: start; }
+  .fx-27 .home-faq-heading { grid-column: 1; grid-row: 1; text-align: left; margin: 0; }
+  .fx-27 .home-faq-heading h2 { margin-left: 0; }
+  .fx-27 .home-faq-list { grid-column: 2; grid-row: 1 / span 2; border-top: 1px solid rgba(64, 64, 64, .22); }
+  .fx-27 .home-faq-all { grid-column: 1; grid-row: 2; align-self: start; margin: 28px 0 0; }
+}
+
+/* ---------- 28 · Contact in two columns ---------- */
+@media (min-width: 900px) {
+  .fx-28 .contact__card { max-width: none; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto auto 1fr;
+    column-gap: clamp(40px, 6vw, 96px); text-align: left; align-items: start; }
+  .fx-28 .contact__card > h2 { grid-column: 1; grid-row: 1; }
+  .fx-28 .contact__card > p:not(.contact__alt) { grid-column: 1; grid-row: 2; margin-bottom: 0; }
+  .fx-28 .contact__card > .contact__alt { grid-column: 1; grid-row: 3; margin-top: 20px; }
+  .fx-28 .cform { grid-column: 2; grid-row: 1 / span 3; }
+  .fx-28 .cform .btn { justify-self: start; }
+  .fx-28 .cform__small { text-align: left; }
+}
+
+/* ---------- 29 · Tidier form fields ---------- */
+.fx-29 .cform { gap: 12px; }
+.fx-29 .cform input,
+.fx-29 .cform textarea { min-height: 54px; padding: 15px 16px; border-radius: 6px; border: 1px solid rgba(64, 64, 64, .22); }
+.fx-29 .cform textarea { min-height: 150px; }
+.fx-29 .cform input:focus,
+.fx-29 .cform textarea:focus { border-color: var(--fa-charcoal); box-shadow: 0 0 0 3px rgba(234, 70, 40, .25); }
+
+/* ---------- 30 · Two-row footer ---------- */
+.fx-30 .foot { padding-block: 44px 32px; }
+.fx-30 .foot__row { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "logo social" "links copy"; gap: 28px 32px; align-items: center; }
+.fx-30 .foot__logo { grid-area: logo; }
+.fx-30 .foot__logo img { height: 34px; }
+.fx-30 .foot__links { grid-area: links; margin: 0; gap: .4rem 1.8rem; }
+.fx-30 .social { grid-area: social; }
+.fx-30 .foot__copy { grid-area: copy; }
+.fx-30 .foot .foot__open-banking { margin-top: 28px; padding-top: 24px; }
+.fx-30 .foot .foot__open-banking p { max-width: 110ch; }
+@media (max-width: 600px) {
+  .fx-30 .foot__row { grid-template-columns: 1fr; grid-template-areas: "logo" "links" "social" "copy"; gap: 22px; }
+}

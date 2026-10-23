@@ -1,0 +1,47 @@
+[
+  {
+    "id": "listed-bank-1",
+    "name": "HSBC",
+    "logo": "assets/blog/2026/02/hsbc-300x81.png"
+  },
+  {
+    "id": "listed-bank-2",
+    "name": "Barclays",
+    "logo": "assets/blog/2026/02/barclays-300x200.png"
+  },
+  {
+    "id": "listed-bank-3",
+    "name": "Lloyds",
+    "logo": "assets/blog/2026/02/lloyds.jpg"
+  },
+  {
+    "id": "listed-bank-4",
+    "name": "Santander",
+    "logo": "assets/blog/2026/02/Santander_Logo-300x53.png"
+  },
+  {
+    "id": "listed-bank-5",
+    "name": "Metro Bank",
+    "logo": "assets/blog/2026/02/metro.png"
+  },
+  {
+    "id": "listed-bank-6",
+    "name": "Nationwide",
+    "logo": "assets/blog/2026/02/nationwide-300x100.png"
+  },
+  {
+    "id": "listed-bank-7",
+    "name": "NatWest",
+    "logo": "assets/blog/2026/02/Natwest-logo-300x83.jpg"
+  },
+  {
+    "id": "listed-bank-8",
+    "name": "Bank of Scotland",
+    "logo": "assets/blog/2026/02/scotland_logo-300x158.png"
+  },
+  {
+    "id": "listed-bank-9",
+    "name": "Virgin Money",
+    "logo": "assets/blog/2026/02/virgin_money_logo-300x300.jpg"
+  }
+]

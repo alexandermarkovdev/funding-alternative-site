@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /*-option-
+Disallow: /*-options.html
+Disallow: /*-preview.html
+Disallow: /apply-form-
+Disallow: /layout-compare.html
+Sitemap: https://fundingalternative.co.uk/sitemap.xml

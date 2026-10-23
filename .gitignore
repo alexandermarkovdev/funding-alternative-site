@@ -1,0 +1,8 @@
+# Kept on this computer only, not published
+brand-assets/reference/
+assets/test/
+.impeccable/live/
+Thumbs.db
+desktop.ini
+.DS_Store
+*.tmp

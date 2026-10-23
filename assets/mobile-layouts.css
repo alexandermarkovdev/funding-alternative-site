@@ -1,0 +1,93 @@
+/* Mobile corrections. The desktop design and footer structure are retained. */
+@media(max-width:1000px){
+  :root body .top .nav,:root body .top__login,:root body .top__phone span{display:none}
+  :root body .top .mnav{display:block}
+  :root body .top__in{width:100%;max-width:none;min-height:64px;padding-inline:16px;gap:8px}
+  :root body .top__logo{display:flex;align-items:center;min-height:44px;flex-shrink:0}
+  :root body .top__logo img,:root body .top.is-scrolled .top__logo img{height:auto;width:103px;max-width:100%}
+  :root body .top__actions{gap:4px;margin-left:auto;min-width:0;flex-shrink:0}
+  :root body .top__phone{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;min-width:44px;padding:0;flex:none}
+  :root body .top .top__actions .btn--sm,:root body .top.is-scrolled .top__actions .btn--sm{min-height:44px;white-space:nowrap;font-size:14px;padding:10px 12px;gap:6px;border-radius:6px}
+  :root body .mnav summary{width:44px;height:44px;min-height:44px}
+  :root body .mnav__panel{width:min(300px,calc(100vw - 24px));min-width:0;max-height:calc(100svh - 86px);overflow-y:auto;overscroll-behavior:contain;right:0;top:calc(100% + 8px)}
+  :root body .mnav__panel a{display:flex;align-items:center;min-height:44px;font-size:16px;white-space:normal}
+}
+@media(max-width:800px){
+  :root body main{min-width:0}
+  :root body main :is(h1,h2,h3){overflow-wrap:break-word}
+  :root body :is(.hero__copy,.bca-hero-copy,.calculator-intro,.calc-slot,.calc-wrap,.panels,.product-panel,.field,.fld,.resource-content,.article-content,.article-body){min-width:0}
+  :root body main :is(button,select,summary){min-height:44px}
+  :root body :is(.hero__call,.prod-link,.blog-read,.home-faq-all,.faq-categories a){display:inline-flex;align-items:center;min-height:44px}
+  :root body :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=hidden]),select,textarea){max-width:100%;min-width:0;font-size:16px!important}
+  :root body :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=hidden]),select){min-height:48px}
+  :root body :is(.cform,.contact__form,.ap__card,.bank-form) :is(input,select,textarea){box-sizing:border-box}
+  :root body .funding-calculator{width:100%;max-width:100%;min-width:0}
+  :root body .funding-calculator .calculation{grid-template-columns:1fr!important;gap:22px!important}
+  :root body .funding-calculator .controls{display:grid;grid-template-columns:1fr!important;gap:16px!important;min-width:0}
+  :root body .funding-calculator .estimate{min-width:0;border-left:0!important;border-top:1px solid #d8cdb8;padding:18px 0 0!important}
+  :root body .funding-calculator [role=tab]{min-height:44px!important;min-width:44px;font-size:14px!important;padding:10px!important}
+  :root body .funding-calculator .calculator-header{gap:16px;flex-wrap:wrap}
+  :root body .funding-calculator .calculator-footer{gap:16px;flex-wrap:wrap}
+  :root body .funding-calculator .calculator-footer .apply{min-height:48px}
+  :root body .funding-calculator .estimate-value{overflow-wrap:normal;max-width:100%}
+  :root body .funding-calculator input[type=range]{display:block;appearance:none;-webkit-appearance:none;width:100%;height:44px!important;min-height:44px;margin:0!important;padding:0!important;border:0!important;background:transparent!important;cursor:pointer;touch-action:pan-y}
+  :root body .funding-calculator input[type=range]::-webkit-slider-runnable-track{height:5px;border-radius:3px;background:linear-gradient(to right,#bf351d var(--range-fill,30%),#dfd3c0 var(--range-fill,30%))}
+  :root body .funding-calculator input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:20px;height:20px;margin-top:-7.5px;border:3px solid #fff;border-radius:50%;background:#bf351d;box-shadow:0 1px 3px #40372940}
+  :root body .funding-calculator input[type=range]::-moz-range-track{height:5px;border-radius:3px;background:#dfd3c0}
+  :root body .funding-calculator input[type=range]::-moz-range-progress{height:5px;background:#bf351d}
+  :root body .funding-calculator input[type=range]::-moz-range-thumb{width:16px;height:16px;border:3px solid #fff;border-radius:50%;background:#bf351d}
+  .mobile-topic-select{display:block;margin:20px 0 26px}.mobile-topic-select label{display:block;font-size:15px;font-weight:600;margin-bottom:8px}.mobile-topic-select select{font:400 16px/1.4 var(--fa-font);width:100%;min-height:48px;padding:11px 12px;border:1px solid #b8ac99;border-radius:5px;background:#fff;color:#404040}
+  :root body.mobile-layouts .blog-filters{display:none}
+  :root body .blog-card-featured{padding:0;gap:0;background:#fff}
+  :root body .blog-card-featured .blog-card-copy{padding:20px 0}
+  :root body .faq-categories{grid-template-columns:1fr!important;gap:0!important}
+  :root body .faq-categories a{display:flex;justify-content:space-between;min-height:48px;padding:12px 4px!important;font-size:16px!important}
+  :root body .article-toc summary{min-height:44px;align-content:center}
+  :root body .article-toc ol{gap:0}
+  :root body .article-toc a{display:flex;align-items:center;min-height:44px;padding:8px 0;line-height:1.5}
+  :root body :is(.article-body,.resource-content) table{display:block;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;font-size:16px}
+  :root body .bank-grid{grid-template-columns:1fr!important;gap:12px}
+  :root body .bank-choice{flex-direction:row;justify-content:flex-start;min-height:80px;padding:16px;gap:22px;font-size:17px}
+  :root body .bank-choice img{width:96px;max-width:96px;height:42px;object-fit:contain;flex:none}
+  :root body .bank-controls>div{width:100%}
+  :root body .bank-form{padding:0;border:0;margin-top:28px}
+  :root body .bank-form-grid{grid-template-columns:1fr!important;gap:22px}
+  :root body .bank-form-grid>.wide{grid-column:1}
+  :root body .bank-form :is(input,select){width:100%}
+  :root body .service-status{padding:16px;font-size:15px;line-height:1.6}
+  :root body .foot__row{min-width:0;gap:18px;flex-wrap:wrap}
+  :root body .foot__links{gap:0 18px;max-width:100%;justify-content:center}
+  :root body .foot__links :is(a,button){display:inline-flex;align-items:center;justify-content:center;min-height:44px;font-size:14px;line-height:1.4;white-space:normal;text-align:center}
+  :root body .foot__logo{display:flex;align-items:center;min-height:44px}
+  :root body .foot .social a{width:44px;height:44px;min-width:44px;min-height:44px}
+  :root body .foot__copy{white-space:normal;text-align:center;line-height:1.6}
+  :root body .foot .foot__open-banking{width:calc(100% - 40px);padding-top:22px;margin-top:20px}
+  :root body .foot .foot__open-banking p{font-size:13px;line-height:1.7;overflow-wrap:break-word}
+  :root body .consent-banner{left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));padding:16px;max-height:75svh}
+  :root body .consent-banner h2{font-size:22px}
+  :root body .consent-banner p{font-size:14px;line-height:1.55}
+  :root body .consent-banner .consent-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;margin-top:14px}
+  :root body .consent-banner .consent-actions button{min-height:44px;padding:10px 8px;font-size:14px}
+  :root body .consent-banner .consent-actions button:last-child{grid-column:1/-1}
+  :root body .consent-dialog{width:calc(100% - 24px);max-height:calc(100svh - 40px);padding:20px}
+  :root body .consent-dialog .consent-actions{gap:8px}
+  :root body .consent-dialog button{min-height:44px}
+  :root body .consent-choice{gap:18px}
+}
+@media(min-width:801px){.mobile-topic-select{display:none}}
+@media(max-width:560px){:root body .ap__row{grid-template-columns:1fr!important;gap:0!important}:root body .ap__card .steps-bar button{font-size:14px;min-height:44px}:root body .contact__alt{overflow-wrap:anywhere}}
+@media(max-width:360px){
+  :root{--hero-content-inset:24px!important}
+  :root body .top__in{padding-inline:10px;gap:6px}
+  :root body .top__logo img,:root body .top.is-scrolled .top__logo img{width:78px}
+  :root body .top .top__actions .btn--sm,:root body .top.is-scrolled .top__actions .btn--sm{padding:10px 9px;font-size:13px;gap:4px}
+  :root body .top__actions{gap:2px}
+  :root body .hero-stat dd,:root body .hero .proof dd{font-size:18px!important}
+  :root body .hero__copy h1,:root body .bca-hero h1{font-size:36px!important;line-height:1.08!important}
+  :root body .hero-stats,:root body .hero .proof{column-gap:16px!important}
+  :root body .resource-heading h1,:root body .blog-heading h1{font-size:36px}
+}
+
+@media(max-width:800px){:root body :is(.resource-content,.article-body) a{overflow-wrap:anywhere}}
+
+@media(max-width:800px){:root body .funding-calculator .estimate{display:flex!important;flex-direction:column;align-items:flex-start;gap:10px}:root body .funding-calculator .estimate-label{max-width:none;font-size:14px!important}:root body .funding-calculator .secondary-result{display:flex;justify-content:space-between;gap:16px;width:100%;border:0!important;padding:0!important}:root body .funding-calculator .calculator-footer .apply{width:100%;justify-content:center}}

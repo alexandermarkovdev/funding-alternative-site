@@ -1,0 +1,17 @@
+/* Selected story layout: two parallel columns, compact outcomes. */
+.bca-page.bca-v2 .bca-stories{background:#fffaf2;color:#404040;padding:44px 0}
+.bca-page.bca-v2 .bca-stories>.wrap{width:min(1200px,calc(100% - 60px))}
+.bca-page.bca-v2 .bca-stories .block__head{grid-template-columns:1.1fr 1fr;gap:70px;margin-bottom:30px;align-items:start}
+.bca-page.bca-v2 .bca-stories h2{font-size:34px;line-height:1.15;letter-spacing:-.025em;max-width:680px}
+.bca-page.bca-v2 .bca-stories .block__head>p{font-size:16px;line-height:1.55;color:#62594c;max-width:58ch}
+.bca-page.bca-v2 .bca-stories .kicker{margin-top:12px;font-size:12px}
+.bca-page.bca-v2 .bca-stories .cases{display:grid;grid-template-columns:1fr 1fr;gap:38px}
+.bca-page.bca-v2 .bca-stories .case{display:block;border-top:2px solid #bf351d;padding:18px 0 0;min-width:0}
+.bca-page.bca-v2 .bca-stories .case small{font-size:14px;color:#a4311d}
+.bca-page.bca-v2 .bca-stories .case__amount{font-size:37px;line-height:1.2;letter-spacing:-.025em;display:block;margin:5px 0 14px;color:#404040}
+.bca-page.bca-v2 .bca-stories .bca-story-copy>p{font-size:16px;line-height:1.55;color:#62594c;margin:0 0 16px;max-width:65ch;min-height:75px}
+.bca-page.bca-v2 .bca-stories .case__more{font-size:14px;font-weight:600;margin:0;text-underline-offset:4px}
+.bca-page.bca-v2 .bca-stories .case .pluslist{border-top:1px solid #dbceb8;padding:10px 0 0;margin:18px 0 0;list-style:none}
+.bca-page.bca-v2 .bca-stories .case .pluslist li{position:relative;display:block;border:0;padding:7px 0 7px 18px;font-size:15px;line-height:1.45;color:#62594c}
+.bca-page.bca-v2 .bca-stories .case .pluslist li:before{content:'';position:absolute;left:0;top:16px;width:5px;height:5px;border-radius:50%;background:#bf351d;transform:none;clip-path:none}
+@media(max-width:760px){.bca-page.bca-v2 .bca-stories{padding:28px 0}.bca-page.bca-v2 .bca-stories>.wrap{width:calc(100% - 44px)}.bca-page.bca-v2 .bca-stories h2{font-size:28px}.bca-page.bca-v2 .bca-stories .block__head{grid-template-columns:1fr;gap:16px;margin-bottom:25px}.bca-page.bca-v2 .bca-stories .cases{grid-template-columns:1fr;gap:28px}.bca-page.bca-v2 .bca-stories .bca-story-copy>p{min-height:0}}

@@ -1,0 +1,12 @@
+/* Consistent, legible primary navigation across the current pages. */
+.top .nav__menu a{grid-template-columns:40px minmax(0,1fr);white-space:normal}
+.top .nav__menu b,.top .nav__menu small{min-width:0;overflow-wrap:anywhere}
+.top .btn{background:#bf351d;color:#fffaf2}.top .btn:hover{background:#404040;color:#fffaf2}
+@media(max-width:420px){.top__in{gap:8px}.top__logo img,.top.is-scrolled .top__logo img{height:26px}.top__actions{gap:.35rem}.top__actions .btn--sm,.top.is-scrolled .top__actions .btn--sm{font-size:.82rem;padding:.7em .85em;gap:.4em}.top__phone{width:32px;height:32px}.mnav summary{width:34px;height:36px}}
+.nav>a[aria-current="page"],.mnav__panel a[aria-current="page"]{color:#9c2e1b}
+
+/* User supplied Open Banking disclosure, shared across the site. */
+.foot .foot__open-banking{width:min(1320px,calc(100% - 40px));margin:28px auto 0;padding-top:22px;border-top:1px solid #cbbdA7;color:#514a40;text-align:left}.foot .foot__open-banking p{font-size:13px;line-height:1.65;margin:0;max-width:none;font-weight:400}
+
+/* One hover line only: the sliding red bar (.nav__ink) marks the hovered link, so the text underline from visual change 03 is switched off. The current page keeps its deep red colour. */
+.top .nav>a:hover,.top .nav>a[aria-current="page"],.top .nav__drop>button:hover{text-decoration:none!important}

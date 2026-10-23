@@ -1,0 +1,38 @@
+{
+  "Red": {
+    "hex": "#ea4628",
+    "role": "primary"
+  },
+  "Beige": {
+    "hex": "#f7ead2",
+    "role": "primary"
+  },
+  "Charcoal": {
+    "hex": "#404040",
+    "role": "primary"
+  },
+  "Light Grey": {
+    "hex": "#efeff0",
+    "role": "primary"
+  },
+  "Deep Red": {
+    "hex": "#d2232a",
+    "role": "secondary"
+  },
+  "Black": {
+    "hex": "#030303",
+    "role": "secondary"
+  },
+  "Sky": {
+    "hex": "#9adbf5",
+    "role": "secondary"
+  },
+  "Teal": {
+    "hex": "#70a0b4",
+    "role": "secondary"
+  },
+  "Logo Grey": {
+    "hex": "#4d4d4d",
+    "role": "artwork"
+  }
+}

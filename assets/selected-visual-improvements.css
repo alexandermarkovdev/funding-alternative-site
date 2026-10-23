@@ -1,0 +1,14 @@
+/* Approved visual choices: 03, 04, 05, 06, 10, 11, 13, 16, 18, 19, 23, 25. Baked from the reviewed visual preview. */
+/* 03 */ .nav>a,.nav__drop>button{text-underline-offset:8px}.nav>a:hover,.nav>a[aria-current=page],.nav__drop>button:hover{text-decoration:underline!important;text-decoration-thickness:2px!important}
+/* 04 */ main h1{letter-spacing:-.035em!important;line-height:1.06!important;text-wrap:balance}
+/* 05 */ main h2{letter-spacing:-.025em!important;line-height:1.15!important;text-wrap:balance}
+/* 06 */ main .prose p:not(.kicker),.phero__lede,.hero__lede,.bca-story-copy>p{font-size:18px!important;line-height:1.75!important}
+/* 10 */ .bca-inline-photo,.founder-portrait>img,.partner-hero-photo{box-shadow:0 15px 36px #40342022!important}
+/* 11 */ .btn,.apply,.prod-link{border-radius:8px!important}
+/* 13 */ .btn,.apply{box-shadow:0 5px 12px #94321c24!important}
+/* 16 */ .bca-facts .proof dd,.hero__proof dd{font-size:27px!important;font-weight:600!important;letter-spacing:-.02em}.bca-facts .proof dt{font-size:13px!important}
+/* 18 */ .calc-slot input[type=range]{height:8px!important;accent-color:#bf351d!important}.calc-slot .field-top output{font-size:25px!important;letter-spacing:-.02em}
+/* 19 */ .home-faq-item,.faq details,.qa__group details{background:transparent!important;border-radius:0!important;box-shadow:none!important;border:0!important;border-bottom:1px solid #c6b497!important}
+/* 23 */ .review{border-left:1px solid #b29a70!important;padding-left:24px!important}.review blockquote{font-size:22px!important;line-height:1.55!important}.review figcaption{margin-top:18px!important;font-weight:600!important}
+/* 25 */ .foot{background:#404040!important;color:#fff3df!important}.foot a,.foot__copy,.foot .foot__open-banking{color:#eadcc6!important}.foot__logo img{filter:brightness(0) invert(1)}.foot .social a{background:#fbf4e7!important;color:#404040!important}
+@media(max-width:650px){main .prose p:not(.kicker),.phero__lede,.bca-story-copy>p{font-size:17px!important}.bca-facts .proof dd{font-size:24px!important}.top .btn{padding:9px 11px!important}}

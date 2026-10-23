@@ -1,0 +1,268 @@
+/* Approved product-page layout changes (Business Cash Advance review): 01, 02, 03, 04, 07, 08, 09, 10, 11, 12,
+   13, 14, 15, 16, 17, 18, 19, 20, 21, 23. Shared by the BCA, MCA and SIF pages, which use the same template.
+   Baked from the reviewed preview (layout-compare.html?page=bca). Brand palette only; no copy or images changed. */
+
+:root {
+  --fx-container: min(1320px, 100% - 2 * var(--gutter));
+  --fx-edge: max(var(--gutter), (100vw - 1320px) / 2);
+  --fx-space: clamp(3.5rem, 7vw, 6rem);
+  --fx-hair: rgba(64, 64, 64, .16);
+  --fx-plus: polygon(35% 0, 65% 0, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%, 0 35%, 35% 35%);
+}
+
+/* ---------- 01 · One shared grid (homepage 01) ---------- */
+:root .top__in { width: var(--fx-container); margin-inline: auto; padding-inline: 0; }
+:root .foot .wrap,
+:root .foot .foot__open-banking,
+:root .bca-page .wrap,
+:root .bca-page.bca-v2 .bca-stories > .wrap,
+:root .bca-page .bca-screen-opening .bca-facts-band .wrap,
+:root .bca-page .bca-visual-repayments .inner,
+:root .bca-page .bca-featured-reviews .inner { width: var(--fx-container); max-width: none; }
+@media (min-width: 901px) {
+  :root .bca-page.bca-v2 .bca-screen-opening .bca-hero-copy { padding-left: var(--fx-edge); }
+}
+
+/* ---------- 02 · One vertical rhythm (homepage 02) ---------- */
+:root .bca-page.bca-v2 :is(.bca-overview, .bca-visual-repayments, .bca-cost, .bca-stories, .bca-featured-reviews, .bca-products, .contact) { padding-block: var(--fx-space); }
+:root .bca-page.bca-v2 :is(.bca-stories .block__head, .bca-visual-repayments .section-heading, .bca-featured-reviews .reviews-heading, .bca-products .fit__head) { margin-bottom: 48px; }
+:root .bca-page.bca-v2 .bca-overview .ledger { margin-top: 64px; }
+@media (max-width: 620px) {
+  :root .bca-page.bca-v2 :is(.bca-stories .block__head, .bca-visual-repayments .section-heading, .bca-featured-reviews .reviews-heading, .bca-products .fit__head) { margin-bottom: 32px; }
+  :root .bca-page.bca-v2 .bca-overview .ledger { margin-top: 40px; }
+}
+
+/* ---------- 03 · Backgrounds that alternate (homepage 04) ---------- */
+:root .bca-page.bca-v2 .bca-overview { background: var(--fa-white); }
+:root .bca-page.bca-v2 .bca-overview .bca-eligibility { background: var(--fa-beige); }
+:root .bca-page.bca-v2 .bca-visual-repayments { background: var(--fa-beige); }
+:root .bca-page.bca-v2 .bca-cost { background: var(--fa-charcoal); }
+:root .bca-page.bca-v2 .bca-cost .block__head h2,
+:root .bca-page.bca-v2 .bca-cost .block__head > p,
+:root .bca-page.bca-v2 .bca-cost .block__head .kicker { color: var(--fa-beige); }
+:root .bca-page.bca-v2 .bca-cost .calc-slot .funding-calculator { background: var(--fa-beige); }
+:root .bca-page.bca-v2 .bca-stories { background: var(--fa-beige); }
+:root .bca-page.bca-v2 .bca-stories .case,
+:root .bca-page.bca-v2 .bca-stories .case .pluslist { border-color: var(--fx-hair); }
+:root .bca-page.bca-v2 .bca-featured-reviews { background: var(--fa-white); }
+:root .bca-page.bca-v2 .bca-products { background: var(--fa-beige); }
+:root .bca-page.bca-v2 .contact { background: var(--fa-white); }
+:root .bca-page .cform input,
+:root .bca-page .cform textarea { background: var(--fa-grey-light); }
+
+/* ---------- 04 · One heading style (homepage 05) ---------- */
+:root .bca-page.bca-v2 :is(.bca-overview .prose h2, .bca-visual-repayments .section-heading h2, .bca-cost .block__head h2, .bca-stories h2, .bca-featured-reviews .reviews-heading h2, .bca-products .fit__head h2, .contact h2) {
+  font: 600 clamp(2rem, 3.4vw, 3rem)/1.08 var(--fa-font) !important; letter-spacing: -.025em !important; text-transform: none; max-width: 22ch; }
+:root .bca-page.bca-v2 :is(.bca-stories .block__head > p, .bca-cost .block__head > p, .bca-visual-repayments .section-heading > p, .bca-products .fit__head > p:last-child, .contact__card > p:not(.contact__alt)) { font-size: 19px; line-height: 1.55; }
+:root .bca-page .contact__card > p:not(.contact__alt) { margin-top: 16px; }
+:root .bca-page .bca-visual-repayments .section-heading,
+:root .bca-page.bca-v2 .bca-stories .block__head { align-items: end; }
+@media (max-width: 620px) {
+  :root .bca-page.bca-v2 :is(.bca-stories .block__head > p, .bca-cost .block__head > p, .bca-visual-repayments .section-heading > p, .bca-products .fit__head > p:last-child, .contact__card > p:not(.contact__alt)) { font-size: 17px; }
+}
+
+/* ---------- 07 · One button size (homepage 08) ---------- */
+:root .bca-page.bca-v2 .bca-hero .phero__ctas .btn,
+:root .bca-page .bca-visual-repayments .apply,
+:root .bca-page .calc-slot .funding-calculator .calculator-footer .apply,
+:root .bca-page .cform .btn { font: 600 17px/1 var(--fa-font) !important; min-height: 54px; padding: 0 26px !important; gap: 14px !important; border-radius: 6px !important; }
+:root .top .btn { border-radius: 6px !important; }
+
+/* ---------- 08 · Readable small print (homepage 09) ---------- */
+:root .bca-page .bca-screen-opening .crumbs { font-size: 14px; }
+:root .bca-page .bca-facts .proof dt,
+:root .bca-page .bca-facts .factcard__head small { font-size: 14px !important; }
+:root .bca-page .pluslist small { font-size: 14px; }
+:root .bca-page .bca-visual-repayments .example-label,
+:root .bca-page .bca-visual-repayments .graph-key { font-size: 14px; }
+:root .bca-page .calc-slot .calculator-footer p { font-size: 13px !important; max-width: 46ch !important; }
+:root .bca-page .calc-slot .field-top,
+:root .bca-page .calc-slot .estimate-label,
+:root .bca-page .calc-slot .secondary-result span,
+:root .bca-page .calc-slot .result-hint { font-size: 14px !important; }
+:root .bca-page .bca-products .fit__a small { font-size: 15px; }
+:root .bca-page .cform__small { font-size: 14px; }
+
+/* ---------- 09 · Menu beside the logo (homepage 10) ---------- */
+@media (min-width: 1361px) { :root .nav { margin-inline: 3rem auto; gap: 2rem; } }
+
+/* ---------- 10 · Tidy mobile header (homepage 11) ---------- */
+@media (max-width: 600px) {
+  :root .top__actions { gap: 8px; }
+  :root .top__phone { width: 40px; height: 40px; }
+  :root .top__actions .btn--sm,
+  :root .top.is-scrolled .top__actions .btn--sm { height: 40px; padding: 0 14px !important; font-size: 14px; }
+  :root .mnav summary { width: 40px; height: 40px; border-radius: 50%; background: var(--fa-beige); }
+}
+@media (max-width: 420px) {
+  :root .top__phone,
+  :root .mnav summary { width: 38px; height: 38px; }
+  :root .top__actions .btn--sm,
+  :root .top.is-scrolled .top__actions .btn--sm { height: 38px; padding: 0 12px !important; }
+}
+
+/* ---------- 11 · Flat beige hero (homepage 12) ---------- */
+:root .bca-screen-opening,
+:root .bca-page .bca-hero { background: var(--fa-beige); }
+
+/* ---------- 12 · Facts strip like the homepage (homepage 13) ---------- */
+:root .bca-page.bca-v2 .bca-screen-opening .bca-facts-band { border-top: 1px solid var(--fx-hair); padding: 22px 0; }
+:root .bca-page.bca-v2 .bca-screen-opening .bca-facts .proof > div { border-color: var(--fx-hair); padding-left: 28px; }
+:root .bca-page .bca-facts .proof dd { font-size: 25px !important; }
+@media (max-width: 900px) {
+  :root .bca-page.bca-v2 .bca-screen-opening .bca-facts .proof > div { padding-left: 0; }
+  :root .bca-page .bca-facts .proof dd { font-size: 22px !important; }
+}
+
+/* ---------- 13 · Other products as cards (homepage 19) ---------- */
+@media (min-width: 701px) {
+  :root .bca-page .bca-products .fit.fit--alternatives { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; row-gap: 0; }
+  :root .bca-page .bca-products .fit--alternatives .fit__col { display: grid; grid-template-rows: subgrid; grid-row: span 5; }
+  :root .bca-page.bca-v2 .bca-products .fit__col .btn { align-self: end; }
+}
+:root .bca-page .bca-products .fit__col { position: relative; background: var(--fa-white); padding: 0 0 32px; }
+:root .bca-page .bca-products .fit__col > :not(figure) { padding-inline: 32px; }
+:root .bca-page .bca-products .fit--alternatives .bca-product-photo { height: auto; aspect-ratio: 16 / 9; margin: 0 0 20px; clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+:root .bca-page .bca-products .fit__q { text-transform: none; color: var(--fa-red-deep); font-size: 19px; font-weight: 500; letter-spacing: 0; margin: 0 0 18px; }
+:root .bca-page .bca-products .fit__a { border: 0; padding-block: 0; margin: 0; }
+:root .bca-page .bca-products .fit__a b { font-size: clamp(24px, 2vw, 28px); max-width: none; }
+:root .bca-page .bca-products .fit__col > p:not(.fit__q) { margin: 14px 0 0; }
+:root .bca-page.bca-v2 .bca-products .fit__col .btn { align-self: flex-start; justify-self: start; margin-top: 24px; padding: 0 32px; min-height: 0; text-decoration: none; color: var(--fa-red-deep); font-size: 17px; box-shadow: none !important; }
+:root .bca-page.bca-v2 .bca-products .fit__col .btn:hover { color: var(--fa-red-deep); text-decoration: underline; }
+@media (max-width: 620px) {
+  :root .bca-page .bca-products .fit__col > :not(figure) { padding-inline: 22px; }
+  :root .bca-page.bca-v2 .bca-products .fit__col .btn { padding: 0 22px; }
+}
+
+/* ---------- 14 · Contact in two columns (homepage 28) ---------- */
+@media (min-width: 900px) {
+  :root .bca-page .contact__card { max-width: none; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto auto 1fr;
+    column-gap: clamp(40px, 6vw, 96px); text-align: left; align-items: start; }
+  :root .bca-page .contact__card > h2 { grid-column: 1; grid-row: 1; }
+  :root .bca-page .contact__card > p:not(.contact__alt) { grid-column: 1; grid-row: 2; margin-bottom: 0; }
+  :root .bca-page .contact__card > .contact__alt { grid-column: 1; grid-row: 3; margin-top: 20px; }
+  :root .bca-page .cform { grid-column: 2; grid-row: 1 / span 3; }
+  :root .bca-page .cform .btn { justify-self: start; }
+  :root .bca-page .cform__small { text-align: left; }
+}
+
+/* ---------- 15 · Tidier form fields (homepage 29) ---------- */
+:root .bca-page .cform { gap: 12px; }
+:root .bca-page .cform input,
+:root .bca-page .cform textarea { min-height: 54px; padding: 15px 16px; border-radius: 6px; border: 1px solid rgba(64, 64, 64, .22); }
+:root .bca-page .cform textarea { min-height: 150px; }
+:root .bca-page .cform input:focus,
+:root .bca-page .cform textarea:focus { border-color: var(--fa-charcoal); box-shadow: 0 0 0 3px rgba(234, 70, 40, .25); }
+
+/* ---------- 16 · Hero text on one rhythm ---------- */
+:root .bca-page.bca-v2 .bca-screen-opening .crumbs { margin-bottom: 28px; }
+:root .bca-page.bca-v2 .bca-screen-opening h1 { margin-bottom: 20px; }
+:root .bca-page.bca-v2 .bca-screen-opening .phero__lede,
+:root .bca-page.bca-v2 .bca-screen-opening .phero__lede + .phero__lede { font-size: 18px !important; line-height: 1.6 !important; color: var(--fa-charcoal); margin: 0 0 12px; max-width: 48ch; }
+:root .bca-page.bca-v2 .bca-screen-opening .phero__ctas { margin-top: 24px; }
+
+/* ---------- 17 · Eligibility panel tidied ---------- */
+:root .bca-page.bca-v2 .bca-overview .bca-eligibility { padding: 0 0 28px; }
+:root .bca-page .bca-inline-photo { box-shadow: none !important; margin: 0 0 28px; }
+:root .bca-page.bca-v2 .bca-eligibility h3,
+:root .bca-page.bca-v2 .bca-eligibility .pluslist { margin-inline: 32px; }
+:root .bca-page .bca-overview .bca-eligibility .pluslist li { border-color: var(--fx-hair); }
+@media (max-width: 620px) {
+  :root .bca-page.bca-v2 .bca-eligibility h3,
+  :root .bca-page.bca-v2 .bca-eligibility .pluslist { margin-inline: 22px; }
+}
+
+/* ---------- 18 · Three equal info columns ---------- */
+:root .bca-page .bca-overview .ledger { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; border-top-color: var(--fx-hair); }
+:root .bca-page .bca-overview .ledger .card { display: grid; grid-template-columns: 40px 1fr; column-gap: 14px; align-items: center; align-content: start; }
+:root .bca-page .bca-overview .ledger .disc { float: none; margin: 0; width: 40px; height: 40px; }
+:root .bca-page .bca-overview .ledger .card h3 { margin: 0; }
+:root .bca-page .bca-overview .ledger .card > :is(ul, p) { grid-column: 1 / -1; margin-top: 16px; }
+@media (max-width: 900px) {
+  :root .bca-page .bca-overview .ledger { grid-template-columns: 1fr; gap: 0; }
+  :root .bca-page .bca-overview .ledger .card { padding-block: 24px; }
+}
+
+/* ---------- 19 · Repayment options as matched panels ---------- */
+:root .bca-page .bca-visual-repayments .visual-methods { gap: 48px; }
+:root .bca-page .bca-visual-repayments .visual-methods .method { display: flex; flex-direction: column; background: var(--fa-white); padding: 32px; border-top: 3px solid var(--fa-red-deep); }
+:root .bca-page .bca-visual-repayments .visual-methods .example { margin-top: auto; padding-top: 20px; }
+:root .bca-page .bca-visual-repayments .repayment-diagram { margin-bottom: 12px; }
+:root .bca-page .bca-visual-repayments .graph-key { margin-bottom: 24px; }
+:root .bca-page .bca-visual-repayments .visual-or { top: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%;
+  background: var(--fa-beige); border: 1px solid var(--fx-hair); font-weight: 600; color: var(--fa-charcoal); }
+@media (max-width: 620px) {
+  :root .bca-page .bca-visual-repayments .visual-methods { gap: 20px; }
+  :root .bca-page .bca-visual-repayments .visual-methods .method { padding: 24px 20px; }
+}
+@media (max-width: 760px) { :root .bca-page .bca-visual-repayments .visual-or { display: none; } }
+
+/* ---------- 20 · Calculator lined up with its heading ---------- */
+:root .bca-page .bca-cost-grid { align-items: start; }
+:root .bca-page .bca-cost .calc-slot .funding-calculator { border-radius: 6px; padding: 32px; }
+:root .bca-page .bca-cost .calc-slot .estimate { background: var(--fa-white); padding: 20px 24px; }
+:root .bca-page .bca-cost .calc-slot .secondary-result { border-left-color: var(--fx-hair); }
+:root .bca-page .bca-cost .calc-slot .calculator-footer { border-top-color: var(--fx-hair); }
+@media (max-width: 620px) { :root .bca-page .bca-cost .calc-slot .funding-calculator { padding: 20px; } }
+
+/* ---------- 21 · Story cards ---------- */
+:root .bca-page.bca-v2 .bca-stories .cases { gap: 24px; }
+:root .bca-page.bca-v2 .bca-stories .case { display: flex; flex-direction: column; align-items: flex-start; gap: 0; background: var(--fa-white); border: 0; padding: 32px; }
+:root .bca-page.bca-v2 .bca-stories .bca-story-copy { display: contents; }
+:root .bca-page.bca-v2 .bca-stories .case__amount { margin: 6px 0 12px; }
+:root .bca-page.bca-v2 .bca-stories .bca-story-copy > p { min-height: 0; margin: 0; }
+:root .bca-page.bca-v2 .bca-stories .case .pluslist { order: 1; align-self: stretch; margin: 20px 0 0; }
+:root .bca-page.bca-v2 .bca-stories .case__more { order: 2; margin-top: auto; padding-top: 20px; }
+:root .bca-page.bca-v2 .bca-stories .case .pluslist li:before { width: 10px; height: 10px; top: 14px; border-radius: 0; background: var(--fa-red); clip-path: var(--fx-plus); }
+@media (max-width: 620px) { :root .bca-page.bca-v2 .bca-stories .case { padding: 24px 20px; } }
+
+/* ---------- 23 · Smaller quotes on phones ---------- */
+@media (max-width: 620px) {
+  :root .bca-page .bca-featured-reviews .review blockquote { font-size: 19px !important; line-height: 1.55 !important; }
+  :root .bca-page .bca-featured-reviews .featured-reviews > .review blockquote { margin: 16px 0 20px; }
+}
+
+/* ---------- MCA and SIF "how it works": the same approved treatment as BCA's repayments section ---------- */
+/* 02 rhythm, 03 beige band, 04 heading style */
+.bca-page.bca-v2 .product-how { padding-block: var(--fx-space); background: var(--fa-beige); border-top: 0; }
+.bca-page.bca-v2 .product-how .block__head { margin-bottom: 48px; }
+.bca-page.bca-v2 .product-how .block__head h2 { font: 600 clamp(2rem, 3.4vw, 3rem)/1.08 var(--fa-font) !important; letter-spacing: -.025em !important; text-transform: none; max-width: 22ch; }
+.bca-page.bca-v2 .product-how .block__head > p { font-size: 19px; line-height: 1.55; }
+@media (max-width: 620px) {
+  .bca-page.bca-v2 .product-how .block__head { margin-bottom: 32px; }
+  .bca-page.bca-v2 .product-how .block__head > p { font-size: 17px; }
+}
+/* 07 one button size */
+.bca-page.bca-v2 .product-how .btn { font: 600 17px/1 var(--fa-font) !important; min-height: 54px; padding: 0 26px !important; gap: 14px !important; border-radius: 6px !important; }
+/* 08 readable small print */
+.bca-page .product-how .diagram-note,
+.bca-page .product-how .day-column p,
+.bca-page .product-how .mca-sale-heading > div > span,
+.bca-page .product-how .allocation-labels span { font-size: 14px; }
+.bca-page .product-how .day-key span { font-size: 13px; }
+/* 19 matched white panels */
+.bca-page.bca-v2 .product-how .options { gap: 24px; border-top: 0; align-items: stretch; }
+.bca-page.bca-v2 .bca-repayments.product-how .options .card { background: var(--fa-white); padding: 32px; border-top: 3px solid var(--fa-red-deep); }
+.bca-page.bca-v2 .product-how .invoice-example { background: var(--fa-white); padding: 32px; border-top: 3px solid var(--fa-red-deep); }
+.bca-page.bca-v2 .sif-how .flow { border-top-color: var(--fx-hair); }
+@media (max-width: 760px) { .bca-page .product-how .journey-arrow { background: var(--fa-white); } }
+@media (max-width: 620px) {
+  .bca-page.bca-v2 .bca-repayments.product-how .options .card,
+  .bca-page.bca-v2 .product-how .invoice-example { padding: 24px 20px; }
+}
+/* SIF's hero button label is long enough to wrap on phones: keep the 07 button size but give two lines room */
+:root .bca-page.bca-v2.product-sif .bca-hero .phero__ctas .btn { padding: 12px 26px !important; line-height: 1.25 !important; }
+
+/* Header logo at the page margin, matching the homepage and the other pages */
+:root body .top__in { width: auto; margin-inline: 0; padding-inline: var(--gutter); }
+/* Hero text and facts strip start at the same page margin as the logo (no gap on wide screens) */
+@media (min-width: 901px) { :root body .bca-page.bca-v2 .bca-screen-opening .bca-hero-copy { padding-left: var(--gutter); } }
+:root body .bca-page .bca-screen-opening .bca-facts-band .wrap { width: calc(100% - 2 * var(--gutter)); }
+
+/* ---------- Product page top: shorter, narrower photo (chosen from the top-section ideas, version 1): photo about 40% wide and only as tall as the text ---------- */
+  @media (min-width: 901px) {
+    :root body .bca-page.bca-v2 .bca-screen-opening { min-height: 0; }
+    :root body .bca-page.bca-v2 .bca-screen-opening .bca-hero-grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+    :root body .bca-page.bca-v2 .bca-screen-opening .bca-hero-copy { padding-top: 56px; padding-bottom: 56px; }
+    :root body .bca-page .bca-screen-opening .bca-hero-photo { min-height: 0; margin-left: -4%; }
+  }

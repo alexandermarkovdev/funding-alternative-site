@@ -1,0 +1,25 @@
+/* Approved Apply-flow changes from the site critique: 03, 05, 06, 07.
+   Baked from the reviewed preview (layout-compare.html?page=apply); :root keeps each rule's preview strength. */
+
+/* ---------- 03 · Product carried into the form, in the site's order ---------- */
+:root #ap-prod .choice label:has(input[value="bca"]) { order: -2; }
+:root #ap-prod .choice label:has(input[value="mca"]) { order: -1; }
+
+
+/* ---------- 05 · Left column reads heading first ---------- */
+:root .ap__copy h2 { order: -3; margin: 0; padding: 0; border: 0; text-transform: none; font-weight: 600; letter-spacing: -.02em;
+  font-size: clamp(30px, 2.8vw, 40px); line-height: 1.1; }
+:root .ap__copy h2 + p { order: -2; }
+:root .ap__copy .ap__promises { order: -1; margin-bottom: 8px; }
+:root .ap__copy .ap__lead { padding-top: 22px; border-top: 1px solid rgba(247, 234, 210, .2); }
+
+
+/* ---------- 06 · Form card stays put ---------- */
+@media (min-width: 1001px) { :root .ap__grid { align-items: start; } }
+:root .ap .ap__card input:not([type=radio]):not([type=checkbox]):disabled { background: var(--fa-grey-light) !important; border-bottom: 1px solid transparent;
+  padding-inline: 12px; }
+:root .ap__card .fld:has(input:disabled) > label { left: 12px; }
+
+
+/* ---------- 07 · Form heading in the site's heading style ---------- */
+:root .ap__card h1 { text-transform: none; font-weight: 600; letter-spacing: -.02em; font-size: 30px; line-height: 1.1; }

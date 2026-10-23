@@ -1,0 +1,428 @@
+{
+  "pages": [
+    {
+      "path": "index.html",
+      "title": "Homepage"
+    },
+    {
+      "path": "business-cash-advance.html",
+      "title": "Business Cash Advance"
+    },
+    {
+      "path": "merchant-cash-advance.html",
+      "title": "Merchant Cash Advance"
+    },
+    {
+      "path": "selective-invoice-financing.html",
+      "title": "Selective Invoice Financing"
+    },
+    {
+      "path": "about-us.html",
+      "title": "About us"
+    },
+    {
+      "path": "faq.html",
+      "title": "FAQs"
+    },
+    {
+      "path": "apply.html",
+      "title": "Application"
+    },
+    {
+      "path": "partner-with-us.html",
+      "title": "Partner with us"
+    },
+    {
+      "path": "blog.html",
+      "title": "Blog"
+    },
+    {
+      "path": "privacy-policy.html",
+      "title": "Privacy Policy"
+    },
+    {
+      "path": "terms-conditions.html",
+      "title": "Terms &amp; Conditions"
+    },
+    {
+      "path": "cookie-policy.html",
+      "title": "Cookie Policy"
+    },
+    {
+      "path": "introducer-portal-faq.html",
+      "title": "Introducer Portal FAQ"
+    },
+    {
+      "path": "open-banking-institutions.html",
+      "title": "Institutions we work with"
+    },
+    {
+      "path": "open-banking-transactions.html",
+      "title": "New Open Banking connection"
+    },
+    {
+      "path": "bca-landing-page-google-ads.html",
+      "title": "Business Cash Advance"
+    },
+    {
+      "path": "mca-landing-page-google-ads.html",
+      "title": "Merchant Cash Advance"
+    },
+    {
+      "path": "sif-landing-page-google-ads.html",
+      "title": "Selective Invoice Financing"
+    },
+    {
+      "path": "thank-you.html",
+      "title": "Thank you"
+    },
+    {
+      "path": "thank-you-bca-landing-page.html",
+      "title": "Thank you"
+    },
+    {
+      "path": "thank-you-mca-landing-page.html",
+      "title": "Thank you"
+    },
+    {
+      "path": "thank-you-sif-landing-page.html",
+      "title": "Thank you"
+    },
+    {
+      "path": "blog/7-practical-ways-to-encourage-customers-to-pay-their-invoices-faster.html",
+      "title": "7 Practical Ways To Encourage Customers to Pay Their Invoices Faster"
+    },
+    {
+      "path": "blog/alternative-finance-for-uk-smes.html",
+      "title": "Alternative Finance for UK SMEs"
+    },
+    {
+      "path": "blog/april-newsletter.html",
+      "title": "April Newsletter"
+    },
+    {
+      "path": "blog/business-cash-advance-vs-bank-loan-a-clear-complete-comparison.html",
+      "title": "Business Cash Advance vs Bank Loan: A Clear, Complete Comparison"
+    },
+    {
+      "path": "blog/december-2025-newsletter.html",
+      "title": "December 2025 Newsletter"
+    },
+    {
+      "path": "blog/february-newsletter.html",
+      "title": "February Newsletter"
+    },
+    {
+      "path": "blog/index.html",
+      "title": "Opening Funding Alternative"
+    },
+    {
+      "path": "blog/january-newsletter.html",
+      "title": "January Newsletter"
+    },
+    {
+      "path": "blog/march-newsletter.html",
+      "title": "March Newsletter"
+    },
+    {
+      "path": "blog/may-newsletter.html",
+      "title": "May Newsletter"
+    },
+    {
+      "path": "blog/meet-the-new-funding-alternative-introducer-portal.html",
+      "title": "Meet the New Funding Alternative Introducer Portal"
+    },
+    {
+      "path": "blog/solving-uk-smb-seasonal-cashflow-problems.html",
+      "title": "Solving UK SMB Seasonal Cashflow Problems"
+    },
+    {
+      "path": "blog/step-by-step-guide-to-a-fast-business-funding-application.html",
+      "title": "Step-by-Step Guide to a Fast Business Funding Application"
+    },
+    {
+      "path": "blog/the-best-alternatives-to-bank-loans-for-smes.html",
+      "title": "The Best Alternatives to Bank Loans for SMEs"
+    },
+    {
+      "path": "blog/the-different-forms-of-invoice-financing.html",
+      "title": "The Different Forms of Invoice Financing"
+    },
+    {
+      "path": "blog/turn-outstanding-invoices-into-growth-capital.html",
+      "title": "Turn Outstanding Invoices into Growth Capital"
+    }
+  ],
+  "features": [
+    {
+      "id": 1,
+      "group": "Navigation",
+      "title": "Softer sticky-header shadow",
+      "page": "index.html",
+      "selector": ".top",
+      "how": "Watch the header as the page scrolls down.",
+      "difference": "Before: the existing header shadow. After: a softer shadow transition."
+    },
+    {
+      "id": 2,
+      "group": "Navigation",
+      "title": "Short product-menu entrance",
+      "page": "index.html",
+      "selector": ".nav__drop",
+      "how": "Watch the product menu opening, especially its top edge.",
+      "difference": "Before: appears immediately. After: fades in while moving down 5px. The fully open menus look the same."
+    },
+    {
+      "id": 3,
+      "group": "Navigation",
+      "title": "Product-menu row feedback",
+      "page": "index.html",
+      "selector": ".nav__drop",
+      "how": "Watch the first product-menu row as its background changes.",
+      "difference": "Before: immediate hover colour. After: colour eases in."
+    },
+    {
+      "id": 4,
+      "group": "Navigation",
+      "title": "Eased dropdown chevron",
+      "page": "index.html",
+      "selector": ".nav__drop",
+      "how": "Watch the small arrow beside Our products.",
+      "difference": "Before: existing arrow turn. After: a gentler easing and timing."
+    },
+    {
+      "id": 5,
+      "group": "Navigation",
+      "title": "Mobile menu entrance",
+      "page": "index.html",
+      "selector": ".top",
+      "how": "On mobile, watch the menu panel open.",
+      "difference": "Before: existing opening. After: a short fade and settle. Desktop navigation is unaffected."
+    },
+    {
+      "id": 6,
+      "group": "Navigation",
+      "title": "Consistent keyboard focus",
+      "page": "index.html",
+      "selector": ".top",
+      "how": "Watch the outline around the focused link or control.",
+      "difference": "Before: existing browser/site focus. After: a consistent dark red outline."
+    },
+    {
+      "id": 7,
+      "group": "Actions",
+      "title": "Button colour transitions",
+      "page": "index.html",
+      "selector": ".hero",
+      "how": "Watch the main button colour change.",
+      "difference": "Before: existing hover response. After: a short colour transition."
+    },
+    {
+      "id": 8,
+      "group": "Actions",
+      "title": "Subtle button press",
+      "page": "index.html",
+      "selector": ".hero",
+      "how": "Watch the button while it is pressed.",
+      "difference": "Before: existing pressed state. After: contracts to 98.5%, then releases."
+    },
+    {
+      "id": 9,
+      "group": "Actions",
+      "title": "Directional arrow movement",
+      "page": "index.html",
+      "selector": "#products",
+      "how": "Watch the arrow beside Learn more.",
+      "difference": "Before: stays in place. After: travels 3px toward the destination."
+    },
+    {
+      "id": 10,
+      "group": "Actions",
+      "title": "Text-link underline feedback",
+      "page": "privacy-policy.html",
+      "selector": ".resource-content",
+      "how": "Watch an article link underline.",
+      "difference": "Before: existing underline. After: a thicker underline and eased colour on hover."
+    },
+    {
+      "id": 11,
+      "group": "Products and articles",
+      "title": "Small product-photo zoom",
+      "page": "index.html",
+      "selector": "#products",
+      "how": "Watch the product photograph.",
+      "difference": "Before: existing photo. After: a small zoom when its Learn more link is hovered."
+    },
+    {
+      "id": 12,
+      "group": "Products and articles",
+      "title": "Product heading responds to links",
+      "page": "index.html",
+      "selector": "#products",
+      "how": "Watch the product name while its link is hovered.",
+      "difference": "Before: existing heading colour. After: changes to dark red."
+    },
+    {
+      "id": 13,
+      "group": "Products and articles",
+      "title": "Small blog-photo zoom",
+      "page": "blog.html",
+      "selector": ".blog-grid",
+      "how": "Watch the first blog photograph.",
+      "difference": "Before: existing photo response. After: a subtle zoom on link hover."
+    },
+    {
+      "id": 14,
+      "group": "Products and articles",
+      "title": "Article-card border feedback",
+      "page": "blog.html",
+      "selector": ".blog-grid",
+      "how": "Watch the rule beneath the blog card.",
+      "difference": "Before: beige divider. After: divider changes to dark red on link hover."
+    },
+    {
+      "id": 15,
+      "group": "Forms",
+      "title": "Clear field-focus transition",
+      "page": "apply.html",
+      "selector": "form",
+      "how": "Watch the border around a text field when focused.",
+      "difference": "Before: existing focus. After: a dark red border with a faint surrounding edge."
+    },
+    {
+      "id": 16,
+      "group": "Forms",
+      "title": "Quiet filled-field state",
+      "page": "apply.html",
+      "selector": "form",
+      "how": "Watch a field after text is entered and focus moves away.",
+      "difference": "Before: existing field background. After: a very slight warm tint. This is deliberately subtle."
+    },
+    {
+      "id": 17,
+      "group": "Forms",
+      "title": "Edited valid-field feedback",
+      "page": "apply.html",
+      "selector": "form",
+      "how": "Watch the border after a valid field is edited and blurred.",
+      "difference": "Before: existing border. After: a muted warm border. No validation rules change."
+    },
+    {
+      "id": 18,
+      "group": "Forms",
+      "title": "Validation-message appearance",
+      "page": "index.html",
+      "selector": "#contact",
+      "how": "Watch the field error message appear.",
+      "difference": "Before: text appears immediately. After: a short fade. Replay uses a sample message and does not submit the form."
+    },
+    {
+      "id": 19,
+      "group": "Forms",
+      "title": "Checkbox and radio feedback",
+      "page": "apply.html",
+      "selector": "form",
+      "how": "Watch the checkbox or radio as you hover it.",
+      "difference": "Before: existing control. After: the dark red accent subtly darkens."
+    },
+    {
+      "id": 20,
+      "group": "Forms",
+      "title": "Message box grows with your writing",
+      "page": "index.html",
+      "selector": "#contact",
+      "how": "Watch the message box while several lines are entered.",
+      "difference": "Before: its existing height. After: grows to fit your message, up to a limit."
+    },
+    {
+      "id": 21,
+      "group": "Calculators",
+      "title": "Slider progress track",
+      "page": "index.html",
+      "selector": ".funding-calculator",
+      "how": "Watch the slider track as its value changes.",
+      "difference": "Before: existing track. After: red filled portion follows the slider."
+    },
+    {
+      "id": 22,
+      "group": "Calculators",
+      "title": "Slider hover and keyboard feedback",
+      "page": "merchant-cash-advance.html",
+      "selector": ".funding-calculator",
+      "how": "Watch the slider thumb when focused.",
+      "difference": "Before: existing thumb. After: a soft focus ring and a slight size increase."
+    },
+    {
+      "id": 23,
+      "group": "Calculators",
+      "title": "Result update feedback",
+      "page": "index.html",
+      "selector": ".funding-calculator",
+      "how": "Watch the calculator result after a slider changes.",
+      "difference": "Before: immediate number update. After: the new result briefly takes the dark red accent. The calculation is the same."
+    },
+    {
+      "id": 24,
+      "group": "Calculators",
+      "title": "Calculator tab crossfade",
+      "page": "index.html",
+      "selector": ".funding-calculator",
+      "how": "Watch the calculator panel as the product tab changes.",
+      "difference": "Before: panel switches directly. After: the new panel briefly fades to full opacity."
+    },
+    {
+      "id": 25,
+      "group": "Reading and wayfinding",
+      "title": "Smooth FAQ opening and closing",
+      "page": "index.html",
+      "selector": "#home-faq",
+      "how": "Watch the FAQ answer open and close.",
+      "difference": "Before: instant height change. After: height opens and closes smoothly. The final open answer is identical."
+    },
+    {
+      "id": 26,
+      "group": "Reading and wayfinding",
+      "title": "Thin reading-progress indicator",
+      "page": "privacy-policy.html",
+      "selector": ".resource-content",
+      "how": "Watch just below the header as you scroll the policy.",
+      "difference": "Before: no reading indicator. After: a thin red line tracks your position."
+    },
+    {
+      "id": 27,
+      "group": "Reading and wayfinding",
+      "title": "Current contents-section marker",
+      "page": "privacy-policy.html",
+      "selector": ".resource-content",
+      "how": "Watch the contents links as you scroll between headings.",
+      "difference": "Before: unchanged contents links. After: the current section is underlined in dark red."
+    },
+    {
+      "id": 28,
+      "group": "Reading and wayfinding",
+      "title": "Back-to-top control",
+      "page": "privacy-policy.html",
+      "selector": ".resource-content",
+      "how": "Scroll down and watch the lower-right corner.",
+      "difference": "Before: no new button. After: a small Back to top control appears."
+    },
+    {
+      "id": 29,
+      "group": "Reading and wayfinding",
+      "title": "Search-result appearance",
+      "page": "open-banking-institutions.html",
+      "selector": ".bank-controls",
+      "how": "Watch bank cards after searching for HSBC.",
+      "difference": "Before: results appear directly. After: returned cards settle in with a short fade."
+    },
+    {
+      "id": 30,
+      "group": "Reading and wayfinding",
+      "title": "Smoother anchors with header clearance",
+      "page": "index.html",
+      "selector": "#how-it-works",
+      "how": "Watch the move to the funding steps section.",
+      "difference": "Before: existing anchor behaviour. After: a smooth scroll with space below the fixed header."
+    }
+  ]
+}

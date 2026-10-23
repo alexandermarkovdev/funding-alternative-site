@@ -1,0 +1,38 @@
+/* Apply flow improvements from the site critique, 01–07 (trust & the Apply flow).
+   Each change is scoped to a class on <html> (ax-01 … ax-07) so it can be switched on or off
+   from layout-compare.html?page=apply. Design/code only: no wording or figures are changed. */
+
+/* ---------- 01 · One primary red that passes contrast ---------- */
+/* Deep Red #d2232a with white text is 5.2:1; beige on #ea4628 was 3.3:1 */
+.ax-01 .ap__card .step__nav .btn:not(.btn--back),
+.ax-01 .top .btn,
+.ax-01 .cform .btn { background: var(--fa-red-deep) !important; color: var(--fa-white) !important; }
+.ax-01 .ap__card .step__nav .btn:not(.btn--back):hover,
+.ax-01 .top .btn:hover,
+.ax-01 .cform .btn:hover { background: var(--fa-charcoal) !important; color: var(--fa-white) !important; }
+
+/* ---------- 02 · Hide the reCAPTCHA set-up note ---------- */
+.ax-02 .captcha { display: none; }
+
+/* ---------- 03 · Product carried into the form, in the site's order ---------- */
+.ax-03 #ap-prod .choice label:has(input[value="bca"]) { order: -2; }
+.ax-03 #ap-prod .choice label:has(input[value="mca"]) { order: -1; }
+
+/* ---------- 04 · One form on the Apply page ---------- */
+.ax-04 main > #contact { display: none; }
+
+/* ---------- 05 · Left column reads heading first ---------- */
+.ax-05 .ap__copy h2 { order: -3; margin: 0; padding: 0; border: 0; text-transform: none; font-weight: 600; letter-spacing: -.02em;
+  font-size: clamp(30px, 2.8vw, 40px); line-height: 1.1; }
+.ax-05 .ap__copy h2 + p { order: -2; }
+.ax-05 .ap__copy .ap__promises { order: -1; margin-bottom: 8px; }
+.ax-05 .ap__copy .ap__lead { padding-top: 22px; border-top: 1px solid rgba(247, 234, 210, .2); }
+
+/* ---------- 06 · Form card stays put ---------- */
+@media (min-width: 1001px) { .ax-06 .ap__grid { align-items: start; } }
+.ax-06 .ap .ap__card input:not([type=radio]):not([type=checkbox]):disabled { background: var(--fa-grey-light) !important; border-bottom: 1px solid transparent;
+  padding-inline: 12px; }
+.ax-06 .ap__card .fld:has(input:disabled) > label { left: 12px; }
+
+/* ---------- 07 · Form heading in the site's heading style ---------- */
+.ax-07 .ap__card h1 { text-transform: none; font-weight: 600; letter-spacing: -.02em; font-size: 30px; line-height: 1.1; }

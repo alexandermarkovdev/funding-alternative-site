@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Layout Review</title>
+<link rel="stylesheet" href="brand-assets/tokens.css">
+<link rel="icon" href="brand-assets/logo/favicon/fa-favicon-33.svg">
+<style>
+  :root { --hair: rgba(64, 64, 64, .16); --bar: 64px; --side: 410px; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; background: var(--fa-grey-light); color: var(--fa-charcoal); font: 400 15px/1.45 var(--fa-font); overflow: hidden; }
+  button { font: inherit; color: inherit; cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--fa-red); outline-offset: 2px; }
+
+  /* Top bar */
+  .bar { height: var(--bar); background: var(--fa-charcoal); color: var(--fa-beige); display: flex; align-items: center; gap: 24px; padding: 0 20px; }
+  .bar__logo { height: 26px; width: auto; display: block; }
+  .bar__title { font-weight: 600; font-size: 17px; white-space: nowrap; }
+  .pick { font: 600 15px/1 var(--fa-font); color: var(--fa-charcoal); background: var(--fa-beige); border: 0; border-radius: 6px; padding: 9px 12px; cursor: pointer; }
+  .bar__mid { margin-inline: auto; display: flex; align-items: center; gap: 14px; }
+  .bar__right { display: flex; align-items: center; gap: 14px; }
+  .seg { display: flex; background: rgba(247, 234, 210, .12); border-radius: 6px; padding: 3px; }
+  .seg button { border: 0; background: transparent; color: var(--fa-beige); padding: 8px 16px; border-radius: 4px; font-weight: 600; min-width: 84px; }
+  .seg button:hover { background: rgba(247, 234, 210, .12); }
+  .seg button[aria-pressed="true"] { background: var(--fa-beige); color: var(--fa-charcoal); }
+  .seg--mode button[aria-pressed="true"][data-mode="after"] { background: var(--fa-red-deep); color: var(--fa-white); }
+  .hint { font-size: 13px; color: var(--fa-beige); opacity: .8; white-space: nowrap; }
+  kbd { font: 600 12px/1 var(--fa-font); border: 1px solid rgba(247, 234, 210, .4); border-radius: 4px; padding: 3px 6px; }
+  .bar a { color: var(--fa-beige); font-weight: 600; text-underline-offset: 4px; white-space: nowrap; }
+
+  .app { display: grid; grid-template-columns: var(--side) 1fr; height: calc(100% - var(--bar)); }
+
+  /* Sidebar */
+  .side { background: var(--fa-beige); border-right: 1px solid var(--hair); display: flex; flex-direction: column; min-height: 0; }
+  .side__head { padding: 18px 20px 14px; border-bottom: 1px solid var(--hair); }
+  .side__count { font-size: 15px; margin: 0 0 12px; }
+  .side__count b { font-size: 22px; font-weight: 700; margin-right: 4px; }
+  .side__actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip { border: 1px solid rgba(64, 64, 64, .3); background: var(--fa-white); border-radius: 6px; padding: 7px 12px; font-weight: 600; font-size: 14px; }
+  .chip:hover { border-color: var(--fa-charcoal); }
+  .chip--red { background: var(--fa-red-deep); border-color: var(--fa-red-deep); color: var(--fa-white); }
+  .chip--red:hover { background: var(--fa-charcoal); border-color: var(--fa-charcoal); }
+  .list { overflow-y: auto; padding: 4px 0 40px; flex: 1; }
+  .group { margin: 18px 20px 6px; font-weight: 700; font-size: 13px; color: var(--fa-red-deep); display: flex; align-items: center; gap: 8px; }
+  .group::before { content: ""; width: 9px; height: 9px; background: var(--fa-red);
+    clip-path: polygon(35% 0, 65% 0, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%, 0 35%, 35% 35%); }
+  .item { display: grid; grid-template-columns: 28px 1fr; gap: 0 10px; padding: 10px 20px 10px 16px; border-left: 4px solid transparent; }
+  .item:hover { background: rgba(255, 255, 255, .55); }
+  .item.is-active { background: var(--fa-white); border-left-color: var(--fa-red); }
+  .item input { appearance: none; margin: 2px 0 0; width: 22px; height: 22px; border-radius: 4px; border: 2px solid var(--fa-charcoal); background: var(--fa-white); cursor: pointer; display: grid; place-items: center; }
+  .item input:checked { background: var(--fa-charcoal); }
+  .item input:checked::after { content: ""; width: 10px; height: 6px; border: solid var(--fa-beige); border-width: 0 0 2.5px 2.5px; transform: translateY(-1px) rotate(-45deg); }
+  .item__go { all: unset; cursor: pointer; display: block; }
+  .item__go:focus-visible { outline: 3px solid var(--fa-red); outline-offset: 3px; }
+  .item__t { display: flex; gap: 8px; align-items: baseline; font-weight: 600; font-size: 15.5px; line-height: 1.3; }
+  .item__n { font-weight: 700; color: var(--fa-red-deep); font-variant-numeric: tabular-nums; flex: none; }
+  .item__d { display: block; margin-top: 3px; font-size: 14px; color: var(--fa-logo-grey); }
+  .item__v { display: inline-block; margin-left: 6px; font-size: 12px; font-weight: 600; padding: 1px 7px; border-radius: 999px; background: var(--fa-charcoal); color: var(--fa-beige); vertical-align: 1px; }
+  .item.is-off .item__t, .item.is-off .item__d { opacity: .55; }
+
+  /* Stage */
+  .stage { position: relative; min-width: 0; min-height: 0; display: flex; flex-direction: column; }
+  .stage__label { display: flex; align-items: center; gap: 10px; padding: 12px 24px; font-weight: 600; }
+  .stage__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--fa-charcoal); }
+  .is-after .stage__dot { background: var(--fa-red-deep); }
+  .stage__label small { font-weight: 400; color: var(--fa-logo-grey); font-size: 14px; }
+  .viewport { flex: 1; min-height: 0; display: flex; justify-content: center; padding: 0 24px 24px; }
+  .frame { position: relative; overflow: hidden; background: var(--fa-white); box-shadow: 0 0 0 1px var(--hair), 0 18px 40px rgba(64, 64, 64, .14); }
+  .frame iframe { position: absolute; top: 0; left: 0; border: 0; transform-origin: 0 0; background: var(--fa-white); }
+
+  @media (max-width: 1100px) {
+    :root { --side: 340px; }
+    .hint, .bar__title { display: none; }
+  }
+  @media (max-width: 760px) {
+    body { overflow: auto; }
+    .bar { height: auto; flex-wrap: wrap; padding: 12px 16px; gap: 10px; }
+    .bar__mid { margin: 0; }
+    .app { display: flex; flex-direction: column-reverse; height: auto; }
+    .stage { height: 75vh; }
+    .side { border-right: 0; }
+    .list { overflow: visible; }
+  }
+</style>
+</head>
+<body>
+<header class="bar">
+  <img class="bar__logo" src="brand-assets/logo/fa-logo-horizontal-on-dark.svg" alt="Funding Alternative">
+  <span class="bar__title">Layout review</span>
+  <select class="pick" id="page" aria-label="Page">
+    <option value="home">Homepage</option>
+    <option value="bca">Business Cash Advance</option>
+    <option value="apply">Apply flow</option>
+  </select>
+  <div class="bar__mid">
+    <div class="seg seg--mode" role="group" aria-label="Version">
+      <button type="button" data-mode="before" aria-pressed="false">Before</button>
+      <button type="button" data-mode="after" aria-pressed="true">After</button>
+    </div>
+    <span class="hint"><kbd>Space</kbd> flips between them</span>
+  </div>
+  <div class="bar__right">
+    <div class="seg seg--device" role="group" aria-label="Screen size">
+      <button type="button" data-device="desktop" aria-pressed="true">Desktop</button>
+      <button type="button" data-device="tablet" aria-pressed="false">Tablet</button>
+      <button type="button" data-device="mobile" aria-pressed="false">Mobile</button>
+    </div>
+    <a id="open-page" href="index-improved.html" target="_blank" rel="noopener">Open full page</a>
+  </div>
+</header>
+
+<div class="app">
+  <aside class="side" aria-label="Layout changes">
+    <div class="side__head">
+      <p class="side__count"><b id="count">0</b>of <span id="total">0</span> changes switched on</p>
+      <div class="side__actions">
+        <button class="chip" type="button" id="all-on">All on</button>
+        <button class="chip" type="button" id="all-off">All off</button>
+        <button class="chip chip--red" type="button" id="copy">Copy approved list</button>
+      </div>
+    </div>
+    <div class="list" id="list"></div>
+  </aside>
+
+  <section class="stage" aria-label="Preview">
+    <div class="stage__label"><span class="stage__dot"></span><span id="label">After</span><small id="sublabel"></small></div>
+    <div class="viewport" id="viewport">
+      <div class="frame" id="frame"><iframe id="site" title="Page preview"></iframe></div>
+    </div>
+  </section>
+</div>
+
+<script>
+const HOME = [
+  ['Whole page', [
+    [1, 'One shared grid', 'Header, hero, every section and the footer now start on the same left edge. Before, content widths ranged from 780px to 1760px.', '#how-it-works'],
+    [2, 'One vertical rhythm', 'Every section gets the same top and bottom spacing, and every heading the same gap to its content. Before, they varied between 30px and 82px.', '#products'],
+    [3, 'Brand colours for text and accents', 'About 15 one-off reds, browns and greys are swapped for brand Red, Deep Red, Charcoal and Logo Grey.', '#how-it-works'],
+    [4, 'Backgrounds that alternate', 'Sections alternate between white, beige and charcoal, so each one has a clear edge. Before, four near-identical creams blurred together.', '#funding-calculator'],
+    [5, 'One heading style', 'Every section heading uses the same size, weight and spacing, including "Get in touch", which was the only all-caps one. Intros match too.', '#why-us'],
+    [6, 'Left-aligned headings', 'Headings no longer switch between centred and left-aligned. The centred red rule under "How does our funding work?" is gone.', '#how-it-works'],
+    [7, 'Labels above headings', '"Our products" and "Why us" move above their headings, where a label belongs, with the brand plus mark.', '#products'],
+    [8, 'One button size', 'All six Apply / Send buttons share the same height, padding, 6px corners and arrow spacing.', '.hero__ctas'],
+    [9, 'Readable small print', 'Disclaimers and calculator labels go up to 13–14px (some were 11px).', '.calculator-footer'],
+  ]],
+  ['Header', [
+    [10, 'Menu beside the logo', 'The menu groups next to the logo instead of floating in the middle, so the header reads in two clear groups.', '.top', 'desktop'],
+    [11, 'Tidy mobile header', 'Phone, Apply and menu become three equal-height controls with even gaps.', '.top', 'mobile'],
+  ]],
+  ['Hero', [
+    [12, 'Flat beige panel', 'A flat brand beige replaces the cream-to-beige fade, and the faint plus behind the headline is removed.', '.hero'],
+    [13, 'Key facts as a strip', 'The four facts become a full-width strip under the photo, matching the product pages.', '.proof', 'desktop'],
+    [14, 'Hero height capped', 'The hero no longer fills very tall screens, so the next section starts sooner.', '.hero', 'desktop'],
+    [15, 'Matched button pair', '"Speak to a funding specialist" becomes an outlined button the same height as "Apply now".', '.hero__ctas'],
+  ]],
+  ['How it works', [
+    [16, 'Smaller step numbers', 'Step numbers shrink from 112px to 64px and sit beside their icons, so the step titles lead.', '.funding-stages'],
+    [17, 'Straight timeline', 'A straight line with plus markers replaces the wavy dashed line that ran through the icons.', '.funding-stages'],
+    [18, 'Requirements panel', '"Before you apply" gets its own beige panel, with the button aligned inside it.', '.funding-criteria'],
+  ]],
+  ['Products', [
+    [19, 'Products side by side', 'The three products sit side by side for easy comparison. Names, descriptions and links line up across the cards.', '.product-chapters', 'desktop'],
+    [20, 'Whole card is clickable', 'Clicking anywhere on a product card opens its page, with a hover and keyboard-focus state.', '.product-chapters'],
+  ]],
+  ['Calculator', [
+    [21, 'Full-width calculator', 'The calculator uses the full content width with larger figures, instead of a narrow 780px box.', '#funding-calculator', 'desktop'],
+    [22, 'Result in a charcoal panel', 'The answer sits in a charcoal panel so it stands out from the controls.', '.product-panel:not([hidden]) .estimate'],
+    [23, 'Bigger controls', 'Product tabs and slider handles get 44px touch targets. On phones, the tabs span the full width.', '.product-tabs'],
+  ]],
+  ['Comparison table', [
+    [24, 'One continuous highlight', 'Our column reads as one beige panel with a Deep Red header. The other columns are slightly quieter.', '.data-table'],
+    [25, 'Apply button under our column', 'The Apply button sits directly under the Funding Alternative column.', '.funding-difference .section-end', 'desktop'],
+    [26, 'Compact table on phones', 'On phones, Private equity and Bank loan sit side by side under our answer, cutting each row about 40%.', '.data-table', 'mobile'],
+  ]],
+  ['FAQs, contact and footer', [
+    [27, 'FAQs in two columns', 'The heading and "View all FAQs" go on the left and the questions on the right, using the full width.', '#home-faq', 'desktop'],
+    [28, 'Contact in two columns', 'The heading, intro and phone/email go on the left and the form on the right.', '#contact', 'desktop'],
+    [29, 'Tidier form fields', 'Fields get brand 6px corners, taller inputs, a clear border and a visible focus ring.', '.cform'],
+    [30, 'Two-row footer', 'Logo and social icons on top, links and copyright below. The legal text gets a readable line length.', '.foot'],
+  ]],
+];
+
+const BCA = [
+  ['From the homepage (already approved there)', [
+    [1, 'One shared grid', 'Repayments, stories and reviews were indented 120px from everything else. Now every section, the header and the footer share one left edge.', '.bca-visual-repayments'],
+    [2, 'One vertical rhythm', 'Section spacing ranged from 44px to 78px. It is now the same everywhere, as on the homepage.', '.bca-stories'],
+    [3, 'Backgrounds that alternate', 'White, beige and a charcoal calculator band, matching the homepage. Before, three near-identical creams blurred together.', '#funding-calculator'],
+    [4, 'One heading style', 'Section headings ranged from 34px to 46px. They now share one size, and the intros match.', '.bca-visual-repayments .section-heading'],
+    [5, 'Left-aligned headings and buttons', 'The centred "Apply today" button and the centred contact block line up with everything else.', '.bca-visual-repayments footer'],
+    [6, 'Labels above headings', 'The seven small labels (Our products, Explained, Repayments and so on) move above their headings, with the brand plus.', '.bca-hero-copy'],
+    [7, 'One button size', 'Apply for a BCA, Apply today, Apply now and Send message share one height, padding and corner radius. Two of them were pill-shaped.', '.bca-hero .phero__ctas'],
+    [8, 'Readable small print', 'Breadcrumbs, fact labels, chart keys and the calculator disclaimer (which was 10–11px) go up to 13–14px.', '.bca-cost .calculator-footer'],
+    [9, 'Menu beside the logo', 'Same as the homepage.', '.top', 'desktop'],
+    [10, 'Tidy mobile header', 'Same as the homepage.', '.top', 'mobile'],
+    [11, 'Flat beige hero', 'Flat brand beige instead of the lighter cream.', '.bca-hero'],
+    [12, 'Facts strip like the homepage', 'A hairline separates the facts from the hero, with the same dividers and figure size as the homepage strip.', '.bca-facts-band'],
+    [13, 'Other products as cards', 'MCA and SIF become the same white cards as on the homepage. The grey ALL-CAPS questions become red sentence case, and the underlined buttons become plain links.', '.bca-products .fit'],
+    [14, 'Contact in two columns', 'Same as the homepage.', '#contact', 'desktop'],
+    [15, 'Tidier form fields', 'Same as the homepage.', '.cform'],
+  ]],
+  ['New for the product page', [
+    [16, 'Hero text on one rhythm', 'Both intro paragraphs share one size and colour (they were 18px and 16px), with even spacing from breadcrumb to buttons.', '.bca-hero-copy'],
+    [17, 'Eligibility panel tidied', 'The drop shadow under the photo is gone, and the panel has even padding on every side.', '#eligibility'],
+    [18, 'Three equal info columns', '"What you\'ll need", "How fast" and "Security" get equal widths, and each icon sits beside its heading, not floating above it.', '.ledger'],
+    [19, 'Repayment options as matched panels', 'The two options become equal white panels. Their examples line up at the bottom, and "VS" sits centred between them.', '.visual-methods'],
+    [20, 'Calculator lined up with its heading', 'The calculator top-aligns with its heading. Its corners match the brand, and the result box is white.', '.bca-cost-grid'],
+    [21, 'Story cards', 'Each story becomes a white card: amount, story, results, then "Read the full story" at the bottom. Dots become brand plus marks.', '.bca-stories .cases'],
+    [22, 'Reviews in one style', 'All three reviews use the same beige card, without the mix of filled card and stray border lines. Names sit at the bottom.', '.featured-reviews'],
+    [23, 'Smaller quotes on phones', 'Review quotes drop from 22px to 19px on phones, so a single review no longer fills the screen.', '.featured-reviews', 'mobile'],
+  ]],
+];
+
+const APPLY = [
+  ['Trust & the Apply flow (critique findings 4–7, 12–14)', [
+    [1, 'One primary red that passes contrast', 'Next, Submit, Apply now and Send message all use brand Deep Red with white text (5.2:1). Before: beige on bright red at 3.3:1, below the 4.5:1 minimum, and three different reds.', '.ap__card .step__nav'],
+    [2, 'Hide the reCAPTCHA set-up note', 'The dashed "the I’m not a robot check will appear here once…" developer note above Submit is hidden. The real check still goes in that spot.', 'STEP3:.ap__card'],
+    [3, 'Product carried into the form', 'Coming from a product page (e.g. apply.html?product=bca), step 3 already has that product ticked. Options follow the site order: BCA, MCA, SIF. This preview arrives as if from the BCA page.', 'STEP3:#ap-prod'],
+    [4, 'One form on the Apply page', 'The second "Get in touch" form under the application is removed, so there is one clear thing to do. Phone stays in "Prefer to talk?" and the header.', '.foot'],
+    [5, 'Left column reads heading first', '"We help British business owners to thrive" leads, in the site’s sentence-case heading style, then the promises, then the longer intro. Before: two paragraphs came before an all-caps heading.', '.ap__copy'],
+    [6, 'Form card stays put', 'The card is top-aligned so it no longer jumps when errors appear or steps change. The locked Business name shows as a grey filled field, not an empty dashed line that looks broken.', '.ap__grid', 'desktop'],
+    [7, 'Form heading in the site style', '"APPLY FOR FUNDING" in heavy capitals becomes "Apply for funding" in the same heading style as the rest of the site.', '#p-h'],
+  ]],
+];
+
+const PAGES = {
+  home: { name: 'Homepage', src: 'index-improved.html', fixes: HOME, approved: [1,2,4,5,6,7,8,9,10,11,12,13,16,17,18,19,25,27,28,29] },
+  bca: { name: 'Business Cash Advance', src: 'business-cash-advance-improved.html', fixes: BCA },
+  apply: { name: 'Apply flow', src: 'apply-improved.html?product=bca', fixes: APPLY },
+};
+const asked = new URLSearchParams(location.search).get('page');
+const pageKey = PAGES[asked] ? asked : 'apply';  // default: the page currently under review
+const PAGE = PAGES[pageKey], FIXES = PAGE.fixes;
+document.getElementById('page').value = pageKey;
+document.getElementById('page').addEventListener('change', e => { location.search = '?page=' + e.target.value; });
+
+const DEVICES = { desktop: 1440, tablet: 834, mobile: 390 };
+const ALL = FIXES.flatMap(([, items]) => items);
+const TOTAL = ALL.length;
+const state = { mode: 'after', device: 'desktop', on: new Set(PAGE.approved || ALL.map(i => i[0])), active: null };
+const pad = n => String(n).padStart(2, '0');
+const $ = s => document.querySelector(s);
+const iframe = $('#site'), frame = $('#frame'), viewport = $('#viewport');
+const withFx = list => PAGE.src + (PAGE.src.includes('?') ? '&' : '?') + 'fx=' + list;
+iframe.src = withFx([...state.on].join(','));
+$('#total').textContent = TOTAL;
+
+// Build the list
+$('#list').innerHTML = FIXES.map(([group, items]) => `<p class="group">${group}</p>` + items.map(([n, t, d, , view]) => `
+  <div class="item" data-n="${n}">
+    <input type="checkbox" checked aria-label="Include change ${pad(n)}: ${t}">
+    <button class="item__go" type="button">
+      <span class="item__t"><span class="item__n">${pad(n)}</span><span>${t}${view ? `<span class="item__v">${view === 'mobile' ? 'Mobile' : 'Desktop'}</span>` : ''}</span></span>
+      <span class="item__d">${d}</span>
+    </button>
+  </div>`).join('')).join('');
+
+const send = msg => iframe.contentWindow && iframe.contentWindow.postMessage(msg, '*');
+const enabled = () => [...state.on].sort((a, b) => a - b);
+
+function render() {
+  const after = state.mode === 'after';
+  document.body.classList.toggle('is-after', after);
+  document.querySelectorAll('[data-mode]').forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === state.mode));
+  document.querySelectorAll('[data-device]').forEach(b => b.setAttribute('aria-pressed', b.dataset.device === state.device));
+  document.querySelectorAll('.item').forEach(el => {
+    const n = +el.dataset.n, on = state.on.has(n);
+    el.querySelector('input').checked = on;
+    el.classList.toggle('is-off', !on);
+    el.classList.toggle('is-active', n === state.active);
+  });
+  $('#count').textContent = state.on.size;
+  $('#label').textContent = after ? 'After' : 'Before';
+  $('#sublabel').textContent = after ? `${state.on.size} of ${TOTAL} changes on` : `${PAGE.name} as it is now`;
+  const list = enabled();
+  $('#open-page').href = withFx(after ? (list.length === TOTAL ? 'all' : list.join(',') || 'none') : 'none');
+  send({ type: 'fx', on: after ? list : [] });
+}
+
+function fit() {
+  const w = DEVICES[state.device];
+  const availW = viewport.clientWidth - 48, availH = viewport.clientHeight - 24;
+  const scale = Math.min(1, availW / w);
+  iframe.style.width = w + 'px';
+  iframe.style.height = (availH / scale) + 'px';
+  iframe.style.transform = `scale(${scale})`;
+  frame.style.width = (w * scale) + 'px';
+  frame.style.height = availH + 'px';
+}
+
+function goTo(n) {
+  const fix = ALL.find(i => i[0] === n);
+  state.active = n;
+  const want = fix[4];
+  const changeDevice = (want === 'mobile' && state.device !== 'mobile') || (want === 'desktop' && state.device === 'mobile');
+  if (changeDevice) { state.device = want; fit(); }
+  render();
+  const sel = fix[3].replace(/^STEP3:/, '');
+  if (fix[3].startsWith('STEP3:')) send({ type: 'demo-step3' });
+  setTimeout(() => send({ type: 'goto', selector: sel }), changeDevice ? 350 : fix[3].startsWith('STEP3:') ? 250 : 0);
+}
+
+document.querySelectorAll('[data-mode]').forEach(b => b.addEventListener('click', () => { state.mode = b.dataset.mode; render(); }));
+document.querySelectorAll('[data-device]').forEach(b => b.addEventListener('click', () => { state.device = b.dataset.device; fit(); render(); }));
+$('#list').addEventListener('change', e => {
+  const n = +e.target.closest('.item').dataset.n;
+  e.target.checked ? state.on.add(n) : state.on.delete(n);
+  state.mode = 'after';
+  render();
+});
+$('#list').addEventListener('click', e => { const go = e.target.closest('.item__go'); if (go) goTo(+go.closest('.item').dataset.n); });
+$('#all-on').addEventListener('click', () => { ALL.forEach(i => state.on.add(i[0])); state.mode = 'after'; render(); });
+$('#all-off').addEventListener('click', () => { state.on.clear(); render(); });
+$('#copy').addEventListener('click', async e => {
+  const text = `Approved layout changes (${PAGE.name}): ` + enabled().map(pad).join(', ');
+  try { await navigator.clipboard.writeText(text); } catch { prompt('Copy this list:', text); return; }
+  const b = e.currentTarget, old = b.textContent; b.textContent = 'Copied'; setTimeout(() => b.textContent = old, 1400);
+});
+addEventListener('keydown', e => {
+  // Space flips everywhere except on controls where it means something else (list items count as "everywhere")
+  if (e.code !== 'Space' || e.target.closest('input, textarea, select, a, .seg button, .chip')) return;
+  e.preventDefault(); state.mode = state.mode === 'after' ? 'before' : 'after'; render();
+});
+addEventListener('keyup', e => { if (e.code === 'Space' && e.target.closest('.item__go')) e.preventDefault(); });
+addEventListener('message', e => {
+  const type = (e.data || {}).type;
+  if (type === 'fx-ready') render();
+  if (type === 'fx-flip') { state.mode = state.mode === 'after' ? 'before' : 'after'; render(); }
+});
+addEventListener('resize', fit);
+fit(); render();
+</script>
+</body>
+</html>

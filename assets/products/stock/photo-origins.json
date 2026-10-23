@@ -1,0 +1,65 @@
+[
+  {
+    "output": "bca-hero.webp",
+    "original": "Stock_Images.zip/Images/BCA/pexels-photo-4246184.avif",
+    "type": "User-supplied real stock photography",
+    "processing": "Responsive sizing and WebP encoding only; no generated content",
+    "alt": "Two business owners preparing customer orders together"
+  },
+  {
+    "output": "bca-business.webp",
+    "original": "Stock_Images.zip/Images/BCA/pexels-photo-6995202.avif",
+    "type": "User-supplied real stock photography",
+    "processing": "Responsive sizing and WebP encoding only; no generated content",
+    "alt": "Stock and orders being managed in a working business"
+  },
+  {
+    "output": "bca-application.webp",
+    "original": "Stock_Images.zip/Images/BCA/pexels-photo-7309323.avif",
+    "type": "User-supplied real stock photography",
+    "processing": "Responsive sizing and WebP encoding only; no generated content",
+    "alt": "A maker preparing products in his studio"
+  },
+  {
+    "output": "mca-hero.webp",
+    "original": "Stock_Images.zip/Images/MCA/pexels-photo-8834117.avif",
+    "type": "User-supplied real stock photography",
+    "processing": "Responsive sizing and WebP encoding only; no generated content",
+    "alt": "A salon owner speaking with a customer at the counter"
+  },
+  {
+    "output": "mca-business.webp",
+    "original": "Stock_Images.zip/Images/MCA/pexels-photo-8475145.avif",
+    "type": "User-supplied real stock photography",
+    "processing": "Responsive sizing and WebP encoding only; no generated content",
+    "alt": "A customer making a card payment in a shop"
+  },
+  {
+    "output": "mca-application.webp",
+    "original": "Stock_Images.zip/Images/MCA/pexels-photo-3907161.avif",
+    "type": "User-supplied real stock photography",
+    "processing": "Responsive sizing and WebP encoding only; no generated content",
+    "alt": "A customer paying by card at a cafe counter"
+  },
+  {
+    "output": "sif-hero.webp",
+    "original": "Stock_Images.zip/Images/SIF/pexels-photo-5324973.avif",
+    "type": "User-supplied real stock photography",
+    "processing": "Responsive sizing and WebP encoding only; no generated content",
+    "alt": "A team reviewing plans for a business project"
+  },
+  {
+    "output": "sif-business.webp",
+    "original": "Stock_Images.zip/Images/SIF/pexels-photo-6034140.avif",
+    "type": "User-supplied real stock photography",
+    "processing": "Responsive sizing and WebP encoding only; no generated content",
+    "alt": "Construction work progressing on site"
+  },
+  {
+    "output": "sif-application.webp",
+    "original": "Stock_Images.zip/Images/SIF/pexels-photo-6457521.avif",
+    "type": "User-supplied real stock photography",
+    "processing": "Responsive sizing and WebP encoding only; no generated content",
+    "alt": "Business paperwork being reviewed together"
+  }
+]

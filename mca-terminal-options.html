@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Four MCA card-terminal photo options | Funding Alternative</title><link rel="stylesheet" href="brand-assets/tokens.css">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7ead2;color:#404040;font:16px/1.4 var(--fa-font)}
+.controls{padding:14px 24px;display:flex;gap:12px 26px;align-items:center;flex-wrap:wrap;border-bottom:1px solid #ccbea5}
+.controls strong{font-size:18px;font-weight:600}.choices{display:flex;gap:5px;flex-wrap:wrap}
+button,a{font:500 14px/1.2 var(--fa-font)}button{min-height:40px;padding:9px 13px;border:1px solid #b5a78e;border-radius:6px;background:transparent;color:#404040;cursor:pointer}
+button:hover{background:#e8d8bc}button[aria-pressed=true]{background:#404040;border-color:#404040;color:#fff}
+a{color:#404040;text-underline-offset:4px;margin-left:auto;white-space:nowrap}button:focus-visible,a:focus-visible{outline:3px solid #a4311d;outline-offset:3px}
+iframe{display:block;border:0;width:100%;height:calc(100svh - var(--controls-height,80px));background:#282624}
+.note{font-size:14px;margin:0;padding:12px 24px;background:#fffaf2}.note span{font-weight:600}
+::selection{background:#a4311d;color:white}
+@media(max-width:700px){.controls{padding:12px;gap:10px}.controls strong{width:100%}button{font-size:13px;padding:9px 10px}.choices{gap:4px}a{margin-left:0}.note{padding:12px}}
+</style></head><body>
+<header class="controls"><strong>MCA terminal photo</strong>
+
+<div class="choices" role="group" aria-label="Photo placement"><button data-variant="1" aria-pressed="true">1 · Repayments</button><button data-variant="2" aria-pressed="false">2 · Explanation</button><button data-variant="3" aria-pressed="false">3 · Eligibility</button><button data-variant="4" aria-pressed="false">4 · Below hero</button></div><button id="from-top">Show from top</button>
+<a id="standalone" target="_blank" rel="noopener" href="mca-terminal-option-1.html#terminal-placement">Open full preview</a></header>
+<iframe title="MCA terminal photo preview" src="mca-terminal-option-1.html#terminal-placement"></iframe>
+<p class="note"><span id="description">Repayments:</span> <span id="detail" style="font-weight:400">A photo beside the repayment introduction, directly above the existing examples.</span> Four full MCA page previews using the same card-terminal photo. Current MCA page is unchanged. Each option opens at the changed section; scroll to see the rest.</p>
+<script>
+const options=[['Repayments','A photo beside the repayment introduction, directly above the existing examples.'],['Explanation','A wider photo below the MCA explanation, leaving eligibility on the right.'],['Eligibility','The card-terminal photo replaces the current eligibility supporting image.'],['Below hero','A dedicated photo-and-copy section between the hero and the MCA explanation.']];
+let variant=new URLSearchParams(location.search).get('variant')||'1';if(!/^[1-4]$/.test(variant))variant='1';
+const frame=document.querySelector('iframe'),controls=document.querySelector('.controls');
+function update(){const src='mca-terminal-option-'+variant+'.html#terminal-placement';frame.src=src;frame.title='MCA terminal photo — '+options[variant-1][0];document.querySelector('#standalone').href=src;document.querySelectorAll('[data-variant]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.variant===variant)));document.querySelector('#description').textContent=options[variant-1][0]+':';document.querySelector('#detail').textContent=options[variant-1][1];history.replaceState(null,'','?variant='+variant)}
+controls.addEventListener('click',e=>{const b=e.target.closest('[data-variant]');if(b){variant=b.dataset.variant;update()}});
+document.querySelector('#from-top').addEventListener('click',()=>{frame.src='mca-terminal-option-'+variant+'.html'});
+new ResizeObserver(()=>document.documentElement.style.setProperty('--controls-height',controls.offsetHeight+'px')).observe(controls);update();
+</script></body></html>

@@ -1,0 +1,257 @@
+{
+  "pages": [
+    {
+      "path": "index.html",
+      "title": "Homepage"
+    },
+    {
+      "path": "business-cash-advance.html",
+      "title": "Business Cash Advance"
+    },
+    {
+      "path": "merchant-cash-advance.html",
+      "title": "Merchant Cash Advance"
+    },
+    {
+      "path": "selective-invoice-financing.html",
+      "title": "Selective Invoice Financing"
+    },
+    {
+      "path": "about-us.html",
+      "title": "About us"
+    },
+    {
+      "path": "faq.html",
+      "title": "FAQs"
+    },
+    {
+      "path": "apply.html",
+      "title": "Application"
+    },
+    {
+      "path": "partner-with-us.html",
+      "title": "Partner with us"
+    },
+    {
+      "path": "blog.html",
+      "title": "Blog"
+    },
+    {
+      "path": "privacy-policy.html",
+      "title": "Privacy Policy"
+    },
+    {
+      "path": "terms-conditions.html",
+      "title": "Terms &amp; Conditions"
+    },
+    {
+      "path": "cookie-policy.html",
+      "title": "Cookie Policy"
+    },
+    {
+      "path": "introducer-portal-faq.html",
+      "title": "Introducer Portal FAQ"
+    },
+    {
+      "path": "open-banking-institutions.html",
+      "title": "Institutions we work with"
+    },
+    {
+      "path": "open-banking-transactions.html",
+      "title": "New Open Banking connection"
+    },
+    {
+      "path": "bca-landing-page-google-ads.html",
+      "title": "Business Cash Advance"
+    },
+    {
+      "path": "mca-landing-page-google-ads.html",
+      "title": "Merchant Cash Advance"
+    },
+    {
+      "path": "sif-landing-page-google-ads.html",
+      "title": "Selective Invoice Financing"
+    },
+    {
+      "path": "thank-you.html",
+      "title": "Thank you"
+    },
+    {
+      "path": "thank-you-bca-landing-page.html",
+      "title": "Thank you"
+    },
+    {
+      "path": "thank-you-mca-landing-page.html",
+      "title": "Thank you"
+    },
+    {
+      "path": "thank-you-sif-landing-page.html",
+      "title": "Thank you"
+    },
+    {
+      "path": "blog/7-practical-ways-to-encourage-customers-to-pay-their-invoices-faster.html",
+      "title": "7 Practical Ways To Encourage Customers to Pay Their Invoices Faster"
+    },
+    {
+      "path": "blog/alternative-finance-for-uk-smes.html",
+      "title": "Alternative Finance for UK SMEs"
+    },
+    {
+      "path": "blog/april-newsletter.html",
+      "title": "April Newsletter"
+    },
+    {
+      "path": "blog/business-cash-advance-vs-bank-loan-a-clear-complete-comparison.html",
+      "title": "Business Cash Advance vs Bank Loan: A Clear, Complete Comparison"
+    },
+    {
+      "path": "blog/december-2025-newsletter.html",
+      "title": "December 2025 Newsletter"
+    },
+    {
+      "path": "blog/february-newsletter.html",
+      "title": "February Newsletter"
+    },
+    {
+      "path": "blog/index.html",
+      "title": "Opening Funding Alternative"
+    },
+    {
+      "path": "blog/january-newsletter.html",
+      "title": "January Newsletter"
+    },
+    {
+      "path": "blog/march-newsletter.html",
+      "title": "March Newsletter"
+    },
+    {
+      "path": "blog/may-newsletter.html",
+      "title": "May Newsletter"
+    },
+    {
+      "path": "blog/meet-the-new-funding-alternative-introducer-portal.html",
+      "title": "Meet the New Funding Alternative Introducer Portal"
+    },
+    {
+      "path": "blog/solving-uk-smb-seasonal-cashflow-problems.html",
+      "title": "Solving UK SMB Seasonal Cashflow Problems"
+    },
+    {
+      "path": "blog/step-by-step-guide-to-a-fast-business-funding-application.html",
+      "title": "Step-by-Step Guide to a Fast Business Funding Application"
+    },
+    {
+      "path": "blog/the-best-alternatives-to-bank-loans-for-smes.html",
+      "title": "The Best Alternatives to Bank Loans for SMEs"
+    },
+    {
+      "path": "blog/the-different-forms-of-invoice-financing.html",
+      "title": "The Different Forms of Invoice Financing"
+    },
+    {
+      "path": "blog/turn-outstanding-invoices-into-growth-capital.html",
+      "title": "Turn Outstanding Invoices into Growth Capital"
+    }
+  ],
+  "features": [
+    {
+      "id": 1,
+      "title": "Header fits narrow phones",
+      "page": "index.html",
+      "selector": ".top",
+      "device": "mobile",
+      "priority": "High",
+      "before": "The header extended past a 320px screen and its actions were small.",
+      "after": "The logo, phone, Apply and menu fit within the screen; actions have 44px targets.",
+      "width": 320
+    },
+    {
+      "id": 2,
+      "title": "Calculator controls made for touch",
+      "page": "index.html",
+      "selector": ".funding-calculator",
+      "device": "mobile",
+      "priority": "High",
+      "before": "Tabs were 34px tall and sliders had a narrow interaction area.",
+      "after": "44px tabs and slider hit areas, a single-column layout and a separate result area. Same calculations.",
+      "width": 390
+    },
+    {
+      "id": 3,
+      "title": "Application fields on a narrow screen",
+      "page": "apply.html",
+      "selector": ".ap__card",
+      "device": "mobile",
+      "priority": "High",
+      "before": "Progress controls were small and the narrow layout varied between fields.",
+      "after": "Consistent field sizing, one column at phone widths and larger progress controls.",
+      "width": 320
+    },
+    {
+      "id": 4,
+      "title": "Compact topic filtering on the blog",
+      "page": "blog.html",
+      "selector": ".mobile-topic-select,.blog-filters",
+      "device": "mobile",
+      "priority": "High",
+      "before": "Wrapped filter buttons pushed the first article further down.",
+      "after": "A labelled topic selector on phones; the existing desktop filter buttons remain.",
+      "width": 390
+    },
+    {
+      "id": 5,
+      "title": "FAQ topics with larger tap areas",
+      "page": "faq.html",
+      "selector": ".faq-categories",
+      "device": "mobile",
+      "priority": "High",
+      "before": "Topics wrapped unevenly across two narrow columns.",
+      "after": "A single-column list with consistent spacing and larger tap targets.",
+      "width": 390
+    },
+    {
+      "id": 6,
+      "title": "Bank selection that is easier to scan",
+      "page": "open-banking-institutions.html",
+      "selector": ".bank-grid",
+      "device": "mobile",
+      "priority": "High",
+      "before": "Two columns squeezed bank logos and names into small cards.",
+      "after": "One clear bank row per line. Real bank connections remain unavailable in this build.",
+      "width": 390
+    },
+    {
+      "id": 7,
+      "title": "Long policy links stay within the page",
+      "page": "privacy-policy.html",
+      "selector": ".resource-content a[href*=\"experian.co.uk/crain\"]",
+      "device": "mobile",
+      "priority": "High",
+      "before": "A long URL extended beyond a 320px screen.",
+      "after": "Long URLs wrap within the reading column; policy words and destinations are unchanged.",
+      "width": 320
+    },
+    {
+      "id": 8,
+      "title": "Footer links easier to tap",
+      "page": "index.html",
+      "selector": ".foot",
+      "device": "mobile",
+      "priority": "High",
+      "before": "Footer links and social buttons were smaller than comfortable touch targets.",
+      "after": "Larger touch areas and better wrapping, with the current footer design retained.",
+      "width": 390
+    },
+    {
+      "id": 9,
+      "title": "Cookie choices fit small phones",
+      "page": "index.html",
+      "selector": ".consent-banner",
+      "device": "mobile",
+      "priority": "High",
+      "before": "Cookie actions could feel cramped on narrow phones.",
+      "after": "A compact two-column action area with a full-width settings button and 44px controls. Preferences are unchanged.",
+      "width": 320
+    }
+  ]
+}
